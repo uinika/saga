@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 let Foot = React.createClass({
-  render: function() {
+  render: function () {
     return (
       <div>
         <h1>Foot</h1>
       </div>
-    );
+    )
   }
-});
+})
 
-export default Foot;
+export default Foot

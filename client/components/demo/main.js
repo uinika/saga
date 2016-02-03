@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 let Demo = React.createClass({
-  render: function() {
+  render: function () {
     return (
       <div>
         <h1>Demo</h1>
       </div>
-    );
+    )
   }
-});
+})
 
-module.exports = Demo;
+module.exports = Demo
