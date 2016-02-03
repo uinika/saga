@@ -1,0 +1,60 @@
+{
+  "name": "template-webpack-react",
+  "version": "1.0.0",
+  "description": "A template project base on webpack.",
+  "main": "index.js",
+  "scripts": {
+    "copy": "copyfiles -f ./client/index.html ./build",
+    "server": "webpack-dev-server",
+    "build": "webpack --config webpack.dist.config.js & npm run copy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uinika/template-webpack-react.git"
+  },
+  "keywords": [
+    "Webpack",
+    "React"
+  ],
+  "author": "Hank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uinika/template-webpack-react/issues"
+  },
+  "homepage": "https://github.com/uinika/template-webpack-react#readme",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "antd": "^0.11.3",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.1.1",
+    "react-router": "^2.0.0-rc5",
+    "redux": "^3.1.2",
+    "redux-promise": "^0.5.1",
+    "redux-thunk": "^1.0.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta9",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "copyfiles": "^0.2.1",
+    "css-loader": "^0.23.1",
+    "eslint": "^1.10.3",
+    "eslint-loader": "^1.2.1",
+    "eslint-plugin-react": "^3.16.1",
+    "express": "^4.13.4",
+    "file-loader": "^0.8.5",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "redux-devtools": "^3.0.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

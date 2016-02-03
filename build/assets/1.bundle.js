@@ -1,0 +1,2 @@
+webpackJsonp([1],{278:function(e,t,n){"use strict";function l(e){return e&&e.__esModule?e:{"default":e}}var u=n(1),a=l(u),r=a["default"].createClass({displayName:"Demo",render:function(){return a["default"].createElement("div",null,a["default"].createElement("h1",null,"Demo"))}});e.exports=r}});
+//# sourceMappingURL=1.bundle.js.map
