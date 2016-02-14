@@ -1,5 +1,5 @@
 {
-  "extends": "rackt",
+  "extends": "reactjs",
   "rules": {
     "valid-jsdoc": 2,
     "react/jsx-uses-react": 1,
