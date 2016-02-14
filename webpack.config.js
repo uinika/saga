@@ -3,7 +3,11 @@ var webpack = require("webpack");
 
 module.exports = {
   context: path.resolve(__dirname, "client"),
-  entry: ['webpack-dev-server/client?http://localhost:8080','webpack/hot/dev-server','./index.js'],
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/dev-server',
+    './index.js'
+  ],
   output: {
     path: path.resolve(__dirname, "build/assets"),
     publicPath: '/assets/',
@@ -38,6 +42,9 @@ module.exports = {
     }, {
       test: /\.less$/,
       loader: 'style!css!less'
+    }, {
+      test: /\.scss$/,
+      loaders: ["style", "css", "sass"]
     }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
       loader: 'url-loader?limit=1024'
