@@ -39,9 +39,6 @@ module.exports = {
       test: /\.less$/,
       loader: 'style!css!less'
     }, {
-      test: /\.scss$/,
-      loaders: ["style", "css", "sass"]
-    }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
       loader: 'url-loader?limit=1024'
     }]
