@@ -1,6 +1,6 @@
 {
   "name": "saga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A template project base on webpack.",
   "main": "index.js",
   "scripts": {

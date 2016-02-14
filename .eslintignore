@@ -1,4 +1,5 @@
 **/build/*
 **/node_modules/*
 **/server/*
-**/webpack.config*.js
+**/webpack.config.js
+**/webpack.dist.config.js

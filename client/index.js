@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDom from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { Row, Col } from 'antd';
 import Menus from './components/common/menus';
@@ -27,7 +27,7 @@ class Index extends React.Component {
   }
 }
 
-render((
+ReactDom.render((
   <Router history={hashHistory}>
     <Route path="/" component={Index}>
       <IndexRoute component={Dashboard}/>
