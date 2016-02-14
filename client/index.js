@@ -1,14 +1,14 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
-import { Row, Col } from 'antd'
-import Menus from './components/common/menus'
-import Head from './components/common/head'
-import Foot from './components/common/foot'
-import Dashboard from './components/dashboard/main'
-import 'antd/style/index.less'
+import React from 'react';
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Row, Col } from 'antd';
+import Menus from './components/common/menus';
+import Head from './components/common/head';
+import Foot from './components/common/foot';
+import Dashboard from './components/dashboard/main';
+import 'antd/style/index.less';
 
-const App = React.createClass({
+class Index extends React.Component {
   render() {
     return (
       <div>
@@ -23,18 +23,16 @@ const App = React.createClass({
           <Col span="24"><Foot /></Col>
         </Row>
       </div>
-    )
+    );
   }
-})
+}
 
 render((
   <Router history={hashHistory}>
-    <Route path="/" component={App}>
+    <Route path="/" component={Index}>
       <IndexRoute component={Dashboard}/>
       <Route path="dashboard" name="Dashboard" component={Dashboard} />
-      <Route path="demo" name="Demo" getComponent={(location, callback) => {
-        require([],()=>{callback(null,require('./components/demo/main'))})
-      }}/>
+      <Route path="demo" name="Demo" getComponent={(location, callback) => { require([], () => {callback(null, require('./components/demo/main'));}); }} />
     </Route>
   </Router>
-), document.getElementById('app'))
+), document.getElementById('app'));
