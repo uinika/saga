@@ -3,15 +3,13 @@ var webpack = require("webpack");
 
 module.exports = {
   context: path.resolve(__dirname, "client"),
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/dev-server',
-    './index.js'
-  ],
+  entry: {
+    index: './index.js'
+  },
   output: {
-    path: path.resolve(__dirname, "build/assets"),
-    publicPath: '/assets/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "build/app"),
+    publicPath: '/app/',
+    filename: '[name].js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -45,6 +43,9 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loaders: ["style", "css", "sass"]
+    }, {
+       test: require.resolve("jquery"),
+       loader: "expose?$!expose?jQuery"
     }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
       loader: 'url-loader?limit=1024'
