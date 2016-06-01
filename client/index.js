@@ -5,7 +5,7 @@ import { Row, Col } from 'antd';
 import Menus from './components/common/menus';
 import Head from './components/common/head';
 import Foot from './components/common/foot';
-import Dashboard from './components/dashboard/main';
+import Dashboard from './components/common/dashboard';
 import 'antd/dist/antd.min.css';
 
 class Index extends React.Component {
@@ -25,7 +25,7 @@ class Index extends React.Component {
       </div>
     );
   }
-}
+};
 
 ReactDom.render((
   <Router history={hashHistory}>
