@@ -9,7 +9,7 @@
   },
   "scripts": {
     "copy": "copyfiles -f ./client/index.html ./build",
-    "start": "webpack-dev-server --hot --inline --port 8080",
+    "start": "webpack-dev-server",
     "build": "webpack --config webpack.dist.config.js & npm run copy"
   },
   "keywords": [ "React", "Redux", "Webpack", "Babel" ],

@@ -15,9 +15,9 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devtool: 'source-map',
-  devServer: {
-    contentBase: "./client",
-  },
+  // devServer: {
+  //   contentBase: "./client",
+  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
