@@ -29,11 +29,11 @@ module.exports = {
     })
   ],
   module: {
-    preLoaders: [{
-      test: /\.(js|jsx)$/,
-      loader: 'eslint-loader',
-      exclude: [/node_modules/]
-    }],
+    // preLoaders: [{
+    //   test: /\.(js|jsx)$/,
+    //   loader: 'eslint-loader',
+    //   exclude: [/node_modules/]
+    // }],
     loaders: [{
       test: /\.(js|jsx)$/,
       exclude: [/(node_modules)/],

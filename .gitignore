@@ -1,5 +1,8 @@
 # Dependency directory
 node_modules
 
+# Npm debug information
+npm-debug.*
+
 # Publish the client project by webpack
 build
