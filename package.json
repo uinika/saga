@@ -12,12 +12,18 @@
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.dist.config.js & npm run copy"
   },
-  "keywords": [ "React", "Redux", "Webpack", "Babel" ],
+  "keywords": [
+    "React",
+    "Redux",
+    "Webpack",
+    "Babel"
+  ],
   "author": "Hank",
   "license": "MIT",
   "dependencies": {
     "antd": "^1.2.1",
     "lodash": "^4.13.1",
+    "material-ui": "^0.15.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1",

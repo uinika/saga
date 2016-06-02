@@ -1,11 +1,13 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class Dashboard extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Dashboard</h1>
-      </div>
+				<MuiThemeProvider>
+			    <RaisedButton label="Default" />
+			  </MuiThemeProvider>
     );
   }
 }
