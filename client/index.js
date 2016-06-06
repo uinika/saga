@@ -5,6 +5,7 @@ import { Row, Col } from 'antd';
 import Login from './components/common/login';
 import Dashboard from './components/dashboard/main';
 import 'antd/dist/antd.min.css';
+import './styles/main.less';
 
 ReactDom.render((
   <Router history={hashHistory}>
