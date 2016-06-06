@@ -1,7 +1,7 @@
 {
   "name": "saga",
   "version": "1.0.0",
-  "description": "A EcmaScript6 project",
+  "description": "An EcmaScript6 project",
   "main": "webpack.config.js",
   "repository": {
     "type": "git",
