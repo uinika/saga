@@ -5,7 +5,7 @@ import { Row, Col, Input } from 'antd';
 class Login extends React.Component {
   render() {
     return (
-      <div>
+      <div id='login'>
         <Row>
           <Col span={12} offset={6}>
             <Input addonBefore="用户名"/>

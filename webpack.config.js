@@ -15,18 +15,14 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devtool: 'source-map',
-  // devServer: {
-  //   contentBase: "./client",
-  // },
+  devServer: {
+    contentBase: "./client",
+    stats: { colors: true }
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    // preLoaders: [{
-    //   test: /\.(js|jsx)$/,
-    //   loader: 'eslint-loader',
-    //   exclude: [/node_modules/]
-    // }],
     loaders: [{
       test: /\.(js|jsx)$/,
       exclude: [/(node_modules)/],
@@ -40,9 +36,6 @@ module.exports = {
     }, {
       test: /\.less$/,
       loader: 'style!css!less'
-    }, {
-      test: /\.scss$/,
-      loaders: ["style", "css", "sass"]
     }, {
        test: require.resolve("jquery"),
        loader: "expose?$!expose?jQuery"
