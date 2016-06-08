@@ -9,7 +9,7 @@ class Login extends React.Component {
         <Row>
           <Col span={12} offset={6}>
             <Input addonBefore="用户名"/>
-            <Input addonBefore="密码"/>
+            <Input addonBefore="密  码"/>
           </Col>
         </Row>
       </div>
