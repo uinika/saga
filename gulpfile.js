@@ -2,6 +2,7 @@ const Gulp = require('gulp'),
       Webpack = require('webpack'),
       WebpackDevServer = require('webpack-dev-server'),
       WebpackConfig = require('./webpack.config.js'),
+      Nodemon = require('gulp-nodemon'),
       Delete = require('del');
 // gulp
 Gulp.task('default', ['client']);
@@ -13,11 +14,15 @@ Gulp.task('client', function(callback) {
     publicPath: '/app/',
     contentBase: './client',
     stats: {colors: true}
-  }).listen(5050);
+  }).listen(5000);
 });
 // gulp server
 Gulp.task('server', function() {
-  console.log(test);
+  Nodemon({
+    script: './server/app.js',
+    execMap: {js: 'node --harmony'},
+    env: {'NODE_ENV': 'development'}
+  })
 });
 // gulp build
 Gulp.task('build', function() {

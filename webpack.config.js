@@ -4,7 +4,7 @@ const Webpack = require('webpack'),
 exports.development = {
   context: Path.resolve(__dirname, 'client'),
   entry: {
-    index: ['webpack-dev-server/client?http://localhost:5050/', 'webpack/hot/dev-server', './index.js']
+    index: ['webpack-dev-server/client?http://localhost:5000/', 'webpack/hot/dev-server', './index.js']
   },
   output: {
     path: Path.resolve(__dirname, 'build/app'),
