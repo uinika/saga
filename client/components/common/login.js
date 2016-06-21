@@ -5,31 +5,13 @@ import 'whatwg-fetch';
 
 class Login extends React.Component {
   componentDidMount() {
-    fetch('http://172.16.0.119:8080/cors/test', {
+    fetch('http://172.16.0.119:8080/login', {
       credentials: 'include',
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-    }).then(function(response) {
-      console.log(response);
-    });
-    fetch('http://172.16.0.119:8080/cors/test/2016', {
-      credentials: 'include',
-      method: 'GET',
-    }).then(function(response) {
-      console.log(response);
-    });
-    fetch('http://172.16.0.119:8080/cors/test', {
-      credentials: 'include',
-      method: 'PUT',
-    }).then(function(response) {
-      console.log(response);
-    });
-    fetch('http://172.16.0.119:8080/cors/test', {
-      credentials: 'include',
-      method: 'DELETE',
     }).then(function(response) {
       console.log(response);
     });
