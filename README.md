@@ -30,9 +30,9 @@
 > head
 * status: (Integer)，Server-side status
   1. 200：Http response success.
-  2. 300：Login timeout.
-  3. 400：Server-side exceptions.
-  4. 500：Reserved.
+  2. 300：Warning infomation.
+  3. 400：Login timeout.
+  4. 500：Server-side exceptions.
 * token: (String)，Encryption key。
 * message: (String)，Server-side infomation for current http request.
 * total: (Integer)，Sum of business logic result (if the results as the object then total equals 1, as an array equals length of the array).

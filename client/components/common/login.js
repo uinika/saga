@@ -12,9 +12,13 @@ class Login extends React.Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-    }).then(function(response) {
-      console.log(response);
-    });
+      body: JSON.stringify({
+        loginName: 'test',
+        password: '123456'
+      })
+    })
+    .then(result => result.json())
+    .then(data => console.log(data));
   };
   render() {
     return (
