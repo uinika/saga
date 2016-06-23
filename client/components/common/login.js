@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Row, Col, Input } from 'antd';
+import { Row, Col, Form, Input, Button } from 'antd';
 import 'whatwg-fetch';
 
 class Login extends React.Component {
@@ -23,10 +23,17 @@ class Login extends React.Component {
   render() {
     return (
       <div id='login'>
-        <Row>
-          <Col span={12} offset={6}>
-            <Input addonBefore="用户名"/>
-            <Input addonBefore="密  码"/>
+        <Row type='flex' align='middle' justify='center'>
+          <Col span={6}>
+            <Form horizontal>
+              <Form.Item>
+                <Input type='text' placeholder='用户名' />
+              </Form.Item>
+              <Form.Item>
+                <Input type='password' placeholder='密码' />
+              </Form.Item>
+              <Button type="primary">登陆</Button>
+            </Form>
           </Col>
         </Row>
       </div>
