@@ -24,7 +24,7 @@ class Login extends React.Component {
     return (
       <div id='login'>
         <Row type='flex' align='middle' justify='center'>
-          <Col span={6}>
+          <Col span={7}>
             <Form horizontal>
               <Form.Item>
                 <Input type='text' placeholder='用户名' />
