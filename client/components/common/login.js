@@ -4,7 +4,8 @@ import { Row, Col, Form, Input, Button } from 'antd';
 import 'whatwg-fetch';
 
 class Login extends React.Component {
-  componentDidMount() {
+  handleSubmit(event) {
+    event.preventDefault();
     fetch('http://172.16.0.119:8080/login', {
       credentials: 'include',
       method: 'POST',
@@ -18,27 +19,35 @@ class Login extends React.Component {
       })
     })
     .then(result => result.json())
-    .then(data => console.log(data));
+    .then(data => {
+      if(data.head.status === 200 && data.head.token){
+        sessionStorage.token = data.head.token;
+      }
+      // Common
+     })
+     .then(() => {
+       window.location.href = 'http://172.16.0.93:5000/#/dashboard';
+     })
   };
   render() {
     return (
       <div id='login'>
         <Row type='flex' align='middle' justify='center'>
           <Col span={7}>
-            <Form horizontal>
+            <Form horizontal onSubmit={this.handleSubmit}>
               <Form.Item>
                 <Input type='text' placeholder='用户名' />
               </Form.Item>
               <Form.Item>
                 <Input type='password' placeholder='密码' />
               </Form.Item>
-              <Button type="primary">登陆</Button>
+              <Button htmlType='submit' type='primary'>登陆</Button>
             </Form>
           </Col>
         </Row>
       </div>
     );
-  }
+  };
 };
 
-export default Login;
+export default Form.create({})(Login);;
