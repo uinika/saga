@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {Row, Col, Form, Input, Button} from 'antd';
 import 'whatwg-fetch';
-import {Path, Http} from './global'
+import {Path, Http} from '../../util/http'
 
 let Login = React.createClass({
   handleSubmit(event) {
@@ -14,13 +14,13 @@ let Login = React.createClass({
     };
     Http({
       url: '/login',
-      method:'POST',
+      method: 'POST',
       token: 'uinika',
       param: httpParam
     })
-    .then(result => {
-      if(result.head.status === 200 && result.head.token){
-        sessionStorage.token = result.head.token;
+    .then(data => {
+      if(data.head.status === 200 && data.head.token){
+        sessionStorage.token = data.head.token;
       }
       // Common
      })

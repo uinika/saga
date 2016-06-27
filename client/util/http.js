@@ -19,5 +19,5 @@ exports.Http = (options) => {
     headers: header,
     body: JSON.stringify(options.param)
   })
-  .then(data => data.json())
+  .then(result => result.json())
 };
