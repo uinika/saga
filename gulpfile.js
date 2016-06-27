@@ -5,7 +5,7 @@ const Gulp = require('gulp'),
       Nodemon = require('gulp-nodemon'),
       Delete = require('del');
 // gulp
-Gulp.task('default', ['client']);
+Gulp.task('default', ['client', 'server']);
 // gulp client
 Gulp.task('client', function(callback) {
   let compiler = Webpack(WebpackConfig.development);

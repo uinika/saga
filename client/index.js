@@ -8,13 +8,13 @@ import Login from './components/common/login';
 ReactDom.render((
   <Router history={hashHistory}>
     <Route path='/' component={Login}>
-      <IndexRoute component={Login}/>
+      <IndexRoute component={Login} />
       <Route path='login' getComponent={(nextState, callback) => {
         require.ensure([], (require) => {callback(null, require('./components/common/login'))})
-      }}/>
+      }} />
       <Route path='dashboard' getComponent={(nextState, callback) => {
         require.ensure([], (require) => {callback(null, require('./components/dashboard/main'))})
-      }}/>
+      }} />
     </Route>
   </Router>
-), document.getElementById('app'));
+), document.getElementById('App'));

@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Row, Col, Form, Input, Button } from 'antd';
+import {Row, Col, Form, Input, Button} from 'antd';
 import 'whatwg-fetch';
+import {Path} from './util'
 
 class Login extends React.Component {
   handleSubmit(event) {
+    console.log(Path());
     event.preventDefault();
     fetch('http://172.16.0.119:8080/login', {
       credentials: 'include',
