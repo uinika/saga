@@ -2,46 +2,45 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {Row, Col, Form, Input, Button} from 'antd';
 import 'whatwg-fetch';
-import {Path} from './util'
+import {Path, Http} from './global'
 
-class Login extends React.Component {
+let Login = React.createClass({
   handleSubmit(event) {
-    console.log(Path());
     event.preventDefault();
-    fetch('http://172.16.0.119:8080/login', {
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        loginName: 'test',
-        password: '123456'
-      })
+    let httpParam = {
+      loginName: this.props.form.getFieldValue('username'),
+      password: this.props.form.getFieldValue('password'),
+      validateCode: this.props.form.getFieldValue('validateCode')
+    };
+    Http({
+      url: '/login',
+      method:'POST',
+      token: 'uinika',
+      param: httpParam
     })
-    .then(result => result.json())
-    .then(data => {
-      if(data.head.status === 200 && data.head.token){
-        sessionStorage.token = data.head.token;
+    .then(result => {
+      if(result.head.status === 200 && result.head.token){
+        sessionStorage.token = result.head.token;
       }
       // Common
      })
-     .then(() => {
-       window.location.href = 'http://172.16.0.93:5000/#/dashboard';
-     })
-  };
+  },
   render() {
+    const {getFieldProps} = this.props.form;
     return (
       <div id='login'>
         <Row type='flex' align='middle' justify='center'>
           <Col span={7}>
             <Form horizontal onSubmit={this.handleSubmit}>
               <Form.Item>
-                <Input type='text' placeholder='用户名' />
+                <Input type='text' placeholder='用户名' {...getFieldProps('username')} />
               </Form.Item>
               <Form.Item>
-                <Input type='password' placeholder='密码' />
+                <Input type='password' placeholder='密码' {...getFieldProps('password')} />
+              </Form.Item>
+              <Form.Item>
+                <Input type='text' placeholder='验证码' {...getFieldProps('validateCode')} />
+                <img src= {Path + '/validatecode'} />
               </Form.Item>
               <Button htmlType='submit' type='primary'>登陆</Button>
             </Form>
@@ -49,7 +48,7 @@ class Login extends React.Component {
         </Row>
       </div>
     );
-  };
-};
+  }
+});
 
 export default Form.create({})(Login);;
