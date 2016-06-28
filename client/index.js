@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import 'antd/dist/antd.min.css';
 import './styles/main.less';
 import Main from './components/main';
-import Login from './components/common/login';
+import Login from './components/login/main';
 
 ReactDom.render((
   <Router history={hashHistory}>

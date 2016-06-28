@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {Row, Col, Form, Input, Button} from 'antd';
 import 'whatwg-fetch';
-import {Path, Http} from '../../util/http'
+import {Path, Http} from '../../utils/http'
 
 let Login = React.createClass({
   contextTypes: {
