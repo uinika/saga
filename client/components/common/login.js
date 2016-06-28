@@ -5,6 +5,9 @@ import 'whatwg-fetch';
 import {Path, Http} from '../../util/http'
 
 let Login = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   handleSubmit(event) {
     event.preventDefault();
     let httpParam = {
@@ -15,14 +18,15 @@ let Login = React.createClass({
     Http({
       url: '/login',
       method: 'POST',
-      token: 'uinika',
       param: httpParam
     })
     .then(data => {
       if(data.head.status === 200 && data.head.token){
         sessionStorage.token = data.head.token;
       }
-      // Common
+     })
+     .then(() => {
+       this.context.router.replace('/main/dashboard');
      })
   },
   render() {
