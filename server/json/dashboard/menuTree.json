@@ -1,0 +1,46 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 1
+  },
+  "body": [{
+    "MenuId": "MENU0000-1000-0000-0000-000000000000",
+    "ParentId": null,
+    "MenuName": "系统管理",
+    "Hint": "系统管理",
+    "icon": "default",
+    "Children": [{
+      "MenuId": "MENU0000-2000-0000-0000-000000000000",
+      "ParentId": "MENU0000-1000-0000-0000-000000000000",
+      "MenuName": "用户管理",
+      "Hint": "用户管理",
+      "icon": "account"
+    }, {
+      "MenuId": "MENU0000-2000-0000-0000-000000000001",
+      "ParentId": "MENU0000-1000-0000-0000-000000000000",
+      "MenuName": "角色管理",
+      "Hint": "角色管理",
+      "icon": "role"
+    }, {
+      "MenuId": "MENU0000-2000-0000-0000-000000000002",
+      "ParentId": "MENU0000-1000-0000-0000-000000000000",
+      "MenuName": "菜单管理",
+      "Hint": "菜单管理",
+      "icon": "menu"
+    }, {
+      "MenuId": "MENU0000-2000-0000-0000-000000000003",
+      "ParentId": "MENU0000-1000-0000-0000-000000000000",
+      "MenuName": "模块管理",
+      "Hint": "模块管理",
+      "icon": "module"
+    }, {
+      "MenuId": "MENU0000-2000-0000-0000-000000000004",
+      "ParentId": "MENU0000-1000-0000-0000-000000000000",
+      "MenuName": "操作日志",
+      "Hint": "操作日志查询",
+      "icon": "info"
+    }]
+  }]
+}
