@@ -30,8 +30,10 @@
 > head
 * status: (Integer)，Server-side status
   1. 200：Http response success.
-  2. 300：Warning infomation.
-  3. 400：Login timeout.
+  2. 201：Warning infomation.
+  3. 202：Login timeout.
+  4. 400: Bad request.
+  5. 404: No page found.
   4. 500：Server-side exceptions.
 * token: (String)，Encryption key。
 * message: (String)，Server-side infomation for current http request.

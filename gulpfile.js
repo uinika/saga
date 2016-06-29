@@ -26,7 +26,7 @@ Gulp.task('server', function() {
 });
 // gulp build
 Gulp.task('build', function() {
-  Gulp.src(['./client/index.html'])
+  Gulp.src(['./client/index.html', './client/styles'])
       .pipe(Gulp.dest('./build'));
   var compiler = Webpack(WebpackConfig.distribution);
   compiler.run(function(err, stats) {

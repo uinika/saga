@@ -34,7 +34,7 @@ let Login = React.createClass({
     return (
       <div id='login'>
         <Row className='box' type='flex' align='middle' justify="space-around">
-          <Col span={7}>
+          <Col span={5}>
             <Form horizontal onSubmit={this.handleSubmit}>
               <Form.Item>
                 <Input type='text' placeholder='用户名' {...getFieldProps('username')} />

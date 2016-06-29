@@ -18,7 +18,7 @@ class Login extends React.Component {
   render() {
     return (
       <div id='dashboard-main'>
-        <Menu onClick={this.handleClick} style={{width: 240}} mode='inline'>
+        <Menu theme='dark' onClick={this.handleClick} style={{width: 240}} mode='inline'>
           <Menu.SubMenu key='sub2' title={<span><Icon type='appstore' /><span>导航</span></span>}>
             <Menu.Item key='5'>选项</Menu.Item>
             <Menu.Item key='6'>选项</Menu.Item>
