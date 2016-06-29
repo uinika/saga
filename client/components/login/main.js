@@ -33,7 +33,7 @@ let Login = React.createClass({
     const {getFieldProps} = this.props.form;
     return (
       <div id='login'>
-        <Row type='flex' align='middle' justify='center'>
+        <Row className='box' type='flex' align='middle' justify="space-around">
           <Col span={7}>
             <Form horizontal onSubmit={this.handleSubmit}>
               <Form.Item>
