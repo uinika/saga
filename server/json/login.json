@@ -1,1 +1,9 @@
-{}
+{
+  "head": {
+    "status": 200,
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJhY2NvdW50SWQiOiJBQ0NPVU5UMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJsb2dpbk5hbWUiOiJhZG1pbiIsInJlYWxOYW1lIjoi57O757uf566h55CG5ZGYIiwidWlzdHlsZSI6IjAiLCJpc3MiOiIwOjA6MDowOjA6MDowOjEiLCJpYXQiOjE0NjcxOTI1MDB9.MFn1GhTeZJTdFxxeo3AwNWHhvkLS10TCeHUBqChd2S8hMvS82LctUXpHPMVm0QQWZhdCAPEwZrIWjBd4zxeHjg",
+    "message": "温馨提示，登录验证成功！",
+    "total": 0
+  },
+  "body": null
+}

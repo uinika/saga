@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import 'whatwg-fetch';
 
-const PATH  = 'http://172.16.0.119:8080';
-exports.Path = PATH;
+const PATH  = 'http://localhost:5002';
+// const PATH  = 'http://172.16.0.119:8080';
 // const PATH  = 'http://' + window.location.href.split('/')[2];
+exports.Path = PATH;
 
 exports.Http = (options) => {
   let header = {

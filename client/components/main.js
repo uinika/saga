@@ -28,7 +28,7 @@ class Login extends React.Component {
             </Menu.SubMenu>
           </Menu.SubMenu>
         </Menu>
-         {this.props.children}
+        {this.props.children}
       </div>
     );
   }
