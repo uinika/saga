@@ -1,8 +1,8 @@
 const Express = require('express'),
       App = Express(),
       Cors = require('cors'),
-      BaseUrl = '/',
-      BodyParser = require('body-parser');
+      BodyParser = require('body-parser'),
+      Url = '/';
 /** Basic config for express */
 App.use('/client', Express.static('./client'));
 App.use(Cors({
@@ -14,8 +14,10 @@ App.use(Cors({
 }));
 App.use(BodyParser.json());
 App.listen(5002);
-console.info('Server started http://localhost:5002' + BaseUrl);
+console.info('Server started http://localhost:5002' + Url);
 // Login
-App.use(BaseUrl, require('./mock/login'));
+App.use(Url, require('./mock/login'));
 // Dashboard
-App.use(BaseUrl, require('./mock/dashboard'));
+App.use(Url, require('./mock/dashboard'));
+// Admin
+App.use(Url, require('./mock/admin/log'));
