@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Row, Col, Menu, Icon} from 'antd';
-import {Path, Http} from '../utils/http';
+import {Path, Http} from '../../utils/http';
+import {Link} from 'react-router';
 
 class Login extends React.Component {
   componentDidMount() {
@@ -20,14 +21,13 @@ class Login extends React.Component {
       <div id='dashboard-main'>
         <Row className='fill'>
           <Col span={3}>
-            <Menu theme='dark' onClick={this.handleClick} mode='inline'>
-              <Menu.SubMenu key='sub2' title={<span><Icon type='appstore' /><span>导航</span></span>}>
-                <Menu.Item key='5'>选项</Menu.Item>
-                <Menu.Item key='6'>选项</Menu.Item>
-                <Menu.SubMenu key='sub3' title='二级导航'>
-                  <Menu.Item key='7'>选项</Menu.Item>
-                  <Menu.Item key='8'>选项</Menu.Item>
-                </Menu.SubMenu>
+            <Menu theme='dark' mode='inline' defaultOpenKeys={['menu']}>
+              <Menu.SubMenu key='menu' title='系统管理'>
+                <Menu.Item><Link to='/main/admin/user'>用户管理</Link></Menu.Item>
+                <Menu.Item><Link to='/main/admin/role'>角色管理</Link></Menu.Item>
+                <Menu.Item><Link to='/main/admin/menu'>菜单管理</Link></Menu.Item>
+                <Menu.Item><Link to='/main/admin/module'>模块管理</Link></Menu.Item>
+                <Menu.Item><Link to='/main/admin/log'>日志管理</Link></Menu.Item>
               </Menu.SubMenu>
             </Menu>
           </Col>
