@@ -57,6 +57,13 @@ exports.distribution = {
     extensions: ['', '.js', '.jsx']
   },
   devtool: 'source-map',
+  plugins: [
+    new Webpack.optimize.UglifyJsPlugin({
+      mangle: {
+          except: ['$super', '$', 'exports', 'require']
+      }
+    })
+  ],
   module: {
     loaders: [{
       test: /\.(js|jsx)$/,

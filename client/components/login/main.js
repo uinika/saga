@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import {Row, Col, Form, Input, Button} from 'antd';
+import {Row, Col, Form, Input, Button, Radio} from 'antd';
 import 'whatwg-fetch';
 import {Path, Http} from '../../utils/http'
 
@@ -34,19 +34,35 @@ let Login = React.createClass({
     return (
       <div id='login'>
         <Row className='box' type='flex' align='middle' justify="space-around">
-          <Col span={5}>
-            <Form horizontal onSubmit={this.handleSubmit}>
-              <Form.Item>
-                <Input type='text' placeholder='用户名' {...getFieldProps('username')} />
-              </Form.Item>
-              <Form.Item>
-                <Input type='password' placeholder='密码' {...getFieldProps('password')} />
-              </Form.Item>
-              <Form.Item>
-                <Input type='text' placeholder='验证码' {...getFieldProps('validateCode')} />
-                <img src= {Path + '/validatecode'} />
-              </Form.Item>
-              <Button htmlType='submit' type='primary'>登陆</Button>
+          <Col span={8}>
+            <section className='logo'></section>
+            <Form className='pannel' horizontal onSubmit={this.handleSubmit}>
+              <section>
+                <Form.Item label="用户名" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                  <Input type='text' placeholder='请输入用户名...' {...getFieldProps('username')} />
+                </Form.Item>
+                <Form.Item label="密码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                  <Input type='password' placeholder='请输入密码...' {...getFieldProps('password')} />
+                </Form.Item>
+                <Form.Item label="验证码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                  <Input type='text' placeholder='请输入验证码...' {...getFieldProps('validateCode')} />
+                  <img src= {Path + '/validatecode'} />
+                  <a>换一张</a>
+                </Form.Item>
+              </section>
+              <section>
+                <Form.Item labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                  <Radio>记住密码</Radio>
+                </Form.Item>
+                <Form.Item labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                  重置密码
+                </Form.Item>
+              </section>
+              <section>
+                <Form.Item wrapperCol={{span: 16, offset: 6}} style={{marginTop: 24}}>
+                  <Button htmlType="submit" type="primary">确定</Button>
+                </Form.Item>
+              </section>
             </Form>
           </Col>
         </Row>
