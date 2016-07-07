@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Row, Col, Menu, Icon} from 'antd';
-import {Path, Http} from '../../utils/http';
+import {Path, Http} from '../../common/http';
 import {Link} from 'react-router';
 
 class Login extends React.Component {
@@ -18,9 +18,14 @@ class Login extends React.Component {
   };
   render() {
     return (
-      <div id='dashboard-main'>
-        <Row className='fill'>
-          <Col span={3}>
+      <div id='main-main'>
+        <Row>
+          <Col className='nav-bar' span={24}>
+            <nav></nav>
+          </Col>
+        </Row>
+        <Row>
+          <Col className='side-bar' span={3}>
             <Menu theme='dark' mode='inline' defaultOpenKeys={['menu']}>
               <Menu.SubMenu key='menu' title='系统管理'>
                 <Menu.Item><Link to='/main/admin/user'>用户管理</Link></Menu.Item>

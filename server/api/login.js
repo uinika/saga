@@ -10,12 +10,8 @@ Router.route('/login')
     response.json(protocal);
 });
 Router.route('/validatecode')
-  .post(function(request, response) {
-    let protocal = Common.Protocal();
-    protocal.head.status = 200;
-    protocal.head.message = 'http response sucess';
-    protocal.body = Common.Json('login.json');
-    response.json(protocal);
+  .get(function(request, response) {
+    response.sendFile(Common.Path + 'login/validate-code.jpg');
 });
 /** Module export */
 module.exports = Router;

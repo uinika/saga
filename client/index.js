@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
-import reducers from './reducers/index'
+import reducers from './reducers/main'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
 import Main from './components/main/main'
@@ -17,7 +17,7 @@ const store = createStore(
   })
 )
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(hashHistory, store)
 
 ReactDom.render((
   <Provider store={store}>

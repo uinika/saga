@@ -6,10 +6,6 @@ exports.Path = __dirname + '/mock/';
 exports.Json = function(name){
   return JsonLoader.sync(__dirname + '/mock/' + name);
 };
-/** File loader */
-exports.File = function(name){
-
-}
 /** Protocal between server & client */
 exports.Protocal = function(head, body){
   head = head || {};
