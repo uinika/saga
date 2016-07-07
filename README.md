@@ -14,12 +14,11 @@
 ## Third party Library
 * [Mongoose 4.x.x](http://mongoosejs.com/)
 * [Express 4.x.x](https://expressjs.com/)
-* [Angular 1.5.x](https://angularjs.org/)
 * [NodeJS 6.2.x](https://nodejs.org/)
-* [React 15.1.x](http://facebook.github.io/react/)
+* [React 15.2.x](http://facebook.github.io/react/)
 * [Redux 3.5.x](https://github.com/reactjs/redux/)
 * [React Router 2.x.x](https://github.com/reactjs/react-router/)
-* [Ant Design 1.5.x](http://ant.design/)
+* [Ant Design 1.6.x](http://ant.design/)
 * [Lodash 1.5.x](https://lodash.com/)
 * [Q 1.4.x](https://github.com/kriskowal/q)
 

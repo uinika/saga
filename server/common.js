@@ -2,10 +2,14 @@ const Mongodb = require('mongodb'),
       JsonLoader = require('load-json-file');
 /** Basic path */
 exports.Path = __dirname + '/mock/';
-/** Json converter */
+/** Json loader */
 exports.Json = function(name){
-  return JsonLoader.sync(__dirname + '/json' + name);
+  return JsonLoader.sync(__dirname + '/mock/' + name);
 };
+/** File loader */
+exports.File = function(name){
+
+}
 /** Protocal between server & client */
 exports.Protocal = function(head, body){
   head = head || {};

@@ -16,8 +16,8 @@ App.use(BodyParser.json());
 App.listen(5002);
 console.info('Server started http://localhost:5002' + Url);
 // Login
-App.use(Url, require('./mock/login'));
+App.use(Url, require('./api/login'));
 // Dashboard
-App.use(Url, require('./mock/dashboard'));
+App.use(Url, require('./api/dashboard'));
 // Admin
-App.use(Url, require('./mock/admin/log'));
+App.use(Url, require('./api/admin/log'));

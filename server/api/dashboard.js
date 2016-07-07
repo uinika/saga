@@ -1,12 +1,12 @@
 const Router = require('express').Router(),
-      Util = require('../util.js');
+      Common = require('../common.js');
 /** Router definition */
-Router.route('/login')
-  .post(function(request, response) {
-    let protocal = Util.Protocal();
+Router.route('/navigation/menuTree')
+  .get(function(request, response) {
+    let protocal = Common.Protocal();
     protocal.head.status = 200;
     protocal.head.message = 'http response sucess';
-    protocal.body = Util.Json('/login.json');
+    protocal.body = Common.Json('dashboard/menuTree.json');
     response.json(protocal);
 });
 /** Module export */
