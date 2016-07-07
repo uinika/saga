@@ -19,14 +19,13 @@ class Login extends React.Component {
   render() {
     return (
       <div id='main-main'>
-        <Row>
-          <Col className='nav-bar' span={24}>
-            <nav></nav>
-          </Col>
-        </Row>
-        <Row>
-          <Col className='side-bar' span={3}>
-            <Menu theme='dark' mode='inline' defaultOpenKeys={['menu']}>
+        <section className='first'>
+          <span className='logo'></span>
+          <span className='avatar'></span>
+        </section>
+        <section className='second'>
+          <div className='side-bar'>
+            <Menu className='menu' mode='inline' defaultOpenKeys={['menu']}>
               <Menu.SubMenu key='menu' title='系统管理'>
                 <Menu.Item><Link to='/main/admin/user'>用户管理</Link></Menu.Item>
                 <Menu.Item><Link to='/main/admin/role'>角色管理</Link></Menu.Item>
@@ -35,11 +34,11 @@ class Login extends React.Component {
                 <Menu.Item><Link to='/main/admin/log'>日志管理</Link></Menu.Item>
               </Menu.SubMenu>
             </Menu>
-          </Col>
-          <Col span={21}>
+          </div>
+          <div className='main-content'>
             {this.props.children}
-          </Col>
-        </Row>
+          </div>
+        </section>
       </div>
     );
   }
