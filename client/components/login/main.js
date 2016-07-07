@@ -42,7 +42,7 @@ let Login = React.createClass({
                   <Form.Item className='username' label="用户名" labelCol={{span: 6}} wrapperCol={{span: 14}}>
                     <Input type='text' placeholder='请输入用户名...' {...getFieldProps('username')} size="large" />
                   </Form.Item>
-                  <Form.Item className='password' label="密码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                  <Form.Item className='password' label="密&nbsp;&nbsp;&nbsp;&nbsp;码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
                     <Input type='password' placeholder='请输入密码...' {...getFieldProps('password')} size="large" />
                   </Form.Item>
                   <Form.Item className='validate' label="验证码" labelCol={{span: 6}} wrapperCol={{span: 14}}>

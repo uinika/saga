@@ -3,6 +3,8 @@
   .box {
     .fill;
     .logo {
+      position: relative;
+      top: -12px;
       display: block;
       margin: 0 auto;
       width: 455px;
@@ -13,19 +15,26 @@
       margin: 0 auto;
       article {
         position: relative;
+        left: 15px;
         top: 90px;
         label {
           color: #007CE7;
         }
         input {
-          background-color:rgba(0, 0, 0, 0.2);
+          background-color:rgba(0, 0, 0, 0.1);
           border-color: #0071D1;
           border-radius: 0;
-          width: 330px;
         }
         .first {
-          input, label {
+          input {
+            height: 33px;
+            width: 320px;
             margin-bottom: 8px;
+          }
+          label {
+            position: relative;
+            left: -8px;
+            font-weight: bold;
           }
           .validate {
             height: 32px;
@@ -39,12 +48,12 @@
               top: 0;
             }
             .image {
-              margin-left: 30px;
+              margin-left: 22px;
               display: inline-block;
               width: 80px;
               height: 32px;
               border: 1px solid #0071D1;
-              background-color:rgba(0, 0, 0, 0.1);
+              background-color:rgba(0, 0, 0, 0.5);
             }
             .switcher {
               margin-left: 20px;
@@ -61,24 +70,24 @@
           padding-top: 12px;
           :first-child {
             float: left;
-            margin-left: 35px;
+            margin-left: 32px;
           }
           :last-child {
             float: right;
-            margin-right: 133px;
+            margin-right: 138px;
           }
         }
         .third {
-          padding-top: 30px;
+          padding-top: 25px;
           button {
-            margin-left: 25px;
+            margin-left: 15px;
             width: 250px;
+            height: 35px;
             background: #0071D1;
             border-color: #0071D1;
             letter-spacing: 7px;
           }
         }
-
       }
       top:200px;
       width: 609px;
