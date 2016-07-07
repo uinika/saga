@@ -34,35 +34,33 @@ let Login = React.createClass({
     return (
       <div id='login'>
         <Row className='box' type='flex' align='middle' justify="space-around">
-          <Col span={8}>
-            <section className='logo'></section>
+          <Col span={24}>
+            <header className='logo'></header>
             <Form className='pannel' horizontal onSubmit={this.handleSubmit}>
-              <section>
-                <Form.Item label="用户名" labelCol={{span: 6}} wrapperCol={{span: 14}}>
-                  <Input type='text' placeholder='请输入用户名...' {...getFieldProps('username')} />
-                </Form.Item>
-                <Form.Item label="密码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
-                  <Input type='password' placeholder='请输入密码...' {...getFieldProps('password')} />
-                </Form.Item>
-                <Form.Item label="验证码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
-                  <Input type='text' placeholder='请输入验证码...' {...getFieldProps('validateCode')} />
-                  <img src= {Path + '/validatecode'} />
-                  <a>换一张</a>
-                </Form.Item>
-              </section>
-              <section>
-                <Form.Item labelCol={{span: 6}} wrapperCol={{span: 14}}>
+              <article>
+                <p className='first'>
+                  <Form.Item className='username' label="用户名" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                    <Input type='text' placeholder='请输入用户名...' {...getFieldProps('username')} size="large" />
+                  </Form.Item>
+                  <Form.Item className='password' label="密码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                    <Input type='password' placeholder='请输入密码...' {...getFieldProps('password')} size="large" />
+                  </Form.Item>
+                  <Form.Item className='validate' label="验证码" labelCol={{span: 6}} wrapperCol={{span: 14}}>
+                    <Input className='code' type='text' placeholder='请输入验证码...' {...getFieldProps('validateCode')} size="large" />
+                    <span className='image' src= {Path + '/validatecode'} ></span>
+                    <a className='switcher'>换一张</a>
+                  </Form.Item>
+                </p>
+                <p className='second'>
                   <Radio>记住密码</Radio>
-                </Form.Item>
-                <Form.Item labelCol={{span: 6}} wrapperCol={{span: 14}}>
-                  重置密码
-                </Form.Item>
-              </section>
-              <section>
-                <Form.Item wrapperCol={{span: 16, offset: 6}} style={{marginTop: 24}}>
-                  <Button htmlType="submit" type="primary">确定</Button>
-                </Form.Item>
-              </section>
+                  <a>重置密码</a>
+                </p>
+                <p className='third'>
+                  <Form.Item wrapperCol={{span: 16, offset: 6}} style={{marginTop: 24}}>
+                    <Button size="large" htmlType="submit" type="primary">确定</Button>
+                  </Form.Item>
+                </p>
+              </article>
             </Form>
           </Col>
         </Row>

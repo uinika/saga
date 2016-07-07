@@ -3,14 +3,82 @@
   .box {
     .fill;
     .logo {
-      width: 609px;
+      display: block;
+      margin: 0 auto;
+      width: 455px;
       height: 60px;
       background: url(../../images/login/logo.png) no-repeat;
     }
     .pannel {
-      section {
+      margin: 0 auto;
+      article {
         position: relative;
-        top: 80px;
+        top: 90px;
+        label {
+          color: #007CE7;
+        }
+        input {
+          background-color:rgba(0, 0, 0, 0.2);
+          border-color: #0071D1;
+          border-radius: 0;
+          width: 330px;
+        }
+        .first {
+          input, label {
+            margin-bottom: 8px;
+          }
+          .validate {
+            height: 32px;
+            span {
+              float: left;
+            }
+            .code {
+              display: inline-block;
+              width: 150px;
+              position: relative;
+              top: 0;
+            }
+            .image {
+              margin-left: 30px;
+              display: inline-block;
+              width: 80px;
+              height: 32px;
+              border: 1px solid #0071D1;
+              background-color:rgba(0, 0, 0, 0.1);
+            }
+            .switcher {
+              margin-left: 20px;
+              color: #0071D1;
+            }
+            .switcher:hover {
+              color: #2DB7F5;
+              font-size: bold;
+              cursor: pointer;
+            }
+          }
+        }
+        .second {
+          padding-top: 12px;
+          :first-child {
+            float: left;
+            margin-left: 35px;
+          }
+          :last-child {
+            float: right;
+            margin-right: 133px;
+          }
+        }
+        .third {
+          padding-top: 30px;
+          button {
+            margin-left: 25px;
+            width: 250px;
+            background: #0071D1;
+            border-color: #0071D1;
+            letter-spacing: 7px;
+          }
+        }
+
       }
       top:200px;
       width: 609px;
