@@ -18,7 +18,7 @@ class Login extends React.Component {
   };
   render() {
     return (
-      <div id='main-main'>
+      <div id='frame-main'>
         <section className='first'>
           <span className='logo'></span>
           <span className='avatar'></span>

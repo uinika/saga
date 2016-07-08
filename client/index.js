@@ -7,7 +7,7 @@ import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 import reducers from './reducers/main'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
-import Main from './components/main/main'
+import Main from './components/frame/main'
 import Login from './components/login/main'
 
 const store = createStore(
