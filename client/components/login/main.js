@@ -38,7 +38,7 @@ let Login = React.createClass({
             <header className='logo'></header>
             <Form className='pannel' horizontal onSubmit={this.handleSubmit}>
               <article>
-                <p className='first'>
+                <section className='first'>
                   <Form.Item className='username' label="用户名" labelCol={{span: 6}} wrapperCol={{span: 14}}>
                     <Input type='text' placeholder='请输入用户名...' {...getFieldProps('username')} size="large" />
                   </Form.Item>
@@ -50,16 +50,16 @@ let Login = React.createClass({
                     <span className='image' src= {Path + '/validatecode'} ></span>
                     <a className='switcher'>换一张</a>
                   </Form.Item>
-                </p>
-                <p className='second'>
+                </section>
+                <section className='second'>
                   <Radio>记住密码</Radio>
                   <a>重置密码</a>
-                </p>
-                <p className='third'>
+                </section>
+                <section className='third'>
                   <Form.Item wrapperCol={{span: 16, offset: 6}} style={{marginTop: 24}}>
                     <Button size="large" htmlType="submit" type="primary">确定</Button>
                   </Form.Item>
-                </p>
+                </section>
               </article>
             </Form>
           </Col>
