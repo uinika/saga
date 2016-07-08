@@ -56,22 +56,16 @@ class AdminLog extends React.Component {
               系统管理
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-              日志管理
+              访问日志
             </Breadcrumb.Item>
           </Breadcrumb>
         </section>
         <section className='second'>
           <Form inline>
-            <Form.Item label="账户">
-              <Input placeholder="请输入账户名" />
+            <Form.Item label="关键字">
+              <Input placeholder="请输入日志名称" />
             </Form.Item>
-            <Form.Item label="密码" >
-              <Input type="password" placeholder="请输入密码" />
-            </Form.Item>
-            <Form.Item>
-              <Checkbox>记住我</Checkbox>
-            </Form.Item>
-            <Button type="primary" htmlType="submit">登录</Button>
+            <Button type="ghost" htmlType="submit">查询</Button>
           </Form>
         </section>
         <section className='third'>
