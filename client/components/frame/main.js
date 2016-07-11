@@ -29,9 +29,11 @@ class Login extends React.Component {
               <Menu.SubMenu key='menu' title='系统管理'>
                 <Menu.Item><Link to='/main/admin/user'>用户管理</Link></Menu.Item>
                 <Menu.Item><Link to='/main/admin/role'>角色管理</Link></Menu.Item>
-                <Menu.Item><Link to='/main/admin/menu'>菜单管理</Link></Menu.Item>
-                <Menu.Item><Link to='/main/admin/module'>模块管理</Link></Menu.Item>
                 <Menu.Item><Link to='/main/admin/log'>日志管理</Link></Menu.Item>
+                {
+                // <Menu.Item><Link to='/main/admin/menu'>菜单管理</Link></Menu.Item>
+                // <Menu.Item><Link to='/main/admin/module'>模块管理</Link></Menu.Item>
+                }
               </Menu.SubMenu>
             </Menu>
           </div>

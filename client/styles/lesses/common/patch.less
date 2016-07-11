@@ -1,0 +1,102 @@
+// Button
+.ant-btn.ant-btn-ghost {
+  background-color: transparent;
+  border: 1px solid @blue;
+  color: @blue;
+}
+// Form
+.ant-form-item {
+  label {
+    color: @white;
+  }
+}
+// Input
+.ant-input {
+  background-color: transparent;
+  border: 1px solid @white;
+  color: @white;
+}
+// Menu
+.ant-menu {
+  min-width: 100px;
+  background: transparent;
+  color: @white;
+  border: none;
+  * {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .ant-menu-item {
+    background: transparent;
+    margin-bottom: 10px;
+    border: none;
+    a {
+      color: @white !important;
+    }
+  }
+  .ant-menu-item-selected {
+    background: @purple;
+  }
+  .ant-menu-submenu-title {
+    font-size: 13px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .ant-menu-submenu>.ant-menu {
+    background: transparent;
+  }
+  .ant-menu-submenu-active {
+    background: transparent;
+    * {
+      background: transparent;
+    }
+    .ant-menu-submenu-title {
+      font-size: 13px;
+      font-weight: bold;
+      background: @blue !important;
+    }
+  }
+}
+// Table
+.ant-table {
+  border-radius: 0px;
+  background: rgba(255, 255, 255, 0.1);
+  color: @white !important;
+  tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.3);
+    td {
+      border: none;
+    }
+  }
+  .ant-checkbox-inner {
+    background: transparent;
+  }
+  .ant-table-body {
+    table {
+      border-radius: 0px;
+    }
+    .ant-table-thead {
+      th {
+        background: @blue !important;
+      }
+    }
+    .ant-table-tbody {
+      .ant-table-row {
+        td {
+          border: none;
+        }
+      }
+      .ant-table-selection-column {
+
+      }
+    }
+
+  }
+  .ant-table-pagination {
+    >.ant-pagination-item {
+      background: red !important;
+    }
+  }
+
+
+}
