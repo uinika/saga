@@ -90,13 +90,44 @@
 
       }
     }
-
   }
-  .ant-table-pagination {
-    >.ant-pagination-item {
-      background: red !important;
+}
+// Pagination
+.ant-table-pagination {
+  .ant-pagination-item, li {
+    background: transparent;
+    border: none;
+    a {
+      color: @blue;
     }
   }
-
-
+  .ant-pagination-item-active {
+    background: @blue;
+    a {
+      color: @white;
+    }
+  }
+  .ant-select-selection {
+    border: solid 1px @blue;
+    border-radius: 5px;
+    background: transparent;
+    color: @blue;
+  }
+}
+//
+.ant-select-dropdown {
+  background-color: @blue;
+  border: none;
+  li {
+    color: @white;
+  }
+  .ant-select-dropdown-menu-item-selected {
+    font-weight: bolder;
+    color: @blue-light;
+    background-color: @blue;
+  }
+  .ant-select-dropdown-menu-item-active {
+    background: @blue-light;
+    color: @blue;
+  }
 }
