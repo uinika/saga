@@ -16,7 +16,7 @@
       article {
         position: relative;
         left: 15px;
-        top: 90px;
+        top: 95px;
         label {
           color: @blue;
         }
@@ -37,7 +37,7 @@
             font-weight: bold;
           }
           .validate {
-            height: 32px;
+            height: 33px;
             span {
               float: left;
             }
@@ -51,7 +51,7 @@
               margin-left: 22px;
               display: inline-block;
               width: 80px;
-              height: 32px;
+              height: 33px;
               border: 1px solid @blue;
               background-color:rgba(0, 0, 0, 0.5);
             }
@@ -67,14 +67,21 @@
           }
         }
         .second {
-          padding-top: 12px;
+          margin-top: 35px;
           :first-child {
             float: left;
             margin-left: 32px;
+            :last-child {
+              margin-top: -2px;
+            }
           }
           :last-child {
             float: right;
             margin-right: 138px;
+            color: @blue;
+            a {
+              margin-top: -2px;
+            }
           }
         }
         .third {

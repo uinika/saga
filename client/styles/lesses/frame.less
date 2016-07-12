@@ -3,11 +3,39 @@
     height: 91px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 30%, rgba(44, 48, 122, 0.8) 100%);
     border-bottom: 1px solid @blue;
-    .logo {
+    >.logo {
       display: inline-block;
       width: 651px;
       height: 92px;
-      background: url(../images/main/logo.png);
+      background: url(../images/frame/logo.png) no-repeat;
+    }
+    >.avatar {
+      display: inline-block;
+      width: 140px;
+      height: 60px;
+      float: right;
+      position: relative;
+      right: 110px;
+      top: 15px;
+      .portrait {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background: url(../images/frame/avatar.jpg) no-repeat;
+        background-size: 60px;
+      }
+      .dropdown {
+        display: inline-block;
+        >.ant-dropdown-link {
+          color: @white;
+          font-size: 14px;
+          font-weight: bold;
+          float: right;
+          position: relative;
+          top: -40px;
+          left: 80px;
+        }
+      }
     }
   }
   >.second {
