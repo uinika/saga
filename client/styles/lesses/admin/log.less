@@ -1,76 +1,17 @@
 #admin-log {
-  .first {
-    * {
-      font-size: 14px;
-      font-weight: normal;
-      color: @blue;
-    }
-  }
-  .second {
+  .filter {
     display: block;
-    width: auto;
-    height: 62px;
-    margin: 10px auto 15px auto;
-    background: rgba(255, 255, 255, 0.2);
-    form {
-      position: relative;
-      top: 14px;
-      left: 10px;
-      label {
-        color: @white;
-      }
-      input {
-        background: rgba(0, 0, 0, 0.1);
-        color: @white !important;
-        border-radius: 15px;
-      }
-      button {
-        border-radius: 15px;
-        border-color: @blue;
-        color: @blue;
-      }
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    .form1, .form2 {
+      float: left;
+      display: inline-block;
+      margin: 15px auto 15px 20px;
     }
   }
-  .third {
-    .filter {
-      display: block;
-      width: auto;
-      height: 50px;
-      padding: 10px;
-      list-style: none;
-      >li {
-        float: left;
-        margin-right: 10px;
-        button {
-          border-radius: 15px;
-          border-color: @blue;
-          color: @blue;
-        }
-      }
-    }
-
-    table {
-      color: @white;
-      .badge {
-        padding: 0 8px;
-        font-size: 12px;
-        border: 1px @purple solid;
-        background-color: #A300F2;
-        border-radius: 10px;
-        color: @white;
-      }
-      thead * {
-        border-radius: 0px;
-        background-color: @blue;
-      }
-      tr:nth-child(even) {
-        background: rgba(0,0,0,.2);
-        td {
-          border: none;
-        }
-      }
-    }
-    background: rgba(255, 255, 255, 0.2);
-
+  .container {
+    display: block;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Badge} from 'antd';
 
-class AdminRole extends React.Component {
+class AdminUser extends React.Component {
   componentDidMount() {
-    console.log('AdminRole');
+    console.log('AdminUser');
   };
   render() {
     const columns = [{
@@ -42,29 +42,31 @@ class AdminRole extends React.Component {
       },
     };
     return (
-      <div id='admin-role'>
-        <sectin className='filter'>
-          <p className='form1'>
+      <div id='admin-user'>
+        <section className='filter'>
+          <span className='form1'>
             <Form inline>
               <Form.Item label="角色名称">
                 <Input />
               </Form.Item>
               <Button type="ghost" htmlType="submit">查询</Button>
             </Form>
-          </p>
-        </sectin>
-        <sectin className='operator'>
-          <Button type="ghost">新建</Button>
-          <Button type="ghost">修改</Button>
-          <Button type="ghost">详情</Button>
-          <Button type="ghost">授权</Button>
-        </sectin>
-        <sectin className='container'>
+          </span>
+        </section>
+        <section className='operator'>
+          <span className='buttons'>
+            <Button type="ghost">新建</Button>
+            <Button type="ghost">修改</Button>
+            <Button type="ghost">详情</Button>
+            <Button type="ghost">授权</Button>
+          </span>
+        </section>
+        <section className='container'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
-        </sectin>
+        </section>
       </div>
     );
   }
 };
 
-export default AdminRole;
+export default AdminUser;

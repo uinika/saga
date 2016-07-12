@@ -63,33 +63,35 @@ class AdminUser extends React.Component {
     };
     return (
       <div id='admin-user'>
-        <sectin className='filter'>
-          <p className='form1'>
+        <section className='filter'>
+          <span className='form1'>
             <Form inline>
               <Form.Item label="登陆名称">
                 <Input />
               </Form.Item>
               <Button type="ghost" htmlType="submit">查询</Button>
             </Form>
-          </p>
-          <p className='form2'>
+          </span>
+          <span className='form2'>
             <Form inline>
               <Form.Item label="用户状态">
                 <Input />
               </Form.Item>
               <Button type="ghost" htmlType="submit">高级查询</Button>
             </Form>
-          </p>
-        </sectin>
-        <sectin className='operator'>
-          <Button type="ghost">新建</Button>
-          <Button type="ghost">修改</Button>
-          <Button type="ghost">详情</Button>
-          <Button type="ghost">授权</Button>
-        </sectin>
-        <sectin className='container'>
+          </span>
+        </section>
+        <section className='operator'>
+          <span className='buttons'>
+            <Button type="ghost">新建</Button>
+            <Button type="ghost">修改</Button>
+            <Button type="ghost">详情</Button>
+            <Button type="ghost">授权</Button>
+          </span>
+        </section>
+        <section className='container'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
-        </sectin>
+        </section>
       </div>
     );
   }

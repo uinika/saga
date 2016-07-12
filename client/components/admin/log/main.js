@@ -61,42 +61,25 @@ class AdminLog extends React.Component {
     };
     return (
       <div id='admin-log'>
-        <section className='first'>
-          <Breadcrumb>
-            <Breadcrumb.Item href="">
-              <Icon type="home" />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item href="">
-              系统管理
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              访问日志
-            </Breadcrumb.Item>
-          </Breadcrumb>
+        <section className='filter'>
+          <span className='form1'>
+            <Form inline>
+              <Form.Item label="登陆名称">
+                <Input />
+              </Form.Item>
+              <Button type="ghost" htmlType="submit">查询</Button>
+            </Form>
+          </span>
+          <span className='form2'>
+            <Form inline>
+              <Form.Item label="用户状态">
+                <Input />
+              </Form.Item>
+              <Button type="ghost" htmlType="submit">高级查询</Button>
+            </Form>
+          </span>
         </section>
-        <section className='second'>
-          <Form inline>
-            <Form.Item label="关键字">
-              <Input placeholder="请输入日志名称" />
-            </Form.Item>
-            <Button type="ghost" htmlType="submit">查询</Button>
-          </Form>
-        </section>
-        <section className='third'>
-          <ul className='filter'>
-            <li>
-              <Button type="ghost">新建</Button>
-            </li>
-            <li>
-              <Button type="ghost">修改</Button>
-            </li>
-            <li>
-              <Button type="ghost">详情</Button>
-            </li>
-            <li>
-              <Button type="ghost">授权</Button>
-            </li>
-          </ul>
+        <section className='container'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
         </section>
       </div>
