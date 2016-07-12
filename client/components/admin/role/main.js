@@ -44,12 +44,14 @@ class AdminRole extends React.Component {
     return (
       <div id='admin-role'>
         <sectin className='filter'>
-          <Form inline>
-            <Form.Item label="角色名称">
-              <Input />
-            </Form.Item>
-            <Button type="ghost" htmlType="submit">查询</Button>
-          </Form>
+          <p className='form1'>
+            <Form inline>
+              <Form.Item label="角色名称">
+                <Input />
+              </Form.Item>
+              <Button type="ghost" htmlType="submit">查询</Button>
+            </Form>
+          </p>
         </sectin>
         <sectin className='operator'>
           <Button type="ghost">新建</Button>
