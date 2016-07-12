@@ -43,6 +43,19 @@ class AdminUser extends React.Component {
     };
     return (
       <div id='admin-user'>
+        <sction className='path'>
+          <Breadcrumb>
+            <Breadcrumb.Item>
+              <Icon type="home" />
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              系统管理
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              权限管理
+            </Breadcrumb.Item>
+          </Breadcrumb>
+        </sction>
         <section className='filter'>
           <span className='form1'>
             <Form inline>

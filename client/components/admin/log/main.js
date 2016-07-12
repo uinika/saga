@@ -61,6 +61,19 @@ class AdminLog extends React.Component {
     };
     return (
       <div id='admin-log'>
+        <sction className='path'>
+          <Breadcrumb>
+            <Breadcrumb.Item>
+              <Icon type="home" />
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              系统管理
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              日志管理
+            </Breadcrumb.Item>
+          </Breadcrumb>
+        </sction>
         <section className='filter'>
           <span className='form1'>
             <Form inline>
