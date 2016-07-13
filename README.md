@@ -61,30 +61,24 @@
 
 ## How to write markdown for CORS API ?
 ### Summary
-    # Page name
-    ----- split line -----
-    ## Module name
-    ### Interface name
-    #### Restful URL
+    # Module name
+    -----
+    ## Module name -- Interface name(Comments)
+    ### Restful URL
         Type: GET/POST/DELETE/PUT
-    ##### Parameter:
+    #### Parameter:
         name       data-type         'description(comment)'
-    ##### String/Object/Array/Bollean:
+    #### Result: String/Object/Array/Bollean/Null
         name       data-type         'description(comment)'
-    ----- split line -----
-
-### Demo
-# User management
-
+    -----
 -----
-
-## User list
-### Query user list
-#### /api/users
+# User Management [Markdown DEMO]
+## User -- query(query all of the user infomation)
+### /api/user
     Type: GET
-##### Parameter:
+#### Parameter:
     department_id    String         ID for user's department(If superuser login ignore this parameter)
-##### Array:
+#### Result: Array
     username         String         'User's alias name'
     password         String         'User's password'
     age              Integer        'User's age'
@@ -92,5 +86,28 @@
     phone            String         'Telephone number'
     department       String         'Department'
     email            String         'E-mail'
-
+## User -- update(update user infomation base on ID)
+### /api/user
+    Type: PUT
+#### Parameter:
+    user_id    String         ID for user's department(If superuser login ignore this parameter)
+#### Result: Null
+## User -- add(Add a user by ID)
+### /api/user
+    Type: POST
+#### Parameter:
+    username         String         'User's alias name'
+    password         String         'User's password'
+    age              Integer        'User's age'
+    realname         String         'User's real name'
+    phone            String         'Telephone number'
+    department       String         'Department'
+    email            String         'E-mail'
+#### Result: Null
+## User -- delete(delete a user by ID)
+### /api/user/{:user_id}
+    Type: DELETE
+#### Parameter:
+    user_id    String         ID for user's department(If superuser login ignore this parameter)
+#### Result: Null
 -----
