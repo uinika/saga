@@ -6,7 +6,7 @@ Router.route('/navigation/menuTree')
     let protocal = Common.Protocal();
     protocal.head.status = 200;
     protocal.head.message = 'http response sucess';
-    protocal.body = Common.Json('dashboard/menuTree.json');
+    protocal.body = Common.Json('frame/menuTree.json');
     response.json(protocal);
 });
 /** Module export */

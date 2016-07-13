@@ -11,7 +11,7 @@ Router.route('/login')
 });
 Router.route('/validatecode')
   .get(function(request, response) {
-    response.sendFile(Common.Path + 'login/validate-code.jpg');
+    response.sendFile(Common.Path + 'login/validatecode.jpg');
 });
 /** Module export */
 module.exports = Router;

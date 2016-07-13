@@ -1,10 +1,30 @@
 import React from 'react';
-import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Badge} from 'antd';
+import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Modal} from 'antd';
 
-class AdminUser extends React.Component {
+const AdminUser = React.createClass({
+  getInitialState() {
+    return { visible: false };
+  },
+  showModal() {
+    this.setState({
+      visible: true,
+    });
+  },
+  handleOk() {
+    console.log('点击了确定');
+    this.setState({
+      visible: false,
+    });
+  },
+  handleCancel(e) {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  },
   componentDidMount() {
     console.log('AdminUser');
-  };
+  },
   render() {
     const columns = [{
       title: '序号',
@@ -96,7 +116,7 @@ class AdminUser extends React.Component {
         </section>
         <section className='operator'>
           <span className='buttons'>
-            <Button type="ghost">新建</Button>
+            <Button type="ghost" onClick={this.showModal}>新建</Button>
             <Button type="ghost">修改</Button>
             <Button type="ghost">详情</Button>
             <Button type="ghost">授权</Button>
@@ -105,9 +125,14 @@ class AdminUser extends React.Component {
         <section className='container'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
         </section>
+        <Modal title="第一个 Modal" visible={this.state.visible} onOk={this.handleOk} onCancel={this.handleCancel}>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+        </Modal>
       </div>
     );
   }
-};
+});
 
 export default AdminUser;

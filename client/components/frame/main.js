@@ -30,7 +30,7 @@ class Login extends React.Component {
     return (
       <div id='frame-main'>
         <section className='first'>
-          <span className='logo'></span>
+          <Link className='logo' to={'/frame/dashboard'} activeClassName="active"></Link>
           <span className='avatar'>
             <div className='portrait'></div>
             <div className='dropdown'>
@@ -46,9 +46,9 @@ class Login extends React.Component {
           <div className='side-bar'>
             <Menu className='menu' mode='inline' defaultOpenKeys={['menu']}>
               <Menu.SubMenu key='menu' title='系统管理'>
-                <Menu.Item><Link to='/main/admin/user'>用户管理</Link></Menu.Item>
-                <Menu.Item><Link to='/main/admin/role'>角色管理</Link></Menu.Item>
-                <Menu.Item><Link to='/main/admin/log'>日志管理</Link></Menu.Item>
+                <Menu.Item><Link to='/frame/admin/user'>用户管理</Link></Menu.Item>
+                <Menu.Item><Link to='/frame/admin/role'>角色管理</Link></Menu.Item>
+                <Menu.Item><Link to='/frame/admin/log'>日志管理</Link></Menu.Item>
                 {
                 // <Menu.Item><Link to='/main/admin/menu'>菜单管理</Link></Menu.Item>
                 // <Menu.Item><Link to='/main/admin/module'>模块管理</Link></Menu.Item>

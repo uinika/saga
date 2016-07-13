@@ -26,7 +26,7 @@ let Login = React.createClass({
       }
      })
      .then(() => {
-       this.context.router.replace('/main/dashboard');
+       this.context.router.replace('/frame/dashboard');
      })
   },
   render() {

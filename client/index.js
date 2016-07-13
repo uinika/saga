@@ -7,7 +7,7 @@ import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 import reducers from './reducers/main'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
-import Main from './components/frame/main'
+import Frame from './components/frame/main'
 import Login from './components/login/main'
 
 const store = createStore(
@@ -27,8 +27,8 @@ ReactDom.render((
         <IndexRoute component={Login} />
         <Route path='login' component={Login} />
       </Route>
-      {/* Main */}
-      <Route path='/main' component={Main}>
+      {/* Frame */}
+      <Route path='/frame' component={Frame}>
         <Route path='dashboard' getComponent={(nextState, callback) => {
           require.ensure([], (require) => {callback(null, require('./components/dashboard/main').default)})
         }} />

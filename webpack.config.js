@@ -34,11 +34,11 @@ exports.development = {
       test: /\.less$/,
       loader: 'style!css!less'
     }, {
-       test: require.resolve('jquery'),
-       loader: 'expose?$!expose?jQuery'
+      test: require.resolve('jquery'),
+      loader: 'expose?$!expose?jQuery'
     }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
-      loader: 'url-loader?limit=1024'
+      loader: 'url-loader?limit=10240'
     }]
   }
 }
@@ -80,8 +80,8 @@ exports.distribution = {
       test: /\.less$/,
       loader: 'style!css!less'
     }, {
-       test: require.resolve('jquery'),
-       loader: 'expose?$!expose?jQuery'
+      test: require.resolve('jquery'),
+      loader: 'expose?$!expose?jQuery'
     }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
       loader: 'url-loader?limit=1024'
