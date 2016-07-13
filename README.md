@@ -63,7 +63,7 @@
 ### Summary
     # Module name
     -----
-    ## Module name -- Interface name(Comments)
+    ## Page name -- Interface name(Comments)
     ### Restful URL
         Type: GET/POST/DELETE/PUT
     #### Parameter:

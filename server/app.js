@@ -18,6 +18,6 @@ console.info('Server started http://localhost:5002' + Url);
 // Login
 App.use(Url, require('./api/login'));
 // Dashboard
-App.use(Url, require('./api/dashboard'));
+App.use(Url, require('./api/frame'));
 // Admin
 App.use(Url, require('./api/admin/log'));
