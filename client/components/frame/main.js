@@ -19,11 +19,11 @@ class Login extends React.Component {
   render() {
     const menu = (
       <Menu>
-        <Menu.Item key="0">
-          <a target="_blank" href="http://www.alipay.com/">管理员菜单项1</a>
+        <Menu.Item key='0'>
+          <a target='_blank' href=''>管理员菜单项1</a>
         </Menu.Item>
-        <Menu.Item key="1">
-          <a target="_blank" href="http://www.taobao.com/">管理员菜单项2</a>
+        <Menu.Item key='1'>
+          <a target='_blank' href=''>管理员菜单项2</a>
         </Menu.Item>
       </Menu>
     );
@@ -35,8 +35,8 @@ class Login extends React.Component {
             <div className='portrait'></div>
             <div className='dropdown'>
               <Dropdown overlay={menu}>
-                <a className="ant-dropdown-link">
-                  管理员 <Icon type="down" />
+                <a className='ant-dropdown-link'>
+                  管理员 <Icon type='down' />
                 </a>
               </Dropdown>
             </div>

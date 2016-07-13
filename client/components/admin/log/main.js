@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Badge} from 'antd';
+import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, DatePicker} from 'antd';
 
 class AdminLog extends React.Component {
   componentDidMount() {
@@ -75,20 +75,14 @@ class AdminLog extends React.Component {
           </Breadcrumb>
         </sction>
         <section className='filter'>
-          <span className='form1'>
+          <span className='date'>
             <Form inline>
-              <Form.Item label="登陆名称">
-                <Input />
+              <Form.Item label='访问时间'>
+                <DatePicker placeholder='起始时间' />
+                <span className='split'>到</span>
+                <DatePicker placeholder='结束时间' />
+                <Button type="ghost" htmlType="submit">查询</Button>
               </Form.Item>
-              <Button type="ghost" htmlType="submit">查询</Button>
-            </Form>
-          </span>
-          <span className='form2'>
-            <Form inline>
-              <Form.Item label="用户状态">
-                <Input />
-              </Form.Item>
-              <Button type="ghost" htmlType="submit">高级查询</Button>
             </Form>
           </span>
         </section>

@@ -18,6 +18,48 @@
   color: @white;
   border-radius: 15px;
 }
+/*========== Date Picker ==========*/
+.ant-calendar {
+  background: @blue;
+  color: @white;
+  border-color: @blue;
+  .ant-calendar-input-wrap {
+    background: @blue;
+    border: none;
+    .ant-calendar-input {
+      background: @blue;
+    }
+  }
+  .ant-calendar-date-panel {
+    .ant-calendar-header {
+      border: none;
+      * {
+        color: @white !important;
+      }
+    }
+    .ant-calendar-calendar-body {
+      .ant-calendar-column-header {
+        color: @white;
+      }
+      .ant-calendar-date {
+        color: @white;
+      }
+      .ant-calendar-last-month-cell .ant-calendar-date {
+        color: #ccc !important;
+      }
+      .ant-calendar-next-month-btn-day .ant-calendar-date {
+        color: #ccc !important;
+      }
+    }
+    .ant-calendar-footer {
+      border: none;
+      .ant-calendar-today-btn  {
+        color: @white;
+      }
+    }
+  }
+
+}
 /*========== Menu ==========*/
 .ant-menu {
   min-width: 100px;
@@ -70,6 +112,9 @@
       border: none;
     }
   }
+  tr:hover {
+    background: @purple !important;
+  }
   .ant-checkbox-inner {
     background: transparent;
   }
@@ -116,7 +161,6 @@
     color: @blue;
   }
 }
-/*========== Dropdown ==========*/
 .ant-select-dropdown {
   background-color: @blue;
   border: none;
@@ -125,12 +169,27 @@
   }
   .ant-select-dropdown-menu-item-selected {
     font-weight: bolder;
-    color: @blue-light;
     background-color: @blue;
   }
   .ant-select-dropdown-menu-item-active {
     background: @blue-light;
-    color: @blue;
+  }
+}
+/*========== Dropdown ==========*/
+.ant-dropdown {
+
+  .ant-dropdown-menu {
+    background: @blue;
+    border-color: @blue;
+    .ant-dropdown-menu-item {
+      a {
+        color: @white;
+      }
+      :hover {
+        background: @blue-light;
+      }
+    }
+
   }
 }
 /*========== Breadcrumb ==========*/
