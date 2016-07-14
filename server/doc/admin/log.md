@@ -1,6 +1,6 @@
 # 日志管理
 -----
-## 日志统计列表--获取所有用户的访问日志统计信息列表页面
+## 日志统计列表 -- 获取所有用户的访问日志统计信息列表页面
 ### /sys/logs
     Type: GET
 #### Parameter:
@@ -14,7 +14,7 @@
     todayAmount    Integer         今日访问次数
     amount         Integer         总访问次数
 -----
-## 查看日志详情--获取指定用户的访问日志详情
+## 查看日志详情 -- 获取指定用户的访问日志详情
 ### /sys/logs/{loginName}
     Type: GET
 #### Parameter:

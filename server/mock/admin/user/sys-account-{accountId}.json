@@ -1,0 +1,25 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 1
+  },
+  "body": [{
+    "accountId": "ACCOUNT0-0000-0000-0000-000000000000",
+    "accountIds": null,
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "password": "21232F297A57A5A743894A0E4A801FC3",
+    "rePassword": null,
+    "oldPassword": null,
+    "email": null,
+    "tel": null,
+    "state": "1",
+    "stateName": "激活",
+    "uiStyle": null,
+    "uiStyleName": "",
+    "roleNames": "系统管理角色",
+    "validateCode": null
+  }]
+}

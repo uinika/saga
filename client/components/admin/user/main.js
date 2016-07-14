@@ -1,67 +1,50 @@
 import React from 'react';
 import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Modal} from 'antd';
+import { Fetch, Validator } from '../../../common/http';
+import CreateUser from './create-user';
 
 const AdminUser = React.createClass({
-  getInitialState() {
-    return { visible: false };
-  },
-  showModal() {
-    this.setState({
-      visible: true,
-    });
-  },
-  handleOk() {
-    console.log('点击了确定');
-    this.setState({
-      visible: false,
-    });
-  },
-  handleCancel(e) {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
+  getInitialState: function() {
+    return {
+      data: []
+    };
   },
   componentDidMount() {
-    console.log('AdminUser');
+    let queryString = {
+      current: 1,
+      pageSize: 12
+    };
+    Fetch({
+      url: '/sys/accounts',
+      method: 'GET',
+      query: queryString
+    })
+    .then(data => {
+      this.setState({ data: data.body });
+     })
   },
   render() {
     const columns = [{
       title: '序号',
-      dataIndex: 'index',
+      dataIndex: 'accountId',
     }, {
       title: '登陆名称',
-      dataIndex: 'login_name',
+      dataIndex: 'loginName',
     }, {
       title: '真实姓名',
-      dataIndex: 'real_name',
-    }, {
-      title: '所属部门',
-      dataIndex: 'department',
+      dataIndex: 'realName',
     }, {
       title: '状态',
-      dataIndex: 'status',
+      dataIndex: 'stateName',
     }, {
       title: '联系电话',
-      dataIndex: 'telephone',
+      dataIndex: 'tel',
     }, {
       title: '电子邮件',
       dataIndex: 'email'
     }];
-    const data = [];
-    for (let i = 0; i < 46; i++) {
-      data.push({
-        index: i,
-        login_name: '数据录入员',
-        real_name: '勤智数码',
-        department: '大数据与智慧城市事业部',
-        status: '激活',
-        telephone: '18785639168',
-        email: 'admin@chinawiserv.com'
-      });
-    }
     const pagination = {
-      total: data.length,
+      total: this.state.data.length,
       showSizeChanger: true,
       onShowSizeChange(current, pageSize) {
         console.log('Current: ', current, '; PageSize: ', pageSize);
@@ -76,6 +59,7 @@ const AdminUser = React.createClass({
       },
       onSelect(record, selected, selectedRows) {
         console.log(record, selected, selectedRows);
+
       },
       onSelectAll(selected, selectedRows, changeRows) {
         console.log(selected, selectedRows, changeRows);
@@ -116,20 +100,15 @@ const AdminUser = React.createClass({
         </section>
         <section className='operator'>
           <span className='buttons'>
-            <Button type="ghost" onClick={this.showModal}>新建</Button>
+            <CreateUser />
             <Button type="ghost">修改</Button>
             <Button type="ghost">详情</Button>
             <Button type="ghost">授权</Button>
           </span>
         </section>
         <section className='container'>
-          <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
+          <Table rowSelection={rowSelection} columns={columns} dataSource={this.state.data} pagination={pagination} />
         </section>
-        <Modal title="第一个 Modal" visible={this.state.visible} onOk={this.handleOk} onCancel={this.handleCancel}>
-          <p>对话框的内容</p>
-          <p>对话框的内容</p>
-          <p>对话框的内容</p>
-        </Modal>
       </div>
     );
   }

@@ -1,0 +1,17 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 1
+  },
+  "body": [{
+    "accountId": "ACCOUNT0-0000-0000-0000-000000000000",
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "state": "1",
+    "tel": null,
+    "email": null,
+    "stateName": "激活"
+  }]
+}

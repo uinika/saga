@@ -1,0 +1,9 @@
+{
+  "body": null,
+  "head": {
+    "message": "被禁止资源，Url：sys/logs/admin，Action：class com.chinawiserv.deepone.manager.controller.sys.log.AccessLogListController",
+    "status": 201,
+    "token": null,
+    "total": 0
+  }
+}

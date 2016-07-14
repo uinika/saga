@@ -1,0 +1,12 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 1
+  },
+  "body": [{
+    "roleName": "系统管理角色",
+    "roleId": "ROLE0000-0000-0000-0000-000000000000"
+  }]
+}

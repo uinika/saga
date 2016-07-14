@@ -47,7 +47,7 @@
     email          String          邮件
     roleNames      String          所属角色（可多个，已逗号分隔符分隔）
 -----
-## 修改用户信息--查询用户信息
+## 修改用户信息 -- 查询用户信息
 ### /sys/account
     Type: GET
 #### Parameter:
@@ -60,7 +60,7 @@
     state          String          账号状态
     tel            String          电话号码
     email          String          邮件
-## 修改用户信息--执行修改操作
+## 修改用户信息 -- 执行修改操作
 ### /sys/account
     Type: PUT
 #### Parameter:
@@ -73,14 +73,14 @@
 #### Result:
     null
 -----
-## 用户账户--启用
+## 用户账户 -- 启用
 ### /sys/account/start
     Type: PUT
 #### Parameter:
     accountIds     String          账号ID集（以逗号分隔）
 #### Result:
- null
-## 用户账户--禁用
+    null
+## 用户账户 -- 禁用
 ### /sys/account/close
     Type: PUT
 #### Parameter:
@@ -88,7 +88,7 @@
 #### Result:
     null
 -----
-## 用户授权--装载用户角色数据
+## 用户授权 -- 装载用户角色数据
 ### /sys/account/{accountId}/roles
     Type: GET
 #### Parameter:
@@ -101,14 +101,14 @@
     notAddList     Array           未分配的角色
     itemValue      String          角色id
     itemLabel      String          角色名
-## 用户授权--授权用户角色
+## 用户授权 -- 授权用户角色
 ### /sys/account/{accountId}/role
     Type: POST
 #### Parameter:
     roleIds        String          授权的角色id集（以逗号分隔）
 #### Result:
     null
-## 用户授权--取消授权用户角色
+## 用户授权 -- 取消授权用户角色
 ### /sys/account/{accountId}/role/[{roleIds}]
     Type: DELETE
 #### Parameter:

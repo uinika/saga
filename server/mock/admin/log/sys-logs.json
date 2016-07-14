@@ -6,10 +6,10 @@
     "total": 1
   },
   "body": [{
-    "amount": "1",
-    "maxip": "0:0:0:0:0:0:0:1",
     "loginName": "admin",
-    "maxDate": "2016-06-30 14:42:29",
-    "todayAmount": "1"
+    "maxDate": "2016-07-14 17:46:29",
+    "maxIp": "172.16.0.94",
+    "todayAmount": 222,
+    "amount": 225
   }]
 }

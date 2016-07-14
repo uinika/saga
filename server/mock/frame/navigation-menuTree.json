@@ -12,7 +12,7 @@
     "hint": "系统管理",
     "entryURL": "",
     "icon": "default",
-    "Children": [{
+    "children": [{
       "menuId": "MENU0000-2000-0000-0000-000000000000",
       "parentId": "MENU0000-1000-0000-0000-000000000000",
       "menuName": "用户管理",
@@ -27,13 +27,6 @@
       "entryURL": "admin-role",
       "icon": "role"
     }, {
-      "menuId": "MENU0000-2000-0000-0000-000000000002",
-      "parentId": "MENU0000-1000-0000-0000-000000000000",
-      "menuName": "菜单管理",
-      "hint": "菜单管理",
-      "entryURL": "admin-menu",
-      "icon": "menu"
-    }, {
       "menuId": "MENU0000-2000-0000-0000-000000000003",
       "parentId": "MENU0000-1000-0000-0000-000000000000",
       "menuName": "模块管理",
@@ -43,8 +36,8 @@
     }, {
       "menuId": "MENU0000-2000-0000-0000-000000000004",
       "parentId": "MENU0000-1000-0000-0000-000000000000",
-      "menuName": "操作日志",
-      "hint": "操作日志查询",
+      "menuName": "访问日志",
+      "hint": "访问日志查询",
       "entryURL": "admin-log",
       "icon": "info"
     }]

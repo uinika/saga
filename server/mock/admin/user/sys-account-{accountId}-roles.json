@@ -1,0 +1,20 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 1
+  },
+  "body": [{
+    "guid": null,
+    "accountId": "ACCOUNT0-0000-0000-0000-000000000000",
+    "roleId": null,
+    "roleIds": null,
+    "roleName": null,
+    "addList": [{
+      "itemValue": "ROLE0000-0000-0000-0000-000000000000",
+      "itemLabel": "系统管理角色"
+    }],
+    "notAddList": []
+  }]
+}

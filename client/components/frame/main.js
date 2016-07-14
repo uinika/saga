@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Row, Col, Menu, Icon, Dropdown} from 'antd';
-import {Path, Http} from '../../common/http';
+import {Url, Fetch} from '../../common/http';
 import {Link} from 'react-router';
 
 class Login extends React.Component {
   componentDidMount() {
-    Http({
+    Fetch({
       url: '/navigation/menuTree',
       method: 'GET'
     })
     .then(data => {
       if(data.head.status === 200){
-        console.log(data);
+        
       }
     });
   };
