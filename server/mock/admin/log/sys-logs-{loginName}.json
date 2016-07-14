@@ -1,9 +1,89 @@
 {
-  "body": null,
   "head": {
-    "message": "被禁止资源，Url：sys/logs/admin，Action：class com.chinawiserv.deepone.manager.controller.sys.log.AccessLogListController",
-    "status": 201,
+    "status": 200,
     "token": null,
-    "total": 0
-  }
+    "message": null,
+    "total": 226
+  },
+  "body": [{
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 18:04:40",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "<span style='color:#009933;'>用户登录！</span>"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:46:29",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "角色详情（roleName=系统管理角色）"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:44:40",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "查询角色（以列表形式展示）"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:31:55",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "用户详情（loginName=admin）"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:30:58",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "查询用户（以列表形式展示）"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:27:28",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "<span style='color:#009933;'>用户登录！</span>"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:25:19",
+    "accessIP": "0:0:0:0:0:0:0:1",
+    "browser": "Firefox^Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "<span style='color:#009933;'>用户登录！</span>"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:20:26",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "查询用户（以列表形式展示）"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:20:22",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "查询用户（以列表形式展示）"
+  }, {
+    "loginName": "admin",
+    "realName": "系统管理员",
+    "accessDateTime": "2016-07-14 17:12:05",
+    "accessIP": "172.16.0.94",
+    "browser": "Firefox^Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "browserDetail": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "command": "查询用户（以列表形式展示）"
+  }]
 }
