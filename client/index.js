@@ -4,7 +4,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
-import reducers from './reducers/main'
+import reducers from './reducers/login'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
 import Frame from './components/frame/main'
@@ -14,7 +14,8 @@ const store = createStore(
   combineReducers({
     reducers,
     routing: routerReducer
-  })
+  }),
+  window.devToolsExtension && window.devToolsExtension()
 )
 
 const history = syncHistoryWithStore(hashHistory, store)

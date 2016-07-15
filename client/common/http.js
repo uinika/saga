@@ -3,9 +3,9 @@ import 'whatwg-fetch';
 import QueryString from 'query-string';
 import SuperAgent from 'superagent';
 
-// const PATH  = 'http://localhost:5002';
-const URL  = 'http://172.16.0.119:8080';
-// const PATH  = 'http://' + window.location.href.split('/')[2];
+const URL  = 'http://localhost:5002';
+// const URL  = 'http://172.16.0.119:8080';
+// const URL  = 'http://' + window.location.href.split('/')[2];
 exports.Url = URL;
 
 exports.Fetch = (options) => {
@@ -35,7 +35,7 @@ exports.Fetch = (options) => {
   }
 };
 
-exports.Http = () => {
+exports.Xhr = () => {
 
 }
 
