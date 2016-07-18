@@ -43,7 +43,7 @@ class AdminUser extends React.Component {
     };
     return (
       <div id='admin-user'>
-        <sction className='path'>
+        <sction className='path wiserv-ui'>
           <Breadcrumb>
             <Breadcrumb.Item>
               <Icon type="home" />
@@ -56,7 +56,7 @@ class AdminUser extends React.Component {
             </Breadcrumb.Item>
           </Breadcrumb>
         </sction>
-        <section className='filter'>
+        <section className='filter wiserv-ui'>
           <span className='form1'>
             <Form inline>
               <Form.Item label="角色名称">
@@ -66,7 +66,7 @@ class AdminUser extends React.Component {
             </Form>
           </span>
         </section>
-        <section className='operator'>
+        <section className='operator wiserv-ui'>
           <span className='buttons'>
             <Button type="ghost">新建</Button>
             <Button type="ghost">修改</Button>
@@ -74,7 +74,7 @@ class AdminUser extends React.Component {
             <Button type="ghost">授权</Button>
           </span>
         </section>
-        <section className='container'>
+        <section className='container wiserv-ui'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
         </section>
       </div>

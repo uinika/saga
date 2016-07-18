@@ -26,10 +26,11 @@ let Login = React.createClass({
       param: httpParam
     })
     .then(data => {
-       if(Validator(data)){
-         sessionStorage.token = data.head.token;
-         this.context.router.replace('/frame/admin/user');
-       }
+      //  if(Validator(data)){
+      //    sessionStorage.token = data.head.token;
+      //    this.context.router.replace('/frame/admin/user');
+      //  }
+       this.context.router.replace('/frame/admin/user');
      })
   },
   render() {

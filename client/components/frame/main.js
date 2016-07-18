@@ -12,7 +12,7 @@ class Login extends React.Component {
     })
     .then(data => {
       if(data.head.status === 200){
-        
+
       }
     });
   };
@@ -43,7 +43,7 @@ class Login extends React.Component {
           </span>
         </section>
         <section className='second'>
-          <div className='side-bar'>
+          <div className='side-bar wiserv-ui'>
             <Menu className='menu' mode='inline' defaultOpenKeys={['menu']}>
               <Menu.SubMenu key='menu' title='系统管理'>
                 <Menu.Item><Link to='/frame/admin/user'>用户管理</Link></Menu.Item>

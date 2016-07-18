@@ -1,225 +1,225 @@
-/*========== Button ==========*/
-.ant-btn.ant-btn-ghost {
-  background-color: transparent;
-  border: 1px solid @blue;
-  color: @blue;
-  border-radius: 15px;
-}
-/*========== Form ==========*/
-.ant-form-item {
-  label {
-    color: @white;
+.wiserv-ui {
+  /*========== Button ==========*/
+  .ant-btn.ant-btn-ghost {
+    background-color: transparent;
+    border: 1px solid @blue;
+    color: @blue;
+    border-radius: 15px;
   }
-}
-/*========== Input ==========*/
-.ant-input {
-  background-color: transparent;
-  border: 1px solid @white;
-  color: @white;
-  border-radius: 15px;
-}
-/*========== Date Picker ==========*/
-.ant-calendar {
-  background: @blue;
-  color: @white;
-  border-color: @blue;
-  .ant-calendar-input-wrap {
-    background: @blue;
-    border: none;
-    .ant-calendar-input {
-      background: @blue;
+  /*========== Form ==========*/
+  .ant-form-item {
+    label {
+      color: @white;
     }
   }
-  .ant-calendar-date-panel {
-    .ant-calendar-header {
+  /*========== Input ==========*/
+  .ant-input {
+    background-color: transparent;
+    border: 1px solid @white;
+    color: @white;
+    border-radius: 15px;
+  }
+  /*========== Date Picker ==========*/
+  .ant-calendar {
+    background: @blue;
+    color: @white;
+    border-color: @blue;
+    .ant-calendar-input-wrap {
+      background: @blue;
       border: none;
-      * {
+      .ant-calendar-input {
+        background: @blue;
+      }
+    }
+    .ant-calendar-date-panel {
+      .ant-calendar-header {
+        border: none;
+        * {
+          color: @white !important;
+        }
+      }
+      .ant-calendar-calendar-body {
+        .ant-calendar-column-header {
+          color: @white;
+        }
+        .ant-calendar-date {
+          color: @white;
+        }
+        .ant-calendar-last-month-cell .ant-calendar-date {
+          color: #ccc !important;
+        }
+        .ant-calendar-next-month-btn-day .ant-calendar-date {
+          color: #ccc !important;
+        }
+      }
+      .ant-calendar-footer {
+        border: none;
+        .ant-calendar-today-btn  {
+          color: @white;
+        }
+      }
+    }
+
+  }
+  /*========== Menu ==========*/
+  .ant-menu {
+    min-width: 100px;
+    background: transparent;
+    color: @white;
+    border: none;
+    * {
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .ant-menu-item {
+      background: transparent;
+      margin-bottom: 10px;
+      border: none;
+      a {
         color: @white !important;
       }
     }
-    .ant-calendar-calendar-body {
-      .ant-calendar-column-header {
-        color: @white;
-      }
-      .ant-calendar-date {
-        color: @white;
-      }
-      .ant-calendar-last-month-cell .ant-calendar-date {
-        color: #ccc !important;
-      }
-      .ant-calendar-next-month-btn-day .ant-calendar-date {
-        color: #ccc !important;
-      }
-    }
-    .ant-calendar-footer {
-      border: none;
-      .ant-calendar-today-btn  {
-        color: @white;
-      }
-    }
-  }
-
-}
-/*========== Menu ==========*/
-.ant-menu {
-  min-width: 100px;
-  background: transparent;
-  color: @white;
-  border: none;
-  * {
-    font-size: 13px;
-    font-weight: bold;
-  }
-  .ant-menu-item {
-    background: transparent;
-    margin-bottom: 10px;
-    border: none;
-    a {
-      color: @white !important;
-    }
-  }
-  .ant-menu-item-selected {
-    background: @purple;
-  }
-  .ant-menu-submenu-title {
-    font-size: 13px;
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .ant-menu-submenu>.ant-menu {
-    background: transparent;
-  }
-  .ant-menu-submenu-active {
-    background: transparent;
-    * {
-      background: transparent;
+    .ant-menu-item-selected {
+      background: @purple;
     }
     .ant-menu-submenu-title {
       font-size: 13px;
       font-weight: bold;
-      background: @blue !important;
+      background: rgba(255, 255, 255, 0.1);
     }
-  }
-}
-/*========== Table ==========*/
-.ant-table {
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.1);
-  color: @white !important;
-  tr:nth-child(odd) {
-    background: rgba(0, 0, 0, 0.3);
-    td {
-      border: none;
+    .ant-menu-submenu>.ant-menu {
+      background: transparent;
     }
-  }
-  tr:hover {
-    background: @purple !important;
-  }
-  .ant-checkbox-inner {
-    background: transparent;
-  }
-  .ant-table-body {
-    table {
-      border-radius: 0px;
-    }
-    .ant-table-thead {
-      th {
+    .ant-menu-submenu-active {
+      background: transparent;
+      * {
+        background: transparent;
+      }
+      .ant-menu-submenu-title {
+        font-size: 13px;
+        font-weight: bold;
         background: @blue !important;
       }
     }
-    .ant-table-tbody {
-      .ant-table-row {
-        td {
-          border: none;
+  }
+  /*========== Table ==========*/
+  .ant-table {
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.1);
+    color: @white !important;
+    tr:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.3);
+      td {
+        border: none;
+      }
+    }
+    tr:hover {
+      background: @purple !important;
+    }
+    .ant-checkbox-inner {
+      background: transparent;
+    }
+    .ant-table-body {
+      table {
+        border-radius: 0px;
+      }
+      .ant-table-thead {
+        th {
+          background: @blue !important;
         }
       }
-      .ant-table-selection-column {
-
+      .ant-table-tbody {
+        .ant-table-row {
+          td {
+            border: none;
+          }
+        }
       }
     }
   }
-}
-/*========== Pagination ==========*/
-.ant-table-pagination {
-  .ant-pagination-item, li {
-    background: transparent;
+  .ant-table-placeholder {
     border: none;
-    a {
-      color: @blue;
+  }
+  /*========== Pagination ==========*/
+  .ant-table-pagination {
+    .ant-pagination-item, li {
+      background: transparent;
+      border: none;
+      a {
+        color: @blue;
+      }
     }
-  }
-  .ant-pagination-item-active {
-    background: @blue;
-    a {
-      color: @white;
-    }
-  }
-  .ant-select-selection {
-    border: solid 1px @blue;
-    border-radius: 5px;
-    background: transparent;
-    color: @blue;
-  }
-}
-.ant-select-dropdown {
-  background-color: @blue;
-  border: none;
-  li {
-    color: @white;
-  }
-  .ant-select-dropdown-menu-item-selected {
-    font-weight: bolder;
-    background-color: @blue;
-  }
-  .ant-select-dropdown-menu-item-active {
-    background: @blue-light;
-  }
-}
-/*========== Dropdown ==========*/
-.ant-dropdown {
-
-  .ant-dropdown-menu {
-    background: @blue;
-    border-color: @blue;
-    .ant-dropdown-menu-item {
+    .ant-pagination-item-active {
+      background: @blue;
       a {
         color: @white;
       }
-      :hover {
-        background: @blue-light;
+    }
+    .ant-select-selection {
+      border: solid 1px @blue;
+      border-radius: 5px;
+      background: transparent;
+      color: @blue;
+    }
+  }
+  .ant-select-dropdown {
+    background-color: @blue;
+    border: none;
+    li {
+      color: @white;
+    }
+    .ant-select-dropdown-menu-item-selected {
+      font-weight: bolder;
+      background-color: @blue;
+    }
+    .ant-select-dropdown-menu-item-active {
+      background: @blue-light;
+    }
+  }
+  /*========== Dropdown ==========*/
+  .ant-dropdown {
+    .ant-dropdown-menu {
+      background: @blue;
+      border-color: @blue;
+      .ant-dropdown-menu-item {
+        a {
+          color: @white;
+        }
+        :hover {
+          background: @blue-light;
+        }
       }
     }
-
   }
-}
-/*========== Breadcrumb ==========*/
-.ant-breadcrumb {
-  span {
-    color: @blue;
-    font-size: 13px;
-    :hover {
-      color: @blue-light;
-      cursor: pointer;
+  /*========== Breadcrumb ==========*/
+  .ant-breadcrumb {
+    span {
+      color: @blue;
+      font-size: 13px;
+      :hover {
+        color: @blue-light;
+        cursor: pointer;
+      }
     }
   }
-}
-/*========== Radio ==========*/
-.ant-radio {
-  :hover {
-    border-color: @blue;
-  }
-  .ant-radio-inner {
-    background: transparent;
-    border-color: @blue;
-  }
-  .ant-radio-inner:after {
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    background: @blue;
-    border-radius: 5px;
-  }
-  .ant-radio-inner:hover {
-    border-color: @blue;
+  /*========== Radio ==========*/
+  .ant-radio {
+    :hover {
+      border-color: @blue;
+    }
+    .ant-radio-inner {
+      background: transparent;
+      border-color: @blue;
+    }
+    .ant-radio-inner:after {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: @blue;
+      border-radius: 5px;
+    }
+    .ant-radio-inner:hover {
+      border-color: @blue;
+    }
   }
 }

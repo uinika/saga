@@ -61,7 +61,7 @@ class AdminLog extends React.Component {
     };
     return (
       <div id='admin-log'>
-        <sction className='path'>
+        <sction className='path wiserv-ui'>
           <Breadcrumb>
             <Breadcrumb.Item>
               <Icon type="home" />
@@ -74,8 +74,8 @@ class AdminLog extends React.Component {
             </Breadcrumb.Item>
           </Breadcrumb>
         </sction>
-        <section className='filter'>
-          <span className='date'>
+        <section className='filter wiserv-ui'>
+          <span className='date '>
             <Form inline>
               <Form.Item label='访问时间'>
                 <DatePicker placeholder='起始时间' />
@@ -86,7 +86,7 @@ class AdminLog extends React.Component {
             </Form>
           </span>
         </section>
-        <section className='container'>
+        <section className='container wiserv-ui'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
         </section>
       </div>

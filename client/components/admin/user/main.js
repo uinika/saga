@@ -1,7 +1,6 @@
 import React from 'react';
 import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Modal} from 'antd';
 import { Fetch, Validator } from '../../../common/http';
-import CreateUser from './create-user';
 
 const AdminUser = React.createClass({
   getInitialState: function() {
@@ -67,7 +66,7 @@ const AdminUser = React.createClass({
     };
     return (
       <div id='admin-user'>
-        <sction className='path'>
+        <sction className='path wiserv-ui'>
           <Breadcrumb>
             <Breadcrumb.Item>
               <Icon type="home" />
@@ -80,7 +79,7 @@ const AdminUser = React.createClass({
             </Breadcrumb.Item>
           </Breadcrumb>
         </sction>
-        <section className='filter'>
+        <section className='filter wiserv-ui'>
           <span className='form1'>
             <Form inline>
               <Form.Item label="登陆名称">
@@ -98,15 +97,14 @@ const AdminUser = React.createClass({
             </Form>
           </span>
         </section>
-        <section className='operator'>
+        <section className='operator wiserv-ui'>
           <span className='buttons'>
-            <CreateUser />
             <Button type="ghost">修改</Button>
             <Button type="ghost">详情</Button>
             <Button type="ghost">授权</Button>
           </span>
         </section>
-        <section className='container'>
+        <section className='container wiserv-ui'>
           <Table rowSelection={rowSelection} columns={columns} dataSource={this.state.data} pagination={pagination} />
         </section>
       </div>
