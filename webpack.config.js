@@ -25,7 +25,7 @@ exports.development = {
       loader: 'babel-loader',
       query: {
         presets: ['react', 'es2015'],
-        plugins: ['antd']
+        plugins: ['antd', 'transform-object-rest-spread']
       }
     }, {
       test: /\.css$/,
@@ -71,7 +71,7 @@ exports.distribution = {
       loader: 'babel-loader',
       query: {
         presets: ['react', 'es2015'],
-        plugins: ['antd']
+        plugins: ['antd', 'transform-object-rest-spread']
       }
     }, {
       test: /\.css$/,

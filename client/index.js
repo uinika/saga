@@ -12,7 +12,7 @@ import Login from './components/login/main'
 
 const store = createStore(
   combineReducers({
-    reducers,
+    ...reducers,
     routing: routerReducer
   }),
   window.devToolsExtension && window.devToolsExtension()
