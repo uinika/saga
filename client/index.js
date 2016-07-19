@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
+import thunkMiddleware from 'redux-thunk'
 import reducers from './reducers/login'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
@@ -15,7 +16,10 @@ const store = createStore(
     ...reducers,
     routing: routerReducer
   }),
-  window.devToolsExtension && window.devToolsExtension()
+  compose(
+    applyMiddleware(thunkMiddleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 )
 
 const history = syncHistoryWithStore(hashHistory, store)

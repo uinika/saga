@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import { Row, Col, Form, Input, Button, Radio } from 'antd';
 import 'whatwg-fetch';
 import { Url, Fetch, Validator } from '../../common/http';
+import ValidateCode from './validate-code';
 
 let Login = React.createClass({
   contextTypes: {
@@ -52,7 +53,7 @@ let Login = React.createClass({
                   <Form.Item className='validate' label='验证码' labelCol={{span: 6}} wrapperCol={{span: 14}}>
                     <Input className='code' type='text' placeholder='请输入验证码...' {...getFieldProps('validateCode')} size='large' />
                     <span className='image'>
-                      <img src={Url+'/validatecode'} height='33' width='88'  />
+                      <ValidateCode />
                     </span>
                     <a className='switcher'>换一张</a>
                   </Form.Item>
