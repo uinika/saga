@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
-import {Provider} from 'react-redux'
-import {Router, Route, IndexRoute, hashHistory} from 'react-router'
-import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import { Provider } from 'react-redux'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
-import reducers from './reducers/login'
+import login from './reducers/login'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
 import Frame from './components/frame/main'
@@ -13,7 +13,7 @@ import Login from './components/login/main'
 
 const store = createStore(
   combineReducers({
-    ...reducers,
+    login,
     routing: routerReducer
   }),
   compose(

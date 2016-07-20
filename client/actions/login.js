@@ -1,18 +1,23 @@
 export const LOGIN = 'LOGIN';
-export const VLIDATE_CODE = "VLIDATE_CODE";
+export const VALIDATE_CODE = 'VALIDATE_CODE';
+import { Url, Fetch, Validator } from '../common/http'
 
-export function login(username, password, validateCode) {
-  return {
-    type: LOGIN,
-    username,
-    password,
-    validateCode
+export function loginForm(httpParam) {
+  return function() {
+    Fetch({
+      url: '/login',
+      method: 'POST',
+      param: httpParam
+    })
+    .then(data => {
+       console.log(data);
+     })
   }
-};
+}
 
-export function validateCode(path) {
+export function getValidateCode(path) {
   return {
-    type: VLIDATE_CODE,
+    type: VALIDATE_CODE,
     path
   }
-};
+}
