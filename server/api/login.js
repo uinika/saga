@@ -3,11 +3,7 @@ const Router = require('express').Router(),
 /** Router definition */
 Router.route('/login')
   .post(function(request, response) {
-    let protocal = Common.Protocal();
-    protocal.head.status = 200;
-    protocal.head.message = 'http response sucess';
-    protocal.body = Common.Json('login/login.json');
-    response.json(protocal);
+    response.json(Common.Json('login/login.json'));
 });
 Router.route('/validatecode')
   .get(function(request, response) {

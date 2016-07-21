@@ -3,13 +3,13 @@ import ReactDom from 'react-dom'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
 import login from './reducers/login'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
-import Frame from './components/frame/main'
-import Login from './components/login/main'
+import Frame from './components/frame/'
+import Login from './components/login/container'
 
 const store = createStore(
   combineReducers({
@@ -17,7 +17,7 @@ const store = createStore(
     routing: routerReducer
   }),
   compose(
-    applyMiddleware(thunkMiddleware),
+    applyMiddleware(thunkMiddleware, routerMiddleware(hashHistory)),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )

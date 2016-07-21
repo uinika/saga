@@ -1,23 +1,36 @@
-export const LOGIN = 'LOGIN';
-export const VALIDATE_CODE = 'VALIDATE_CODE';
 import { Url, Fetch, Validator } from '../common/http'
+import { push } from 'react-router-redux'
 
-export function loginForm(httpParam) {
-  return function() {
+export const SUBMIT_LOGIN = 'SUBMIT_LOGIN'
+export const GET_VALIDATE_CODE_URL = 'GET_VALIDATE_CODE_URL'
+
+export function fetchLogin(httpParam) {
+  return function(dispatch) {
     Fetch({
       url: '/login',
       method: 'POST',
       param: httpParam
     })
     .then(data => {
-       console.log(data);
+       if(Validator(data)){
+         sessionStorage.token = data.head.token;
+         dispatch(submitLogin(data.body))
+         dispatch(push('/frame/dashboard'))
+       }
      })
   }
 }
 
-export function getValidateCode(path) {
+export function submitLogin(user) {
   return {
-    type: VALIDATE_CODE,
-    path
+    type: SUBMIT_LOGIN,
+    user
+  }
+}
+
+export function getValidateCodeUrl() {
+  return {
+    type: GET_VALIDATE_CODE_URL,
+    url: Url + '/validatecode?_=' + Math.random()
   }
 }

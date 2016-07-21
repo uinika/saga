@@ -1,21 +1,21 @@
 import { combineReducers } from 'redux'
-import { LOGIN, VALIDATE_CODE } from '../actions/login';
+import { SUBMIT_LOGIN, GET_VALIDATE_CODE_URL } from '../actions/login';
 
-function login(state = {}, action) {
+function LoginReducer(state = {}, action) {
   switch (action.type) {
-    case LOGIN:
+    case SUBMIT_LOGIN:
       return {
         ...state,
-        auth: action.auth
+        user: action.user
       }
-    case VALIDATE_CODE:
+    case GET_VALIDATE_CODE_URL:
       return {
         ...state,
-        path: action.path
+        validate_code_url: action.url
       }
     default:
       return state
   }
 }
 
-export default login
+export default LoginReducer
