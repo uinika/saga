@@ -6,14 +6,18 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
 import login from './reducers/login'
+import frame from './reducers/frame'
+import user from './reducers/user'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
-import Frame from './components/frame/'
+import Frame from './components/frame/container'
 import Login from './components/login/container'
 
 const store = createStore(
   combineReducers({
     login,
+    frame,
+    user,
     routing: routerReducer
   }),
   compose(

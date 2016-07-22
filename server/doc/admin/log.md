@@ -18,7 +18,10 @@
 ### /sys/logs/{loginName}
     Type: GET
 #### Parameter:
-    null
+    今日访问次数：传递如下2个参数
+    startTime      Date            2016-07-22 00:00:00
+    endTime        Date            2016-07-22 23:59:59
+    总访问次数：默认不传递任何参数
 #### Result:
     loginName      String          登录名称
     realName       String          真实姓名

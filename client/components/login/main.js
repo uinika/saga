@@ -10,7 +10,12 @@ let Login = React.createClass({
     if (sessionStorage.token) {
       sessionStorage.removeItem('token');
     }
-    this.props.getValidateCodeUrl();
+    this.setValidateCodeInterval();
+  },
+  setValidateCodeInterval(){
+    window.test = this.props.getValidateCodeUrl;
+    window.test();
+    setInterval("window.test()", 1000 * 50);
   },
   handleSubmit(event) {
     event.preventDefault();

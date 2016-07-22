@@ -1,20 +1,11 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import {Row, Col, Menu, Icon, Dropdown} from 'antd';
-import {Url, Fetch} from '../../common/http';
 import {Link} from 'react-router';
+import _ from 'lodash';
 
 class Login extends React.Component {
   componentDidMount() {
-    Fetch({
-      url: '/navigation/menuTree',
-      method: 'GET'
-    })
-    .then(data => {
-      if(data.head.status === 200){
-
-      }
-    });
+    this.props.requestMenuTree();
   };
   render() {
     const menu = (
@@ -26,7 +17,13 @@ class Login extends React.Component {
           <a target='_blank' href=''>管理员菜单项2</a>
         </Menu.Item>
       </Menu>
-    );
+    )
+    const menuTree = [];
+    _.map(this.props.menuTree, function(item1){
+      _.map(item1.children, function(item2, index){
+        menuTree.push(<Menu.Item key={index}><Link to={item2.entryURL}>{item2.menuName}</Link></Menu.Item>);
+      })
+    })
     return (
       <div id='frame-main'>
         <section className='first'>
@@ -41,18 +38,12 @@ class Login extends React.Component {
               </Dropdown>
             </div>
           </span>
-        </section>
+        </section>i
         <section className='second'>
           <div className='side-bar wiserv-ui'>
             <Menu className='menu' mode='inline' defaultOpenKeys={['menu']}>
               <Menu.SubMenu key='menu' title='系统管理'>
-                <Menu.Item><Link to='/frame/admin/user'>用户管理</Link></Menu.Item>
-                <Menu.Item><Link to='/frame/admin/role'>角色管理</Link></Menu.Item>
-                <Menu.Item><Link to='/frame/admin/log'>日志管理</Link></Menu.Item>
-                {
-                // <Menu.Item><Link to='/main/admin/menu'>菜单管理</Link></Menu.Item>
-                // <Menu.Item><Link to='/main/admin/module'>模块管理</Link></Menu.Item>
-                }
+                {menuTree}
               </Menu.SubMenu>
             </Menu>
           </div>

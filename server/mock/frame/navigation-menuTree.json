@@ -1,45 +1,37 @@
-{
-  "head": {
-    "status": 200,
-    "token": null,
-    "message": null,
-    "total": 1
-  },
-  "body": [{
-    "menuId": "MENU0000-1000-0000-0000-000000000000",
-    "parentId": null,
-    "menuName": "系统管理",
-    "hint": "系统管理",
-    "entryURL": "",
-    "icon": "default",
-    "children": [{
-      "menuId": "MENU0000-2000-0000-0000-000000000000",
-      "parentId": "MENU0000-1000-0000-0000-000000000000",
-      "menuName": "用户管理",
-      "hint": "用户管理",
-      "entryURL": "admin-account",
-      "icon": "account"
-    }, {
-      "menuId": "MENU0000-2000-0000-0000-000000000001",
-      "parentId": "MENU0000-1000-0000-0000-000000000000",
-      "menuName": "角色管理",
-      "hint": "角色管理",
-      "entryURL": "admin-role",
-      "icon": "role"
-    }, {
-      "menuId": "MENU0000-2000-0000-0000-000000000003",
-      "parentId": "MENU0000-1000-0000-0000-000000000000",
-      "menuName": "模块管理",
-      "hint": "模块管理",
-      "entryURL": "admin-module",
-      "icon": "module"
-    }, {
-      "menuId": "MENU0000-2000-0000-0000-000000000004",
-      "parentId": "MENU0000-1000-0000-0000-000000000000",
-      "menuName": "访问日志",
-      "hint": "访问日志查询",
-      "entryURL": "admin-log",
-      "icon": "info"
-    }]
+[{
+  "menuId": "MENU0000-1000-0000-0000-000000000000",
+  "parentId": null,
+  "menuName": "系统管理",
+  "hint": "系统管理",
+  "entryURL": "",
+  "icon": "default",
+  "children": [{
+    "menuId": "MENU0000-2000-0000-0000-000000000000",
+    "parentId": "MENU0000-1000-0000-0000-000000000000",
+    "menuName": "用户管理",
+    "hint": "用户管理",
+    "entryURL": "/frame/admin/user",
+    "icon": "account"
+  }, {
+    "menuId": "MENU0000-2000-0000-0000-000000000001",
+    "parentId": "MENU0000-1000-0000-0000-000000000000",
+    "menuName": "角色管理",
+    "hint": "角色管理",
+    "entryURL": "/frame/admin/role",
+    "icon": "role"
+  }, {
+    "menuId": "MENU0000-2000-0000-0000-000000000003",
+    "parentId": "MENU0000-1000-0000-0000-000000000000",
+    "menuName": "模块管理",
+    "hint": "模块管理",
+    "entryURL": "/frame/admin/module",
+    "icon": "module"
+  }, {
+    "menuId": "MENU0000-2000-0000-0000-000000000004",
+    "parentId": "MENU0000-1000-0000-0000-000000000000",
+    "menuName": "访问日志",
+    "hint": "访问日志查询",
+    "entryURL": "/frame/admin/log",
+    "icon": "info"
   }]
-}
+}]

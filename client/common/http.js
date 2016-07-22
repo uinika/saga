@@ -3,8 +3,8 @@ import 'whatwg-fetch';
 import QueryString from 'query-string';
 import SuperAgent from 'superagent';
 
-const URL  = 'http://localhost:5002';
-// const URL  = 'http://172.16.0.119:8080';
+// const URL  = 'http://localhost:5002';
+const URL  = 'http://172.16.0.119:8080';
 // const URL  = 'http://' + window.location.href.split('/')[2];
 exports.Url = URL;
 
@@ -39,6 +39,23 @@ exports.Xhr = () => {
 
 }
 
-exports.Validator = (data) => {
-  return (data.head.status === 200 && data.head.token);
+exports.Validator = (data, status) => {
+  switch(status) {
+    case 200:
+      return (data && data.head && data.head.status === status); break;
+    case 201:
+      return (data && data.head && data.head.status === status); break;
+    case 202:
+      return (data && data.head && data.head.status === status); break;
+    case 400:
+      return (data && data.head && data.head.status === status); break;
+    case 404:
+      return (data && data.head && data.head.status === status); break;
+    case 405:
+      return (data && data.head && data.head.status === status); break;
+    case 415:
+      return (data && data.head && data.head.status === status); break;
+    case 500:
+      return (data && data.head && data.head.status === status); break;
+  }
 }

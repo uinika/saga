@@ -12,10 +12,13 @@ export function fetchLogin(httpParam) {
       param: httpParam
     })
     .then(data => {
-       if(Validator(data)){
+       if(Validator(data, 200)){
          sessionStorage.token = data.head.token;
          dispatch(submitLogin(data.body))
          dispatch(push('/frame/dashboard'))
+       }
+       else if(Validator(data, 201)){
+         dispatch(getValidateCodeUrl())
        }
      })
   }
