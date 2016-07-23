@@ -3,8 +3,8 @@ import 'whatwg-fetch';
 import QueryString from 'query-string';
 import SuperAgent from 'superagent';
 
-// const URL  = 'http://localhost:5002';
-const URL  = 'http://172.16.0.119:8080';
+const URL  = 'http://localhost:5002';
+// const URL  = 'http://172.16.0.119:8080';
 // const URL  = 'http://' + window.location.href.split('/')[2];
 exports.Url = URL;
 

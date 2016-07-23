@@ -3,24 +3,12 @@ import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Modal} from 'ant
 import { Fetch, Validator } from '../../../common/http';
 
 const AdminUser = React.createClass({
-  getInitialState: function() {
-    return {
-      data: []
-    };
-  },
   componentDidMount() {
     let queryString = {
       current: 1,
       pageSize: 12
     };
-    Fetch({
-      url: '/sys/accounts',
-      method: 'GET',
-      query: queryString
-    })
-    .then(data => {
-      this.setState({ data: data.body });
-     })
+    this.props.requestUser(queryString);
   },
   render() {
     const columns = [{
@@ -43,7 +31,7 @@ const AdminUser = React.createClass({
       dataIndex: 'email'
     }];
     const pagination = {
-      total: this.state.data.length,
+      total: 1,
       showSizeChanger: true,
       onShowSizeChange(current, pageSize) {
         console.log('Current: ', current, '; PageSize: ', pageSize);
@@ -105,7 +93,7 @@ const AdminUser = React.createClass({
           </span>
         </section>
         <section className='container wiserv-ui'>
-          <Table rowSelection={rowSelection} columns={columns} dataSource={this.state.data} pagination={pagination} />
+          <Table rowSelection={rowSelection} columns={columns} dataSource={this.props.userList} pagination={pagination} />
         </section>
       </div>
     );

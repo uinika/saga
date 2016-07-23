@@ -20,4 +20,4 @@ App.use(Url, require('./api/login'));
 // Dashboard
 App.use(Url, require('./api/frame'));
 // Admin
-App.use(Url, require('./api/admin/log'));
+App.use(Url, require('./api/admin/user'));

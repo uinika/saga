@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import { SUBMIT_LOGIN, GET_VALIDATE_CODE_URL } from '../actions/login';
 
 function LoginReducer(state = {}, action) {

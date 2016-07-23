@@ -7,7 +7,7 @@ import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-rou
 import thunkMiddleware from 'redux-thunk'
 import login from './reducers/login'
 import frame from './reducers/frame'
-import user from './reducers/user'
+import user from './reducers/admin/user'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
 import Frame from './components/frame/container'
@@ -55,7 +55,7 @@ ReactDom.render((
             require.ensure([], (require) => {callback(null, require('./components/admin/role/main').default)})
           }} />
           <Route path='user' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/user/main').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/user/container').default)})
           }} />
         </Route>
       </Route>

@@ -3,7 +3,11 @@ const Router = require('express').Router(),
 /** Router definition */
 Router.route('/navigation/menuTree')
   .get(function(request, response) {
-    response.json(Common.Json('frame/navigation-menuTree.json'));
+    let protocal = Common.Protocal();
+    protocal.head.status = 200;
+    protocal.head.message = 'http response sucess';
+    protocal.body = Common.Json('frame/navigation-menuTree.json');
+    response.json(protocal);
 });
 /** Module export */
 module.exports = Router;
