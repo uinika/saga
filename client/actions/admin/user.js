@@ -1,26 +1,20 @@
+import { createAction } from 'redux-actions'
 import { Url, Fetch, Validator } from '../../common/http'
 
-export const REQUEST_USER = 'REQUEST_USER'
-export const RESPONSE_USER = 'RESPONSE_USER'
+export let findUser = createAction('FIND_USER', async httpParam => {
+  let result = await Fetch({
+    url: '/sys/accounts',
+    method: 'GET',
+    query: httpParam
+  });
+  return result.body
+})
 
-export function requestUser(httpParam) {
-  return function(dispatch){
-    Fetch({
-      url: '/sys/accounts',
-      method: 'GET',
-      query: httpParam
-    })
-    .then(data => {
-       if(Validator(data, 200)){
-         dispatch(responseUser(data.body))
-       }
-     })
-  }
-}
-
-export function responseUser(userList) {
-  return {
-    type : RESPONSE_USER,
-    userList
-  }
-}
+export let addUser = createAction('ADD_USER', async httpParam => {
+  let result = await Fetch({
+    url: '/sys/account',
+    method: 'POST',
+    param: httpParam
+  });
+  return result.body
+})

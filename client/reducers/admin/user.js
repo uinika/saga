@@ -1,14 +1,9 @@
-import { REQUEST_USER, RESPONSE_USER } from '../../actions/admin/user';
+import { handleAction, handleActions } from 'redux-actions'
 
-function UserReducer(state = {}, action) {
-  switch (action.type) {
-    case RESPONSE_USER:
-      return {
-        userList: action.userList
-      }
-    default:
-      return state
-  }
-}
+let UserReducer = handleActions({
+  'FIND_USER': (state = {}, action) => ({
+    users: action.payload
+  })
+}, { users: [] });
 
 export default UserReducer

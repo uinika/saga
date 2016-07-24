@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
+import promiseMiddleware from 'redux-promise'
+import 'babel-polyfill'
 import login from './reducers/login'
 import frame from './reducers/frame'
 import user from './reducers/admin/user'
@@ -21,7 +23,7 @@ const store = createStore(
     routing: routerReducer
   }),
   compose(
-    applyMiddleware(thunkMiddleware, routerMiddleware(hashHistory)),
+    applyMiddleware(thunkMiddleware, promiseMiddleware, routerMiddleware(hashHistory)),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )

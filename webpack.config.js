@@ -24,8 +24,8 @@ exports.development = {
       exclude: [/(node_modules)/],
       loader: 'babel-loader',
       query: {
-        presets: ['react', 'es2015'],
-        plugins: ['antd', 'transform-object-rest-spread']
+        presets: ['react', 'es2015', 'stage-0', 'stage-1', 'stage-2', 'stage-3'],
+        plugins: ['antd']
       }
     }, {
       test: /\.css$/,

@@ -1,6 +1,5 @@
 import React from 'react';
-import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Modal} from 'antd';
-import { Fetch, Validator } from '../../../common/http';
+import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Modal, Select} from 'antd';
 
 const AdminUser = React.createClass({
   componentDidMount() {
@@ -8,7 +7,7 @@ const AdminUser = React.createClass({
       current: 1,
       pageSize: 12
     };
-    this.props.requestUser(queryString);
+    this.props.findUser(queryString);
   },
   render() {
     const columns = [{
@@ -79,7 +78,10 @@ const AdminUser = React.createClass({
           <span className='form2'>
             <Form inline>
               <Form.Item label="用户状态">
-                <Input />
+              <Select defaultValue="1" style={{ width: 120 }} allowClear>
+                <Select.Option value="1">闲置</Select.Option>
+                <Select.Option value="2">激活</Select.Option>
+              </Select>
               </Form.Item>
               <Button type="ghost" htmlType="submit">高级查询</Button>
             </Form>
@@ -87,13 +89,14 @@ const AdminUser = React.createClass({
         </section>
         <section className='operator wiserv-ui'>
           <span className='buttons'>
-            <Button type="ghost">修改</Button>
-            <Button type="ghost">详情</Button>
-            <Button type="ghost">授权</Button>
+            <Button type="ghost"><Icon type="plus" />新建</Button>
+            <Button type="ghost"><Icon type="edit" />修改</Button>
+            <Button type="ghost"><Icon type="book" />详情</Button>
+            <Button type="ghost"><Icon type="lock" />授权</Button>
           </span>
         </section>
         <section className='container wiserv-ui'>
-          <Table rowSelection={rowSelection} columns={columns} dataSource={this.props.userList} pagination={pagination} />
+          <Table rowSelection={rowSelection} columns={columns} dataSource={this.props.users} pagination={pagination} />
         </section>
       </div>
     );
