@@ -5,9 +5,6 @@ export default React.createClass({
   contextTypes: {
      container: React.PropTypes.object
   },
-  showModal() {
-    this.props.toggleModal(true)
-  },
   handleOk() {
     let httpParam = {
       loginName : this.refs.loginName.value.trim(),
@@ -17,18 +14,18 @@ export default React.createClass({
       tel : this.refs.tel.value.trim(),
       email : this.refs.email.value.trim()
     }
-    this.props.addUser(httpParam);
-    this.props.toggleModal(false)
+    this.context.container.addUser(httpParam)
+    this.context.container.toggleModal(false)
   },
   handleCancel(event) {
-    this.props.toggleModal(false)
+    this.context.container.toggleModal(false)
   },
   render(){
     return (
       <span>
         <Modal
           title="新建用户"
-          //visible={this.props.user.modal}
+          visible={this.context.container.user.modal}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >

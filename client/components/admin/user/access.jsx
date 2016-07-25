@@ -5,6 +5,9 @@ export default React.createClass({
   contextTypes: {
      container: React.PropTypes.object
   },
+  showModal() {
+    this.context.container.toggleModal(true)
+  },
   render(){
     return (
       <span className='buttons'>

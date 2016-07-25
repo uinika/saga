@@ -17,8 +17,8 @@ export default handleActions({
 
 
 /** ========== Action Creator ========== */
-export let findUser = createAction('FIND_USER', async httpParam => {
-  let data = await Fetch({
+export const findUser = createAction('FIND_USER', async httpParam => {
+  const data = await Fetch({
     url: '/sys/accounts',
     method: 'GET',
     query: httpParam
@@ -28,8 +28,8 @@ export let findUser = createAction('FIND_USER', async httpParam => {
   }
 })
 
-export let addUser = createAction('ADD_USER', async httpParam => {
-  let data = await Fetch({
+export const addUser = createAction('ADD_USER', async httpParam => {
+  const data = await Fetch({
     url: '/sys/account',
     method: 'POST',
     param: httpParam
@@ -39,8 +39,8 @@ export let addUser = createAction('ADD_USER', async httpParam => {
   }
 })
 
-export let updateUser = createAction('UPDATE_USER', async httpParam => {
-  let data = await Fetch({
+export const updateUser = createAction('UPDATE_USER', async httpParam => {
+  const data = await Fetch({
     url: '/sys/account',
     method: 'PUT',
     param: httpParam
@@ -50,6 +50,6 @@ export let updateUser = createAction('UPDATE_USER', async httpParam => {
   }
 })
 
-export let toggleModal = createAction('TOGGLE_MODAL', visible => (
+export const toggleModal = createAction('TOGGLE_MODAL', visible => (
   visible
 ))
