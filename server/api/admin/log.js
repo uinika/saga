@@ -3,7 +3,7 @@ const Router = require('express').Router(),
 /** Router definition */
 Router.route('/sys/accessLogList')
   .get(function(request, response) {
-    let protocal = Util.Protocal();
+    let protocal = Common.Protocal();
     protocal.head.status = 200;
     protocal.head.message = 'http response sucess';
     protocal.body = Common.Json('admin/log/accessLogList.json');
@@ -11,7 +11,7 @@ Router.route('/sys/accessLogList')
 });
 Router.route('/sys/accessLogDetailList')
   .get(function(request, response) {
-    let protocal = Util.Protocal();
+    let protocal = Common.Protocal();
     protocal.head.status = 200;
     protocal.head.message = 'http response sucess';
     protocal.body = Common.Json('admin/log/accessLogDetailList.json');
