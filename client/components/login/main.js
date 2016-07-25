@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Row, Col, Form, Input, Button, Radio } from 'antd'
 import { Url, Fetch, Validator } from '../../common/http'
 import LoginForm from './login-form'
-import * as actionCreators from '../../fluxes/actions/login'
+import * as actionCreators from '../../fluxes/login'
 
 function mapStateToProps(state) {
   return {

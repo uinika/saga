@@ -7,7 +7,7 @@ import { Url, Fetch, Validator } from '../../common/http'
 import _ from 'lodash';
 import MenuTree from './menu-tree'
 import Avatar from './avatar'
-import * as actionCreators from '../../fluxes/actions/frame'
+import * as actionCreators from '../../fluxes/frame'
 
 function mapStateToProps(state) {
   return {

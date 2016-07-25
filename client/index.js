@@ -11,9 +11,9 @@ import Login from './components/login/main'
 import Frame from './components/frame/main'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
-import login from './fluxes/reducers/login'
-import frame from './fluxes/reducers/frame'
-import user from './fluxes/reducers/admin/user'
+import login from './fluxes/login'
+import frame from './fluxes/frame'
+import user from './fluxes/admin/user'
 
 const store = createStore(
   combineReducers({

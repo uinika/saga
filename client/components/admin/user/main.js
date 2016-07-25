@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actionCreators from '../../../fluxes/actions/admin/user'
+import * as actionCreators from '../../../fluxes/admin/user'
 import Path from './path'
 import Filter from './filter'
 import Access from './access'

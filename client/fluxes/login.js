@@ -1,7 +1,23 @@
 import { createAction } from 'redux-actions'
-import { Url, Fetch, Validator } from '../../common/http'
+import { Url, Fetch, Validator } from '../common/http'
 import { push } from 'react-router-redux'
+import { handleAction, handleActions } from 'redux-actions'
 
+/** ========== Reducer ========== */
+export default handleActions({
+  'LAUNCH_LOGIN': (state = {}, action) => ({
+    user: action.payload
+  }),
+  'GET_VALIDATE_CODE': (state = {}, action) => ({
+    validatecode: action.payload
+  })
+}, {
+  user: {},
+  validatecode: ''
+});
+
+
+/** ========== Action Creator ========== */
 export function launchLogin(httpParam) {
   return function(dispatch) {
     Fetch({

@@ -1,6 +1,22 @@
 import { createAction } from 'redux-actions'
-import { Fetch, Validator } from '../../../common/http'
+import { Fetch, Validator } from '../../common/http'
+import { handleActions } from 'redux-actions'
 
+/** ========== Reducer ========== */
+export default handleActions({
+  'FIND_USER': (state = {}, action) => ({
+    list: action.payload
+  }),
+  'TOGGLE_MODAL': (state = {}, action) => ({
+    modal: action.payload
+  })
+}, {
+  list: [],
+  modal: false
+})
+
+
+/** ========== Action Creator ========== */
 export let findUser = createAction('FIND_USER', async httpParam => {
   let data = await Fetch({
     url: '/sys/accounts',
