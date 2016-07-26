@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actionCreators from '../../../fluxes/admin/user'
+import * as actionCreators from '../../../fluxes/admin/user/action'
 import Path from './path'
 import Filter from './filter'
 import Access from './access'
@@ -13,22 +13,24 @@ import AuthModal from './modal/auth'
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    state: state.user
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
+  return {
+    dispatch: bindActionCreators(actionCreators, dispatch)
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   React.createClass({
     childContextTypes: {
-      container: React.PropTypes.object
+      user: React.PropTypes.object
     },
     getChildContext: function() {
       return {
-        container: this.props
+        user: this.props
       }
     },
     render() {

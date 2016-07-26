@@ -4,19 +4,19 @@ import { CREATE, UPDATE, DETAIL, AUTH } from '../../../common/marker'
 
 export default React.createClass({
   contextTypes: {
-     container: React.PropTypes.object
+     user: React.PropTypes.object
   },
   showCreateModal() {
-    this.context.container.toggleCreateModal(true)
+    this.context.user.dispatch.toggleCreateModal(true)
   },
   showUpdateModal() {
-    this.context.container.toggleUpdateModal(true)
+    this.context.user.dispatch.toggleUpdateModal(true)
   },
   showDetailModal() {
-    this.context.container.toggleDetailModal(true)
+    this.context.user.dispatch.toggleDetailModal(true)
   },
   showAuthModal() {
-    this.context.container.toggleAuthModal(true)
+    this.context.user.dispatch.toggleAuthModal(true)
   },
   render() {
     return (

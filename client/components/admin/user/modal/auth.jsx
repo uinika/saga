@@ -3,7 +3,7 @@ import { Modal, Transfer, Button } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-     container: React.PropTypes.object
+     user: React.PropTypes.object
   },
   getInitialState() {
     return {
@@ -56,7 +56,7 @@ export default React.createClass({
       <span>
         <Modal
           title="授权用户"
-          visible={this.context.container.user.auth.modal}
+          visible={this.context.user.state.auth.modal}
           onOk={this.handleSubmit}
           onCancel={this.handleCancel}
           width={ 600 }

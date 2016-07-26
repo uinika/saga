@@ -11,6 +11,7 @@ const URL  = 'http://localhost:5002'
 // const URL = 'http://192.168.13.185:8080'
 /* 同源自动生成 */
 // const URL  = 'http://' + window.location.href.split('/')[2]
+
 exports.Url = URL;
 
 exports.Fetch = (options) => {

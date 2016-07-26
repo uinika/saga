@@ -3,7 +3,7 @@ import { Modal } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-     container: React.PropTypes.object
+     user: React.PropTypes.object
   },
   componentWillMount: function(){
 
@@ -23,9 +23,9 @@ export default React.createClass({
       <span>
         <Modal
           title="用户详情"
-          visible={this.context.container.user.detail.modal}
-          onOk={this.handleSubmit}
-          onCancel={this.handleCancel}
+          visible = {this.context.user.state.detail.modal}
+          onOk = {this.handleSubmit}
+          onCancel = {this.handleCancel}
         >
           <table>
             <tbody>

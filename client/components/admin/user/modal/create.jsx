@@ -4,15 +4,15 @@ import { Modal, Input, Form } from 'antd'
 export default Form.create()(
   React.createClass({
     contextTypes: {
-       container: React.PropTypes.object
+       user: React.PropTypes.object
     },
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
-      this.context.container.createUser(httpParam)
-      this.context.container.toggleCreateModal(false)
+      this.context.user.dispatch.createUser(httpParam)
+      this.context.user.dispatch.toggleCreateModal(false)
     },
     handleCancel(event) {
-      this.context.container.toggleCreateModal(false)
+      this.context.user.dispatch.toggleCreateModal(false)
     },
     render() {
       const { getFieldProps } = this.props.form
@@ -20,7 +20,7 @@ export default Form.create()(
         <span>
           <Modal
             title="新建用户"
-            visible={this.context.container.user.create.modal}
+            visible={this.context.user.state.create.modal}
             onOk={this.handleSubmit}
             onCancel={this.handleCancel}
           >

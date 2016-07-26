@@ -13,7 +13,7 @@ import 'antd/dist/antd.min.css'
 import './styles/main.less'
 import login from './fluxes/login'
 import frame from './fluxes/frame'
-import user from './fluxes/admin/user'
+import user from './fluxes/admin/user/reducer'
 
 const store = createStore(
   combineReducers({

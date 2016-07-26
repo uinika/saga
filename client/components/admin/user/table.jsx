@@ -3,14 +3,14 @@ import { Table } from 'antd';
 
 export default React.createClass({
   contextTypes: {
-     container: React.PropTypes.object
+     user: React.PropTypes.object
   },
   componentDidMount() {
     let queryString = {
       current: 1,
       pageSize: 12
     };
-    this.context.container.findUser(queryString)
+    this.context.user.dispatch.findUser(queryString)
   },
   columns(){
     return [{
@@ -58,7 +58,7 @@ export default React.createClass({
     return (
       <span className='buttons'>
         <Table
-          dataSource = { this.context.container.user.find }
+          dataSource = { this.context.user.state.find.list }
           rowSelection = { this.rowSelection() }
           columns = { this.columns() }
           pagination = { this.pagination() }
