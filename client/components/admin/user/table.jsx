@@ -58,7 +58,7 @@ export default React.createClass({
     return (
       <span className='buttons'>
         <Table
-          dataSource = { this.context.container.user.list }
+          dataSource = { this.context.container.user.find }
           rowSelection = { this.rowSelection() }
           columns = { this.columns() }
           pagination = { this.pagination() }
