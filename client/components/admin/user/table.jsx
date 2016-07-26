@@ -48,7 +48,7 @@ export default React.createClass({
   rowSelection(){
     return {
       onSelect : (record, selected, selectedRows) => {
-        console.log(this.props.users);
+        this.context.container.selectTargetRow(record)
       },
       onSelectAll: (selected, selectedRows, changeRows) => {
       }

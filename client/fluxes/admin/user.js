@@ -16,6 +16,10 @@ export default handleActions({
     ...state,
     update: action.payload
   }),
+  'SELECT_TARGET_ROW': (state = {}, action) => ({
+    ...state,
+    update: action.payload
+  }),
   'TOGGLE_DETAIL_MODAL': (state = {}, action) => ({
     ...state,
     detail: action.payload
@@ -30,7 +34,8 @@ export default handleActions({
     modal: false
   },
   update: {
-    modal: false
+    modal: false,
+    target: {}
   },
   detail: {
     modal: false
@@ -79,6 +84,9 @@ export const updateUser = createAction('UPDATE_USER', async httpParam => {
 })
 export const toggleUpdateModal = createAction('TOGGLE_UPDATE_MODAL', visible => (
   { modal: visible }
+))
+export const selectTargetRow = createAction('SELECT_TARGET_ROW', target => (
+  {target: target}
 ))
 // Detail
 export const toggleDetailModal = createAction('TOGGLE_DETAIL_MODAL', visible => (
