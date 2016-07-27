@@ -6,10 +6,7 @@ import Path from './path'
 import Filter from './filter'
 import Access from './access'
 import Table from './table'
-import CreateModal from './modal/create'
-import UpdateModal from './modal/update'
-import DetailModal from './modal/detail'
-import AuthModal from './modal/auth'
+
 
 function mapStateToProps(state) {
   return {
@@ -48,10 +45,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           <section className='table'>
             <Table />
           </section>
-          <CreateModal />
-          <UpdateModal />
-          <DetailModal />
-          <AuthModal />
         </div>
       );
     }

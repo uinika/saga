@@ -1,7 +1,7 @@
 const Webpack = require('webpack'),
       Path = require('path');
 // Configration for development
-exports.development = {
+exports.Development = {
   context: Path.resolve(__dirname, 'client'),
   entry: {
     index: ['webpack-dev-server/client?http://localhost:5000/', 'webpack/hot/dev-server', './index.js']
@@ -34,16 +34,13 @@ exports.development = {
       test: /\.less$/,
       loader: 'style!css!less'
     }, {
-      test: require.resolve('jquery'),
-      loader: 'expose?$!expose?jQuery'
-    }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
       loader: 'url-loader?limit=10240'
     }]
   }
 }
-// Configration for distribution
-exports.distribution = {
+// Configration for production
+exports.Production = {
   context: Path.resolve(__dirname, 'client'),
   entry: {
     index: ['./index.js']
@@ -62,6 +59,11 @@ exports.distribution = {
       mangle: {
           except: ['$super', '$', 'exports', 'require']
       }
+    }),
+    new Webpack.DefinePlugin({
+      "process.env": {
+         NODE_ENV: JSON.stringify("production")
+       }
     })
   ],
   module: {
@@ -70,8 +72,8 @@ exports.distribution = {
       exclude: [/(node_modules)/],
       loader: 'babel-loader',
       query: {
-        presets: ['react', 'es2015'],
-        plugins: ['antd', 'transform-object-rest-spread']
+        presets: ['react', 'es2015', 'stage-0', 'stage-1', 'stage-2', 'stage-3'],
+        plugins: ['antd']
       }
     }, {
       test: /\.css$/,
@@ -79,9 +81,6 @@ exports.distribution = {
     }, {
       test: /\.less$/,
       loader: 'style!css!less'
-    }, {
-      test: require.resolve('jquery'),
-      loader: 'expose?$!expose?jQuery'
     }, {
       test: /\.(png|jpg|woff|woff2|ttf)$/,
       loader: 'url-loader?limit=1024'

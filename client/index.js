@@ -11,8 +11,8 @@ import Login from './components/login/main'
 import Frame from './components/frame/main'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
-import login from './fluxes/login'
-import frame from './fluxes/frame'
+import login from './fluxes/login/reducer'
+import frame from './fluxes/frame/reducer'
 import user from './fluxes/admin/user/reducer'
 
 const store = createStore(

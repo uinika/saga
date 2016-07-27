@@ -5,6 +5,7 @@ const Express = require('express'),
       Common = require('./common.js'),
       Url = '/';
 
+/** Middleware */
 App.use('/client', Express.static('./client'));
 App.use(Cors({
   origin: 'http://localhost:5000',
@@ -22,6 +23,6 @@ App.listen(5002);
 console.info('Server started http://localhost:5002' + Url);
 
 /** Basic config for express */
-App.use(Url, require('./login/api')); // Login
-App.use(Url, require('./frame/api')); // Dashboard
-App.use(Url, require('./admin/user/api')); // Admin
+App.use(Url, require('./login/api'));
+App.use(Url, require('./frame/api'));
+App.use(Url, require('./admin/user/api'));

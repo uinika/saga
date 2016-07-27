@@ -4,10 +4,9 @@ import {Link} from 'react-router'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Url, Fetch, Validator } from '../../common/http'
-import _ from 'lodash';
 import MenuTree from './menu-tree'
 import Avatar from './avatar'
-import * as actionCreators from '../../fluxes/frame'
+import * as actionCreators from '../../fluxes/frame/action'
 
 function mapStateToProps(state) {
   return {

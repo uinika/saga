@@ -10,24 +10,24 @@
     "loginName": "admin",
     "realName": "测试人员",
     "state": "1",
-    "tel": null,
-    "email": null,
+    "tel": 13198554698,
+    "email": "demo@chinawiserv.com",
     "stateName": "激活"
   }, {
     "accountId": "ACCOUNT0-0000-0000-0000-000000000000",
     "loginName": "hank",
     "realName": "系统管理员",
     "state": "0",
-    "tel": null,
-    "email": null,
+    "tel": "028-229339719",
+    "email": "admin@chinawiserv.com",
     "stateName": "未激活"
   }, {
     "accountId": "ACCOUNT0-0000-0000-0000-000000000015",
     "loginName": "uinika",
     "realName": "开发人员",
     "state": "1",
-    "tel": null,
-    "email": null,
+    "tel": 18536591875,
+    "email": "test@chinawiserv.com",
     "stateName": "激活"
   }]
 }

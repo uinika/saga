@@ -8,7 +8,7 @@ const Gulp = require('gulp'),
 Gulp.task('default', ['client', 'server']);
 // gulp client
 Gulp.task('client', function(callback) {
-  let compiler = Webpack(WebpackConfig.development);
+  let compiler = Webpack(WebpackConfig.Development);
   let server = new WebpackDevServer(compiler, {
     hot: true,
     publicPath: '/app/',
@@ -28,7 +28,7 @@ Gulp.task('server', function() {
 Gulp.task('build', function() {
   Gulp.src(['./client/index.html'])
       .pipe(Gulp.dest('./build'));
-  var compiler = Webpack(WebpackConfig.distribution);
+  var compiler = Webpack(WebpackConfig.Production);
   compiler.run(function(err, stats) {
     console.error(err);
     console.info(stats);

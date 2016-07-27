@@ -8,7 +8,7 @@ export default Form.create()(
     },
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
-
+      this.context.user.dispatch.updateUser(httpParam);
       this.context.user.dispatch.toggleUpdateModal(false)
     },
     handleCancel(event) {
@@ -16,6 +16,7 @@ export default Form.create()(
     },
     render() {
       const { getFieldProps } = this.props.form
+      const target = this.context.user.state.update.target
       return (
         <span>
           <Modal
@@ -26,22 +27,20 @@ export default Form.create()(
           >
           <Form inline form={this.props.form}>
             <Form.Item label="登陆名称">
-              <Input placeholder="请输入账户名" {...getFieldProps('loginName')} />
+              <Input placeholder="请输入账户名"
+                {...getFieldProps('loginName', {initialValue: target.loginName})} />
             </Form.Item>
             <Form.Item label="真实姓名">
-              <Input placeholder="请输入账户名" {...getFieldProps('realName')} />
-            </Form.Item>
-            <Form.Item label="登陆密码">
-              <Input placeholder="请输入账户名" {...getFieldProps('password')} />
-            </Form.Item>
-            <Form.Item label="确认密码">
-              <Input placeholder="请输入账户名" {...getFieldProps('rePassword')} />
+              <Input placeholder="请输入账户名"
+                {...getFieldProps('realName', {initialValue: target.realName})} />
             </Form.Item>
             <Form.Item label="联系电话">
-              <Input placeholder="请输入账户名" {...getFieldProps('tel')} />
+              <Input placeholder="请输入账户名"
+                {...getFieldProps('tel', {initialValue: target.tel})} />
             </Form.Item>
             <Form.Item label="电子邮箱">
-              <Input placeholder="请输入账户名" {...getFieldProps('email')} />
+              <Input placeholder="请输入账户名"
+                {...getFieldProps('email', {initialValue: target.email})} />
             </Form.Item>
           </Form>
           </Modal>
