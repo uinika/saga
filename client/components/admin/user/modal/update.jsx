@@ -1,19 +1,18 @@
 import React from 'react'
 import { Modal, Input, Form } from 'antd'
-import { CREATE, UPDATE, DETAIL, AUTH } from '../../../../common/marker'
 
 export default Form.create()(
   React.createClass({
     contextTypes: {
-       container: React.PropTypes.object
+       user: React.PropTypes.object
     },
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
-      this.context.container.createUser(httpParam)
-      this.context.container.toggleCreateModal(false)
+
+      this.context.user.dispatch.toggleUpdateModal(false)
     },
     handleCancel(event) {
-      this.context.container.toggleCreateModal(false)
+      this.context.user.dispatch.toggleUpdateModal(false)
     },
     render() {
       const { getFieldProps } = this.props.form
@@ -21,7 +20,7 @@ export default Form.create()(
         <span>
           <Modal
             title="修改用户"
-            visible={this.context.container.user.create.modal}
+            visible={this.context.user.state.update.modal}
             onOk={this.handleSubmit}
             onCancel={this.handleCancel}
           >

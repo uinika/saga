@@ -49,7 +49,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             <Table />
           </section>
           <CreateModal />
-          <CreateModal />
+          <UpdateModal />
           <DetailModal />
           <AuthModal />
         </div>

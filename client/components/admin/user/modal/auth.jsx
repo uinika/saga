@@ -44,11 +44,10 @@ export default React.createClass({
     );
   },
   handleSubmit() {
-    //
-    this.context.container.toggleAuthModal(false)
+    this.context.user.dispatch.toggleAuthModal(false)
   },
   handleCancel(event) {
-    this.context.container.toggleAuthModal(false)
+    this.context.user.dispatch.toggleAuthModal(false)
   },
   render() {
 

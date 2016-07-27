@@ -12,11 +12,10 @@ export default React.createClass({
 
   },
   handleSubmit() {
-    //
-    this.context.container.toggleDetailModal(false)
+    this.context.user.dispatch.toggleDetailModal(false)
   },
   handleCancel(event) {
-    this.context.container.toggleDetailModal(false)
+    this.context.user.dispatch.toggleDetailModal(false)
   },
   render() {
     return (
