@@ -41,22 +41,23 @@ exports.Fetch = (options) => {
 }
 
 exports.Validator = (data, status) => {
+  let resolve = (code) => (data && data.head && data.head.status === code)
   switch(status) {
     case 200:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 201:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 202:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 400:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 404:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 405:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 415:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
     case 500:
-      return (data && data.head && data.head.status === status); break;
+      return (resolve(status)); break;
   }
 }

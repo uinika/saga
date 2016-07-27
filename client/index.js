@@ -7,8 +7,8 @@ import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-rou
 import thunkMiddleware from 'redux-thunk'
 import promiseMiddleware from 'redux-promise'
 import 'babel-polyfill'
-import Login from './components/login/main'
-import Frame from './components/frame/main'
+import Login from './components/login'
+import Frame from './components/frame'
 import 'antd/dist/antd.min.css'
 import './styles/main.less'
 import login from './fluxes/login/reducer'
@@ -41,23 +41,23 @@ ReactDom.render((
       {/* Frame */}
       <Route path='/frame' component={Frame}>
         <Route path='dashboard' getComponent={(nextState, callback) => {
-          require.ensure([], (require) => {callback(null, require('./components/dashboard/main').default)})
+          require.ensure([], (require) => {callback(null, require('./components/dashboard').default)})
         }} />
         <Route path='admin'>
           <Route path='log' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/log/main').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/log').default)})
           }} />
           <Route path='menu' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/menu/main').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/menu').default)})
           }} />
           <Route path='module' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/module/main').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/module').default)})
           }} />
           <Route path='role' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/role/main').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/role').default)})
           }} />
           <Route path='user' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/user/main').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/user').default)})
           }} />
         </Route>
       </Route>
