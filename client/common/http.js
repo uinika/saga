@@ -1,7 +1,6 @@
-import _ from 'lodash';
-import 'whatwg-fetch';
-import QueryString from 'query-string';
-import SuperAgent from 'superagent';
+import 'whatwg-fetch'
+import QueryString from 'query-string'
+import _ from 'lodash'
 
 /* 本机 */
 const URL  = 'http://localhost:5002'
@@ -12,7 +11,7 @@ const URL  = 'http://localhost:5002'
 /* 同源自动生成 */
 // const URL  = 'http://' + window.location.href.split('/')[2]
 
-exports.Url = URL;
+exports.Url = URL
 
 exports.Fetch = (options) => {
   let header = {
@@ -39,10 +38,6 @@ exports.Fetch = (options) => {
     })
     .then(result => result.json());
   }
-};
-
-exports.Xhr = () => {
-
 }
 
 exports.Validator = (data, status) => {
