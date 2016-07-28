@@ -2,12 +2,18 @@ import { handleActions } from 'redux-actions'
 import { combineReducers } from 'redux'
 
 /* Selected */
-export const target = handleActions({
-  'USER_SELECT_TARGET': (state = {}, action) => (
-    action.payload
-  )
+export const select = handleActions({
+  'USER_SELECT_SINGLE': (state = {}, action) => ({
+    ...state,
+    single: action.payload
+  }),
+  'USER_SELECT_MULTIPLE': (state = {}, action) => ({
+    ...state,
+    multiple: action.payload
+  })
 }, {
-  target: []
+  single: {},
+  multiple: []
 })
 
 /* Find */
@@ -45,9 +51,14 @@ export const detail = handleActions({
   'USER_DETAIL_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
+  }),
+  'USER_DETAIL': (state = {}, action) => ({
+    ...state,
+    target: action.payload
   })
 }, {
-  modal: false
+  modal: false,
+  target: []
 })
 
 /* Auth */
@@ -61,7 +72,7 @@ export const auth = handleActions({
 })
 
 export default combineReducers({
-  target,
+  select,
   find,
   create,
   update,

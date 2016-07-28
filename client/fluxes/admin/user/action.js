@@ -2,7 +2,8 @@ import { createAction } from 'redux-actions'
 import { Fetch, Validator } from '../../../common/http'
 
 /* Selected */
-export const userSelectTarget = createAction('USER_SELECT_TARGET')
+export const userSelectSingle = createAction('USER_SELECT_SINGLE')
+export const userSelectMultiple = createAction('USER_SELECT_MULTIPLE')
 
 /* Find */
 export const userFind = createAction('USER_FIND', async httpParam => {

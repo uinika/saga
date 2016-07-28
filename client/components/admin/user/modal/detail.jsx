@@ -5,12 +5,6 @@ export default React.createClass({
   contextTypes: {
      user: React.PropTypes.object
   },
-  componentWillMount: function(){
-
-  },
-  componentDidMount: function(){
-
-  },
   handleSubmit() {
     this.context.user.dispatch.userDetailModal(false)
   },
@@ -18,6 +12,21 @@ export default React.createClass({
     this.context.user.dispatch.userDetailModal(false)
   },
   render() {
+    let userInfo = this.context.user.state.detail.target[0]
+    if(userInfo){
+      var userInfoList = (
+        <tbody>
+          <tr>
+            <td>{userInfo.loginName}</td>
+            <td>{userInfo.realName}</td>
+          </tr>
+          <tr>
+            <td>{userInfo.stateName}</td>
+            <td>{userInfo.roleNames}</td>
+          </tr>
+        </tbody>
+      )
+    }
     return (
       <span>
         <Modal
@@ -27,12 +36,7 @@ export default React.createClass({
           onCancel = {this.handleCancel}
         >
           <table>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-              </tr>
-            </tbody>
+            {userInfoList}
           </table>
         </Modal>
       </span>

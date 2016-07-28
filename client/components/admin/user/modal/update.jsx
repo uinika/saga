@@ -16,7 +16,7 @@ export default Form.create()(
     },
     render() {
       const { getFieldProps } = this.props.form
-      const target = this.context.user.state.target
+      const target = this.context.user.state.select.single
       return (
         <span>
           <Modal
