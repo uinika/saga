@@ -8,15 +8,15 @@ export default Form.create()(
     },
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
-      this.context.user.dispatch.updateUser(httpParam);
-      this.context.user.dispatch.toggleUpdateModal(false)
+      this.context.user.dispatch.userUpdate(httpParam);
+      this.context.user.dispatch.userUpdateModal(false)
     },
     handleCancel(event) {
-      this.context.user.dispatch.toggleUpdateModal(false)
+      this.context.user.dispatch.userUpdateModal(false)
     },
     render() {
       const { getFieldProps } = this.props.form
-      const target = this.context.user.state.update.target
+      const target = this.context.user.state.target
       return (
         <span>
           <Modal

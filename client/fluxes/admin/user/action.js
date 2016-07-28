@@ -1,8 +1,11 @@
 import { createAction } from 'redux-actions'
 import { Fetch, Validator } from '../../../common/http'
 
+/* Selected */
+export const userSelectTarget = createAction('USER_SELECT_TARGET')
+
 /* Find */
-export const findUser = createAction('FIND_USER', async httpParam => {
+export const userFind = createAction('USER_FIND', async httpParam => {
   const data = await Fetch({
     url: '/sys/accounts',
     method: 'GET',
@@ -14,7 +17,8 @@ export const findUser = createAction('FIND_USER', async httpParam => {
 })
 
 /* Create */
-export const createUser = createAction('CREATE_USER', async httpParam => {
+export const userCreateModal = createAction('USER_CREATE_MODAL')
+export const userCreate = createAction('USER_CREATE', async httpParam => {
   const data = await Fetch({
     url: '/sys/account',
     method: 'POST',
@@ -24,12 +28,10 @@ export const createUser = createAction('CREATE_USER', async httpParam => {
     return data.body
   }
 })
-export const toggleCreateModal = createAction('TOGGLE_CREATE_MODAL')
 
 /* Update */
-export const toggleUpdateModal = createAction('TOGGLE_UPDATE_MODAL')
-export const selectTargetRow = createAction('SELECT_TARGET_ROW')
-export const updateUser = createAction('UPDATE_USER', async httpParam => {
+export const userUpdateModal = createAction('USER_UPDATE_MODAL')
+export const userUpdate = createAction('USER_UPDATE', async httpParam => {
   const data = await Fetch({
     url: '/sys/account',
     method: 'PUT',
@@ -41,7 +43,16 @@ export const updateUser = createAction('UPDATE_USER', async httpParam => {
 })
 
 /* Detail */
-export const toggleDetailModal = createAction('TOGGLE_DETAIL_MODAL')
+export const userDetailModal = createAction('USER_DETAIL_MODAL')
+export const userDetail = createAction('USER_DETAIL', async pathParam => {
+  const data = await Fetch({
+    url: '/sys/account/' + pathParam,
+    method: 'GET'
+  });
+  if(Validator(data, 200)){
+    return data.body
+  }
+})
 
 /* Auth */
-export const toggleAuthModal = createAction('TOGGLE_AUTH_MODAL')
+export const userAuthModal = createAction('USER_AUTH_MODAL')

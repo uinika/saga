@@ -10,7 +10,7 @@ export default React.createClass({
       current: 1,
       pageSize: 12
     };
-    this.context.user.dispatch.findUser(queryString)
+    this.context.user.dispatch.userFind(queryString)
   },
   columns(){
     return [{
@@ -48,7 +48,7 @@ export default React.createClass({
   rowSelection(){
     return {
       onSelect : (record, selected, selectedRows) => {
-        this.context.user.dispatch.selectTargetRow(record)
+        this.context.user.dispatch.userSelectTarget(record)
       },
       onSelectAll: (selected, selectedRows, changeRows) => {
       }

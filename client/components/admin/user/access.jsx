@@ -9,31 +9,19 @@ export default React.createClass({
   contextTypes: {
      user: React.PropTypes.object
   },
-  showCreateModal() {
-    this.context.user.dispatch.toggleCreateModal(true)
-  },
-  showUpdateModal() {
-    this.context.user.dispatch.toggleUpdateModal(true)
-  },
-  showDetailModal() {
-    this.context.user.dispatch.toggleDetailModal(true)
-  },
-  showAuthModal() {
-    this.context.user.dispatch.toggleAuthModal(true)
-  },
   render() {
     return (
       <span className='buttons'>
-        <Button type='ghost' onClick = { this.showCreateModal }>
+        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userCreateModal(true)}}>
           <Icon type='plus' />新建
         </Button>
-        <Button type='ghost' onClick = { this.showUpdateModal }>
+        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userUpdateModal(true)}}>
           <Icon type='edit' />修改
         </Button>
-        <Button type='ghost' onClick = { this.showDetailModal }>
+        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userDetailModal(true)}}>
           <Icon type='book' />详情
         </Button>
-        <Button type='ghost' onClick = { this.showAuthModal }>
+        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userAuthModal(true)}}>
           <Icon type='lock' />授权
         </Button>
         <CreateModal />
