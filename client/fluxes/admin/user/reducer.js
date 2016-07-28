@@ -21,9 +21,14 @@ export const find = handleActions({
   'USER_FIND': (state = {}, action) => ({
     ...state,
     list: action.payload
-  })
+  }),
+  'USER_FIND_FILTER': (state = {}, action) => ({
+    ...state,
+    filter: action.payload
+  }),
 }, {
-  list: []
+  list: [],
+  filter: {}
 })
 
 /* Create */
@@ -48,13 +53,13 @@ export const update = handleActions({
 
 /* Detail */
 export const detail = handleActions({
-  'USER_DETAIL_MODAL': (state = {}, action) => ({
-    ...state,
-    modal: action.payload
-  }),
   'USER_DETAIL': (state = {}, action) => ({
     ...state,
     target: action.payload
+  }),
+  'USER_DETAIL_MODAL': (state = {}, action) => ({
+    ...state,
+    modal: action.payload
   })
 }, {
   modal: false,

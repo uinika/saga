@@ -6,6 +6,7 @@ export const userSelectSingle = createAction('USER_SELECT_SINGLE')
 export const userSelectMultiple = createAction('USER_SELECT_MULTIPLE')
 
 /* Find */
+export const userFindFilter = createAction('USER_FIND_FILTER')
 export const userFind = createAction('USER_FIND', async httpParam => {
   const data = await Fetch({
     url: '/sys/accounts',
