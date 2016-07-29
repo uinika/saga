@@ -46,9 +46,14 @@ ReactDom.render((
           require.ensure([], (require) => {callback(null, require('./components/dashboard').default)})
         }} />
         <Route path='admin'>
-          <Route path='log' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/log/overview').default)})
-          }} />
+          <Router path='log'>
+            <Route path='summary' getComponent={(nextState, callback) => {
+              require.ensure([], (require) => {callback(null, require('./components/admin/log/summary').default)})
+            }} />
+            <Route path='detail/:loginName' getComponent={(nextState, callback) => {
+              require.ensure([], (require) => {callback(null, require('./components/admin/log/detail').default)})
+            }} />
+          </Router>
           <Route path='menu' getComponent={(nextState, callback) => {
             require.ensure([], (require) => {callback(null, require('./components/admin/menu').default)})
           }} />

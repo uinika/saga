@@ -15,7 +15,7 @@ export default React.createClass({
   columns(){
     return [{
         title: '序号',
-        dataIndex: 'accountId',
+        render: (text, record, index) => (++index)
       }, {
         title: '登陆名称',
         dataIndex: 'loginName',

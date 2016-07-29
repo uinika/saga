@@ -7,9 +7,21 @@
   },
   "body": [{
     "loginName": "admin",
+    "maxDate": "2013-04-09 17:46:29",
+    "maxIp": "122.115.0.13",
+    "todayAmount": 537,
+    "amount": 11
+  }, {
+    "loginName": "Hank",
     "maxDate": "2016-07-14 17:46:29",
-    "maxIp": "172.16.0.94",
-    "todayAmount": 222,
-    "amount": 225
+    "maxIp": "194.16.55.94",
+    "todayAmount": 435,
+    "amount": 89
+  }, {
+    "loginName": "uinika",
+    "maxDate": "2006-03-07 19:55:03",
+    "maxIp": "172.9.6.94",
+    "todayAmount": 56,
+    "amount": 56875
   }]
 }

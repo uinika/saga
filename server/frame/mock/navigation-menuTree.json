@@ -31,7 +31,7 @@
     "parentId": "MENU0000-1000-0000-0000-000000000000",
     "menuName": "访问日志",
     "hint": "访问日志查询",
-    "entryURL": "/frame/admin/log",
+    "entryURL": "/frame/admin/log/summary",
     "icon": "info"
   }]
 }]

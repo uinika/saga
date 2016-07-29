@@ -1,16 +1,25 @@
 import React from 'react';
+import { Breadcrumb, Icon } from 'antd'
 
-class AdminModule extends React.Component {
+export default React.Component ({
   componentDidMount() {
-    console.log('AdminModule');
-  };
+    // console.log('AdminModule');
+  },
   render() {
     return (
       <div id='admin-module'>
-        <h1>AdminModule</h1>
+        <Breadcrumb>
+          <Breadcrumb.Item>
+            <Icon type="home" />
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            系统管理
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            模块管理
+          </Breadcrumb.Item>
+        </Breadcrumb>
       </div>
     );
   }
-};
-
-export default AdminModule;
+})

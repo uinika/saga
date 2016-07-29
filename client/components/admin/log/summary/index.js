@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actionCreators from '../../../../fluxes/admin/log/overview/action'
+import * as actionCreators from '../../../../fluxes/admin/log/summary/action'
 import List from './main'
 
 function mapStateToProps(state) {
   return {
-    state: state.logList
+    state: state.log.summary
   }
 }
 
@@ -19,11 +19,11 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(
   React.createClass({
     childContextTypes: {
-      logList: React.PropTypes.object
+      log: React.PropTypes.object
     },
     getChildContext: function() {
       return {
-        logList: this.props
+        log: this.props
       }
     },
     render() {

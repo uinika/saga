@@ -1,21 +1,15 @@
 const Router = require('express').Router(),
       Common = require('../../common.js');
-/** Router definition */
-Router.route('/sys/accessLogList')
+
+// 日志统计列表 -- 获取所有用户的访问日志统计信息列表页面
+Router.route('/sys/logs')
   .get(function(request, response) {
-    let protocal = Common.Protocal();
-    protocal.head.status = 200;
-    protocal.head.message = 'http response sucess';
-    protocal.body = Common.Json('admin/log/accessLogList.json');
-    response.json(protocal);
+    response.json(Common.Json('/admin/log/mock/sys-logs.json'));
 });
-Router.route('/sys/accessLogDetailList')
+// 查看日志详情 -- 获取指定用户的访问日志详情
+Router.route('/sys/logs/:loginName')
   .get(function(request, response) {
-    let protocal = Common.Protocal();
-    protocal.head.status = 200;
-    protocal.head.message = 'http response sucess';
-    protocal.body = Common.Json('admin/log/accessLogDetailList.json');
-    response.json(protocal);
+    response.json(Common.Json('/admin/log/mock/sys-logs-{loginName}.json'));
 });
-/** Module export */
+
 module.exports = Router;

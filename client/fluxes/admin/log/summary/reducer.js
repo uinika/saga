@@ -3,11 +3,11 @@ import { handleActions } from 'redux-actions'
 
 /* Find */
 export const find = handleActions({
-  'LOG_FIND': (state = {}, action) => ({
+  'LOG_SUMMARY_FIND': (state = {}, action) => ({
     ...state,
     list: action.payload
   }),
-  'LOG_FIND_FILTER': (state = {}, action) => ({
+  'LOG_SUMMARY_FIND_FILTER': (state = {}, action) => ({
     ...state,
     filter: action.payload
   }),

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import overview from './overview/reducer'
+import summary from './summary/reducer'
 
 export default combineReducers({
-  overview
+  summary
 })

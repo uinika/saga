@@ -1,5 +1,6 @@
-import React from 'react';
-import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, DatePicker} from 'antd';
+import React from 'react'
+import { Link } from 'react-router'
+import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, DatePicker} from 'antd'
 
 export default React.createClass ({
   componentDidMount() {
@@ -60,7 +61,7 @@ export default React.createClass ({
       },
     };
     return (
-      <div id='admin-log'>
+      <div id='admin-log-detail'>
         <sction className='path wiserv-ui'>
           <Breadcrumb>
             <Breadcrumb.Item>
@@ -70,7 +71,10 @@ export default React.createClass ({
               系统管理
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-              日志管理
+              <Link to={'/frame/admin/log/summary'}>访问日志</Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              日志详情
             </Breadcrumb.Item>
           </Breadcrumb>
         </sction>

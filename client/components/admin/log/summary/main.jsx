@@ -1,30 +1,58 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { Breadcrumb, Icon, Input, Form, Button, Table } from 'antd'
 
 export default Form.create({})(
   React.createClass({
     contextTypes: {
-       logList: React.PropTypes.object
+       log: React.PropTypes.object
+    },
+    componentDidMount() {
+      let queryString = {
+        current: 1,
+        pageSize: 12
+      };
+      this.context.log.dispatch.logSummaryFind(queryString)
+    },
+    handleFind() {
+      let loginName = this.props.form.getFieldValue('loginName')
+      if(loginName) {
+        console.log(loginName);
+        this.context.log.dispatch.logSummaryFindFilter(loginName)
+        let queryString = {
+          current: 1,
+          pageSize: 12,
+          loginName: loginName
+        }
+        this.context.log.dispatch.logSummaryFind(queryString)
+      }
+
     },
     columns(){
       return [{
           title: '序号',
-          dataIndex: 'accountId',
+          render: (text, record, index) => (++index)
         }, {
           title: '登录名称',
           dataIndex: 'loginName',
         }, {
           title: '最后访问时间',
-          dataIndex: 'realName',
+          dataIndex: 'maxDate',
         }, {
           title: '最后访问IP',
-          dataIndex: 'stateName',
+          dataIndex: 'maxIp',
         }, {
           title: '今日访问次数',
-          dataIndex: 'tel',
+          dataIndex: 'todayAmount',
+          render: (text, record, index) => {
+            return <Link to={'/frame/admin/log/detail/${record.loginName}'}>{text}</Link>
+          }
         }, {
           title: '总访问次数',
-          dataIndex: 'email'
+          dataIndex: 'amount',
+          render: (text, record, index) => {
+            return <Link to={'/frame/admin/log/detail/${record.loginName}'}>{text}</Link>
+          }
       }]
     },
     pagination() {
@@ -66,7 +94,7 @@ export default Form.create({})(
           </section>
           <section className='table'>
             <Table
-              //dataSource = { this.context.logList.state.find.list }
+              dataSource = { this.context.log.state.find.list }
               columns = { this.columns() }
               pagination = { this.pagination() }
             />
