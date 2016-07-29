@@ -47,13 +47,12 @@
               position: relative;
               top: 0;
             }
-            .image {
+            .image>img {
               margin-left: 22px;
               display: inline-block;
               width: 80px;
               height: 33px;
               border: 1px solid @blue;
-              background-color:rgba(0, 0, 0, 0.5);
             }
             .switcher {
               margin-left: 20px;
@@ -90,8 +89,9 @@
             margin-left: 15px;
             width: 250px;
             height: 35px;
-            background: #0071D1;
-            border-color: #0071D1;
+            background: @blue;
+            border-color: @blue;
+            color: @white;
             letter-spacing: 7px;
           }
         }

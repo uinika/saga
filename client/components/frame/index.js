@@ -4,7 +4,7 @@ import {Link} from 'react-router'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Url, Fetch, Validator } from '../../common/http'
-import MenuTree from './menu-tree'
+import MenuTree from './menuTree'
 import Avatar from './avatar'
 import * as actionCreators from '../../fluxes/frame/action'
 

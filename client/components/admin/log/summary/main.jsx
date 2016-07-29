@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
+import QueryString from 'query-string'
+import Moment from 'moment'
 import { Breadcrumb, Icon, Input, Form, Button, Table } from 'antd'
 
 export default Form.create({})(
@@ -17,7 +19,6 @@ export default Form.create({})(
     handleFind() {
       let loginName = this.props.form.getFieldValue('loginName')
       if(loginName) {
-        console.log(loginName);
         this.context.log.dispatch.logSummaryFindFilter(loginName)
         let queryString = {
           current: 1,
@@ -26,7 +27,6 @@ export default Form.create({})(
         }
         this.context.log.dispatch.logSummaryFind(queryString)
       }
-
     },
     columns(){
       return [{
@@ -45,13 +45,21 @@ export default Form.create({})(
           title: '今日访问次数',
           dataIndex: 'todayAmount',
           render: (text, record, index) => {
-            return <Link to={'/frame/admin/log/detail/${record.loginName}'}>{text}</Link>
+            let httpQuery = record.loginName +'?'+ QueryString.stringify({
+              startTime: Moment().format('YYYY-MM-DD')+'00:00:00',
+              endTime: Moment().format('YYYY-MM-DD')+'23:59:59'
+            })
+            return (
+              <Link to={ '/frame/admin/log/detail/' + httpQuery }>
+                {text}
+              </Link>
+            )
           }
         }, {
           title: '总访问次数',
           dataIndex: 'amount',
           render: (text, record, index) => {
-            return <Link to={'/frame/admin/log/detail/${record.loginName}'}>{text}</Link>
+            return <Link to={'/frame/admin/log/detail/'+record.loginName}>{text}</Link>
           }
       }]
     },
@@ -86,8 +94,8 @@ export default Form.create({})(
           </section>
           <section className='filter'>
             <Form inline className='form'>
-              <Form.Item label='关键字'>
-                <Input placeholder='登陆名称' {...getFieldProps('loginName')} />
+              <Form.Item label='登陆名称'>
+                <Input placeholder='输入查询条件' {...getFieldProps('loginName')} />
               </Form.Item>
               <Button onClick={this.handleFind} type='ghost'>查询</Button>
             </Form>

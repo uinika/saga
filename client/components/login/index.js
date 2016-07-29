@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Row, Col, Form, Input, Button, Radio } from 'antd'
 import { Url, Fetch, Validator } from '../../common/http'
-import LoginForm from './login-form'
+import LoginForm from './loginForm'
 import * as actionCreators from '../../fluxes/login/action'
 
 function mapStateToProps(state) {

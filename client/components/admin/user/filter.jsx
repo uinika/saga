@@ -22,18 +22,18 @@ export default Form.create({})(
       const { getFieldProps } = this.props.form
       return (
         <div>
-          <span className='form1'>
+          <span className='form'>
             <Form inline>
               <Form.Item label='登陆名称'>
-                <Input placeholder='登陆名' {...getFieldProps('loginName')} />
+                <Input placeholder='输入查询条件' {...getFieldProps('loginName')} />
               </Form.Item>
               <Button onClick={this.handleFind} type='ghost'>查询</Button>
             </Form>
           </span>
-          <span className='form2'>
+          <span className='form'>
             <Form inline>
               <Form.Item label='用户状态'>
-                <Select {...getFieldProps('state')} defaultValue='1'>
+                <Select { ...getFieldProps('state', {initialValue: '1'}) }>
                   <Select.Option value='1'>激活</Select.Option>
                   <Select.Option value='0'>禁用</Select.Option>
                 </Select>

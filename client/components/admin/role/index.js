@@ -42,7 +42,7 @@ class AdminUser extends React.Component {
       },
     };
     return (
-      <div id='admin-user'>
+      <div id='admin-role'>
         <sction className='path wiserv-ui'>
           <Breadcrumb>
             <Breadcrumb.Item>
@@ -60,7 +60,7 @@ class AdminUser extends React.Component {
           <span className='form1'>
             <Form inline>
               <Form.Item label="角色名称">
-                <Input />
+                <Input placeholder='输入查询条件' />
               </Form.Item>
               <Button type="ghost" htmlType="submit">查询</Button>
             </Form>
@@ -68,10 +68,10 @@ class AdminUser extends React.Component {
         </section>
         <section className='operator wiserv-ui'>
           <span className='buttons'>
-            <Button type="ghost">新建</Button>
-            <Button type="ghost">修改</Button>
-            <Button type="ghost">详情</Button>
-            <Button type="ghost">授权</Button>
+            <Button type="ghost"><Icon type='plus' />新建</Button>
+            <Button type="ghost"><Icon type='edit' />修改</Button>
+            <Button type="ghost"><Icon type='book' />详情</Button>
+            <Button type="ghost"><Icon type='lock' />授权</Button>
           </span>
         </section>
         <section className='container wiserv-ui'>

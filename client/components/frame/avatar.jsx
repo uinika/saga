@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { Icon, Dropdown, Menu } from 'antd'
 
 export default React.createClass({
@@ -6,10 +7,7 @@ export default React.createClass({
     const menu = (
       <Menu>
         <Menu.Item key='0'>
-          <a target='_blank' href=''>管理员菜单项1</a>
-        </Menu.Item>
-        <Menu.Item key='1'>
-          <a target='_blank' href=''>管理员菜单项2</a>
+          <Link to={'/'}>退出系统</Link>
         </Menu.Item>
       </Menu>
     )
