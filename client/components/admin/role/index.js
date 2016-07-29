@@ -1,85 +1,51 @@
-import React from 'react';
-import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, Badge} from 'antd';
+import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from '../../../fluxes/admin/role/action'
+import Path from './path'
+import Filter from './filter'
+import Access from './access'
+import Table from './table'
 
-class AdminUser extends React.Component {
-  componentDidMount() {
-    console.log('AdminUser');
-  };
-  render() {
-    const columns = [{
-      title: '序号',
-      dataIndex: 'index',
-    }, {
-      title: '角色名称',
-      dataIndex: 'role_name',
-    }];
-    const data = [];
-    for (let i = 0; i < 46; i++) {
-      data.push({
-        index: i,
-        role_name: '数据采集员'
-      });
-    }
-    const pagination = {
-      total: data.length,
-      showSizeChanger: true,
-      onShowSizeChange(current, pageSize) {
-        console.log('Current: ', current, '; PageSize: ', pageSize);
-      },
-      onChange(current) {
-        console.log('Current: ', current);
-      },
-    };
-    const rowSelection = {
-      onChange(selectedRowKeys, selectedRows) {
-        console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-      },
-      onSelect(record, selected, selectedRows) {
-        console.log(record, selected, selectedRows);
-      },
-      onSelectAll(selected, selectedRows, changeRows) {
-        console.log(selected, selectedRows, changeRows);
-      },
-    };
-    return (
-      <div id='admin-role'>
-        <sction className='path wiserv-ui'>
-          <Breadcrumb>
-            <Breadcrumb.Item>
-              <Icon type="home" />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              系统管理
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              权限管理
-            </Breadcrumb.Item>
-          </Breadcrumb>
-        </sction>
-        <section className='filter wiserv-ui'>
-          <span className='form1'>
-            <Form inline>
-              <Form.Item label="角色名称">
-                <Input placeholder='输入查询条件' />
-              </Form.Item>
-              <Button type="ghost" htmlType="submit">查询</Button>
-            </Form>
-          </span>
-        </section>
-        <section className='operator wiserv-ui'>
-          <span className='buttons'>
-            <Button type="ghost"><Icon type='plus' />新建</Button>
-            <Button type="ghost"><Icon type='edit' />修改</Button>
-            <Button type="ghost"><Icon type='book' />详情</Button>
-            <Button type="ghost"><Icon type='lock' />授权</Button>
-          </span>
-        </section>
-        <section className='container wiserv-ui'>
-          <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={pagination} />
-        </section>
-      </div>
-    );
+function mapStateToProps(state) {
+  return {
+    state: state.role
   }
-};
+}
 
-export default AdminUser;
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch: bindActionCreators(actionCreators, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  React.createClass({
+    childContextTypes: {
+      role: React.PropTypes.object
+    },
+    getChildContext: function() {
+      return {
+        role: this.props
+      }
+    },
+    render() {
+      return (
+        <div id='admin-role'>
+          <sction className='path'>
+            <Path />
+          </sction>
+          <section className='filter'>
+            <Filter />
+          </section>
+          <section className='access'>
+            <Access />
+          </section>
+          <section className='table'>
+            <Table />
+          </section>
+        </div>
+      )
+    }
+  })
+)

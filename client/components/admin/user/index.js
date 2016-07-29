@@ -31,7 +31,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     },
     render() {
       return (
-        <div id='admin-user' className='wiserv-ui'>
+        <div id='admin-user'>
           <sction className='path '>
             <Path />
           </sction>

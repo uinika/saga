@@ -18,16 +18,25 @@ export default React.createClass({
         render: (text, record, index) => (++index)
       }, {
         title: '登陆名称',
-        dataIndex: 'loginName',
+        dataIndex: 'loginName'
       }, {
         title: '真实姓名',
-        dataIndex: 'realName',
+        dataIndex: 'realName'
       }, {
         title: '状态',
         dataIndex: 'stateName',
+        render: (text, record, index) => {
+          console.log(record);
+          if('1' === record.state) {
+            return <span className='bread-tag-purple'>{text}</span>
+          }
+          else if('0' === record.state) {
+            return <span className='bread-tag-carmine'>{text}</span>
+          }
+        }
       }, {
         title: '联系电话',
-        dataIndex: 'tel',
+        dataIndex: 'tel'
       }, {
         title: '电子邮件',
         dataIndex: 'email'

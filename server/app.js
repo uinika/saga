@@ -27,3 +27,4 @@ App.use(Url, require('./login/api'));
 App.use(Url, require('./frame/api'));
 App.use(Url, require('./admin/user/api'));
 App.use(Url, require('./admin/log/api'));
+App.use(Url, require('./admin/role/api'));

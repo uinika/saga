@@ -10,11 +10,12 @@ import 'babel-polyfill'
 import Login from './components/login'
 import Frame from './components/frame'
 import 'antd/dist/antd.min.css'
-import './styles/main.less'
+import './styles/index.less'
 import login from './fluxes/login/reducer'
 import frame from './fluxes/frame/reducer'
 import user from './fluxes/admin/user/reducer'
 import log from './fluxes/admin/log/reducer'
+import role from './fluxes/admin/role/reducer'
 
 const store = createStore(
   combineReducers({
@@ -22,6 +23,7 @@ const store = createStore(
     frame,
     user,
     log,
+    role,
     routing: routerReducer
   }),
   compose(

@@ -3,26 +3,26 @@ import { Modal } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-     user: React.PropTypes.object
+     role: React.PropTypes.object
   },
   handleSubmit() {
-    this.context.user.dispatch.userDetailModal(false)
+    this.context.role.dispatch.roleDetailModal(false)
   },
   handleCancel(event) {
-    this.context.user.dispatch.userDetailModal(false)
+    this.context.role.dispatch.roleDetailModal(false)
   },
   render() {
-    let userInfo = this.context.user.state.detail.target[0]
-    if(userInfo){
-      var userInfoList = (
+    let roleInfo = this.context.role.state.detail.target[0]
+    if(roleInfo){
+      var roleInfoList = (
         <tbody>
           <tr>
-            <td>{userInfo.loginName}</td>
-            <td>{userInfo.realName}</td>
+            <td>{roleInfo.loginName}</td>
+            <td>{roleInfo.realName}</td>
           </tr>
           <tr>
-            <td>{userInfo.stateName}</td>
-            <td>{userInfo.roleNames}</td>
+            <td>{roleInfo.stateName}</td>
+            <td>{roleInfo.roleNames}</td>
           </tr>
         </tbody>
       )
@@ -31,12 +31,12 @@ export default React.createClass({
       <span>
         <Modal
           title="用户详情"
-          visible = {this.context.user.state.detail.modal}
+          visible = {this.context.role.state.detail.modal}
           onOk = {this.handleSubmit}
           onCancel = {this.handleCancel}
         >
           <table className='detail-table'>
-            {userInfoList}
+            {roleInfoList}
           </table>
         </Modal>
       </span>

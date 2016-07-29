@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from '../../../../fluxes/admin/log/summary/action'
-import List from './main'
+import Main from './main'
 
 function mapStateToProps(state) {
   return {
@@ -29,7 +29,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     render() {
       return (
         <div id = 'admin-user-list' className = 'wiserv-ui'>
-          <List />
+          <Main />
         </div>
       )
     }
