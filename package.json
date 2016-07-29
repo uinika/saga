@@ -32,7 +32,6 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3",
-    "superagent": "^2.1.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {

@@ -3,7 +3,7 @@ import { Breadcrumb, Icon } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-     container: React.PropTypes.object
+     user: React.PropTypes.object
   },
   render(){
     return (

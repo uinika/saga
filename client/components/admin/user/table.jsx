@@ -58,7 +58,7 @@ export default React.createClass({
   },
   render(){
     return (
-      <span className='buttons'>
+      <span>
         <Table
           dataSource = { this.context.user.state.find.list }
           rowSelection = { this.rowSelection() }

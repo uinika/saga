@@ -14,12 +14,14 @@ import './styles/main.less'
 import login from './fluxes/login/reducer'
 import frame from './fluxes/frame/reducer'
 import user from './fluxes/admin/user/reducer'
+import log from './fluxes/admin/log/reducer'
 
 const store = createStore(
   combineReducers({
     login,
     frame,
     user,
+    log,
     routing: routerReducer
   }),
   compose(
@@ -45,7 +47,7 @@ ReactDom.render((
         }} />
         <Route path='admin'>
           <Route path='log' getComponent={(nextState, callback) => {
-            require.ensure([], (require) => {callback(null, require('./components/admin/log').default)})
+            require.ensure([], (require) => {callback(null, require('./components/admin/log/overview').default)})
           }} />
           <Route path='menu' getComponent={(nextState, callback) => {
             require.ensure([], (require) => {callback(null, require('./components/admin/menu').default)})

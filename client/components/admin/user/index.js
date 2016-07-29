@@ -7,7 +7,6 @@ import Filter from './filter'
 import Access from './access'
 import Table from './table'
 
-
 function mapStateToProps(state) {
   return {
     state: state.user

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Table, Breadcrumb, Icon, Form, Input, Button, Checkbox, DatePicker} from 'antd';
 
-class AdminLog extends React.Component {
+export default React.createClass ({
   componentDidMount() {
-    console.log('AdminLog');
-  };
+    // console.log('AdminLog');
+  },
   render() {
     const columns = [{
       title: '序号',
@@ -92,6 +92,4 @@ class AdminLog extends React.Component {
       </div>
     );
   }
-};
-
-export default AdminLog;
+})
