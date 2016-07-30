@@ -19,6 +19,9 @@ export default React.createClass({
     }, {
       title: '角色名称',
       dataIndex: 'roleName',
+      render: (text, record, index) => {
+        return <span className='bread-tag-blue'>{text}</span>
+      }
     }]
   },
   pagination() {
