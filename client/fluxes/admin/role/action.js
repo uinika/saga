@@ -50,7 +50,7 @@ export const roleDetail = createAction('ROLE_DETAIL', async pathParam => {
   const data = await Fetch({
     url: '/sys/role/' + pathParam,
     method: 'GET'
-  });
+  })
   if(Validator(data, 200)){
     return data.body
   }

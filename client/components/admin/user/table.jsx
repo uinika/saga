@@ -26,7 +26,6 @@ export default React.createClass({
         title: '状态',
         dataIndex: 'stateName',
         render: (text, record, index) => {
-          console.log(record);
           if('1' === record.state) {
             return <span className='bread-tag-purple'>{text}</span>
           }

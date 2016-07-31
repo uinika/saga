@@ -21,7 +21,7 @@ export default React.createClass({
         </Button>
         <Button type='ghost' onClick = {() => {
           this.context.role.dispatch.roleDetailModal(true)
-          this.context.role.dispatch.roleDetail(this.context.role.state.select.single.accountId)
+          this.context.role.dispatch.roleDetail(this.context.role.state.select.single.roleId)
         }}>
           <Icon type='book' />详情
         </Button>

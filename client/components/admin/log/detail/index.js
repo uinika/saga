@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actionCreators from '../../../../fluxes/admin/log/summary/action'
+import * as actionCreators from '../../../../fluxes/admin/log/detail/action'
 import Detail from './main'
 
-function mapStateToProps(state) {
+function mapStateToProps(state, router) {
   return {
-    state: state.logDetail
+    state: state.log.detail,
+    pathParam: router.params,
+    queryParam: router.location.query
   }
 }
 

@@ -24,7 +24,7 @@ export default Form.create()(
             onOk={this.handleSubmit}
             onCancel={this.handleCancel}
           >
-          <Form inline form={this.props.form}>
+          <Form inline>
             <Form.Item label="登陆名称">
               <Input placeholder="请输入账户名" {...getFieldProps('loginName')} />
             </Form.Item>

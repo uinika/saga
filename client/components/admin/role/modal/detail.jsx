@@ -17,12 +17,14 @@ export default React.createClass({
       var roleInfoList = (
         <tbody>
           <tr>
-            <td>{roleInfo.loginName}</td>
-            <td>{roleInfo.realName}</td>
+            <td>{roleInfo.accountNames}</td>
+            <td>{roleInfo.listRole}</td>
           </tr>
           <tr>
-            <td>{roleInfo.stateName}</td>
-            <td>{roleInfo.roleNames}</td>
+            <td>{roleInfo.roleName}</td>
+            <td>
+              <div>{roleInfo.moduleNames}</div>
+            </td>
           </tr>
         </tbody>
       )

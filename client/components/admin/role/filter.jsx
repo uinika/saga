@@ -8,10 +8,10 @@ export default Form.create({})(
     },
     handleFind() {
       let httpParam = {
-        loginName: this.props.form.getFieldValue('loginName')
+        loginName: this.props.form.getFieldValue('roleName')
       }
-      this.context.role.dispatch.userFindFilter(httpParam)
-      this.context.role.dispatch.userFind(httpParam)
+      this.context.role.dispatch.roleFindFilter(httpParam)
+      this.context.role.dispatch.roleFind(httpParam)
     },
     render(){
       const { getFieldProps } = this.props.form

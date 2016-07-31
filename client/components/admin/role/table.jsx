@@ -48,7 +48,6 @@ export default React.createClass({
     }
   },
   render(){
-    console.log(this.context.role.state.find.list);
     return (
       <span>
         <Table
