@@ -58,3 +58,13 @@ export const userDetail = createAction('USER_DETAIL', async pathParam => {
 
 /* Auth */
 export const userAuthModal = createAction('USER_AUTH_MODAL')
+export const userAuth = createAction('USER_AUTH', async (pathParam, queryParam) => {
+  const data = await Fetch({
+    url: '/sys/account/' + pathParam +'/roles',
+    method: 'GET',
+    query: queryParam
+  });
+  if(Validator(data, 200)){
+    return data.body
+  }
+})

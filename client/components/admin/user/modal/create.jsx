@@ -9,6 +9,7 @@ export default Form.create()(
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
       this.context.user.dispatch.userCreate(httpParam)
+      this.context.user.dispatch.userFind()
       this.context.user.dispatch.userCreateModal(false)
     },
     handleCancel(event) {

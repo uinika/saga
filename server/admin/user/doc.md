@@ -96,11 +96,11 @@
 #### Result:
     accountId      String          账号ID
     addList        Array           已分配的角色
-    itemValue      String          角色id
-    itemLabel      String          角色名
+    --itemValue      String          角色id
+    --itemLabel      String          角色名
     notAddList     Array           未分配的角色
-    itemValue      String          角色id
-    itemLabel      String          角色名
+    --itemValue      String          角色id
+    --itemLabel      String          角色名
 ## 用户授权 -- 授权用户角色
 ### /sys/account/{accountId}/role
     Type: POST

@@ -71,9 +71,14 @@ export const auth = handleActions({
   'USER_AUTH_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
+  }),
+  'USER_AUTH': (state = {}, action) => ({
+    ...state,
+    target: action.payload
   })
 }, {
-  modal: false
+  modal: false,
+  target: []
 })
 
 export default combineReducers({

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Transfer, Button } from 'antd'
+import { Modal, Transfer, Button, Input } from 'antd'
 
 export default React.createClass({
   contextTypes: {
@@ -31,7 +31,8 @@ export default React.createClass({
     }
     this.setState({ mockData, targetKeys });
   },
-  handleChange(targetKeys) {
+  handleChange(targetKeys, direction, moveKeys) {
+    console.log(targetKeys, direction, moveKeys);
     this.setState({ targetKeys });
   },
   renderFooter() {
@@ -49,8 +50,16 @@ export default React.createClass({
   handleCancel(event) {
     this.context.user.dispatch.userAuthModal(false)
   },
+  getAuthData() {
+    const authTarget = this.context.user.state.auth.target[0];
+    if( authTarget ){
+      return {
+        notAddList: authTarget.notAddList,
+        addList: authTarget.addList
+      }
+    }
+  },
   render() {
-
     return (
       <span>
         <Modal
@@ -58,17 +67,13 @@ export default React.createClass({
           visible={this.context.user.state.auth.modal}
           onOk={this.handleSubmit}
           onCancel={this.handleCancel}
-          width={ 600 }
         >
           <Transfer
-            dataSource={this.state.mockData}
             showSearch
-            listStyle={{ width: 226, height: 320 }}
-            operations={['已经授予角色', '未授予角色']}
-            targetKeys={this.state.targetKeys}
+            dataSource={this.getAuthData.addList}
+            targetKeys={this.getAuthData.notAddList}
             onChange={this.handleChange}
-            render={item => `${item.title}-${item.description}`}
-            footer={this.renderFooter}
+            render={item => item.title}
           />
         </Modal>
       </span>

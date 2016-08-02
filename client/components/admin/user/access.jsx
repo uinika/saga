@@ -13,10 +13,10 @@ export default React.createClass({
   render() {
     return (
       <span className='buttons'>
-        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userCreateModal(true)}}>
+        <Button type='ghost' onClick = {() => this.context.user.dispatch.userCreateModal(true)}>
           <Icon type='plus' />新建
         </Button>
-        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userUpdateModal(true)}}>
+        <Button type='ghost' onClick = {() => this.context.user.dispatch.userUpdateModal(true)}>
           <Icon type='edit' />修改
         </Button>
         <Button type='ghost' onClick = {() => {
@@ -25,7 +25,10 @@ export default React.createClass({
         }}>
           <Icon type='book' />详情
         </Button>
-        <Button type='ghost' onClick = {() => {this.context.user.dispatch.userAuthModal(true)}}>
+        <Button type='ghost' onClick = {() => {
+          this.context.user.dispatch.userAuthModal(true)
+          this.context.user.dispatch.userAuth(this.context.user.state.select.single.accountId, '')
+        }}>
           <Icon type='lock' />授权
         </Button>
         <CreateModal />

@@ -57,6 +57,8 @@ export default React.createClass({
     return {
       onSelect : (record, selected, selectedRows) => {
         this.context.user.dispatch.userSelectSingle(record)
+      },
+      onChange: (selectedRowKeys, selectedRows) => {
         this.context.user.dispatch.userSelectMultiple(selectedRows)
       },
       onSelectAll: (selected, selectedRows, changeRows) => {

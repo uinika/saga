@@ -4,14 +4,14 @@ import { Link } from 'react-router'
 
 export default React.createClass({
   contextTypes: {
-    container: React.PropTypes.object
+    frame: React.PropTypes.object
   },
   componentDidMount() {
-    this.context.container.fetchMenuTree()
+    this.context.frame.fetchMenuTree()
   },
   render() {
     const menuTree = [];
-    _.map(this.context.container.frame.menuTree, function(item1){
+    _.map(this.context.frame.state.menuTree, function(item1){
       _.map(item1.children, function(item2, index){
         menuTree.push(<Menu.Item key={index}><Link to={item2.entryURL}>{item2.menuName}</Link></Menu.Item>);
       })

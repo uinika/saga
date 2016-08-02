@@ -1,6 +1,6 @@
 import React from 'react'
-import {Row, Col, Menu, Icon, Dropdown} from 'antd'
-import {Link} from 'react-router'
+import { Row, Col, Menu, Icon, Dropdown } from 'antd'
+import { Link } from 'react-router'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Url, Fetch, Validator } from '../../common/http'
@@ -10,7 +10,7 @@ import * as actionCreators from '../../fluxes/frame/action'
 
 function mapStateToProps(state) {
   return {
-    frame: state.frame
+    state: state.frame
   }
 }
 
@@ -21,11 +21,11 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(
   React.createClass({
     childContextTypes: {
-      container: React.PropTypes.object
+      frame: React.PropTypes.object
     },
     getChildContext: function() {
       return {
-        container: this.props
+        frame: this.props
       }
     },
     render() {
