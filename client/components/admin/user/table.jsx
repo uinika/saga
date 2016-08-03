@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'antd';
+import { Table } from 'antd'
 
 export default React.createClass({
   contextTypes: {
@@ -7,19 +7,21 @@ export default React.createClass({
     action: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired
   },
-  componentDidMount() {
+  componentWillMount() {
     let queryString = {
       current: 1,
       pageSize: 12
-    };
+    }
     this.context.action.find(queryString)
   },
   dataSource() {
-    return this.context.user.find.list
+    return this.context.user.find.list.body
   },
   columns(){
     return [{
-        title: '序号', render: (text, record, index) => (++index)
+        title: '序号', render: (text, record, index) => (++index),
+        sorter: true,
+        sortOrder: 'descend'
       }, {
         title: '登陆名称', dataIndex: 'loginName'
       }, {
@@ -42,7 +44,8 @@ export default React.createClass({
   },
   rowSelection(){
     return {
-      onSelect : (record, selected, selectedRows) => {
+      type: 'radio',
+      onSelect: (record, selected, selectedRows) => {
         this.context.action.selectSingle(record)
       },
       onChange: (selectedRowKeys, selectedRows) => {
@@ -54,25 +57,32 @@ export default React.createClass({
     }
   },
   pagination() {
-    return {
-      total: 18,
-      showSizeChanger: true,
-      defaultPageSize: 12,
-      pageSize: 12,
-      pageSizeOptions: ['12', '25', '50'],
-      onChange: (current) => {
-        let httpParam = {
-          current: current,
-          pageSize: 12
+    let head = this.context.user.find.list.head
+    if(head) {
+      return {
+        total: head.total,
+        current: 1,
+        pageSize: 12,
+        defaultCurrent: 1,
+        defaultPageSize: 12,
+        pageSizeOptions: ['12', '25', '50'],
+        showSizeChanger: true,
+        showQuickJumper: true,
+        onChange: (current) => {
+          let httpParam = {
+            current: current,
+            pageSize: 12
+          }
+          this.context.action.find(httpParam)
+        },
+        onShowSizeChange: (current, pageSize) => {
+          let httpParam = {
+            current: current,
+            pageSize: pageSize
+          }
+          console.log(this.pageSize);
+          this.context.action.find(httpParam)
         }
-        this.context.action.find(httpParam)
-      },
-      onShowSizeChange: (current, pageSize) => {
-        let httpParam = {
-          current: current,
-          pageSize: pageSize
-        }
-        this.context.action.find(httpParam)
       }
     }
   },
@@ -80,7 +90,7 @@ export default React.createClass({
     return (
       <span>
         <Table
-          dataSource = { this.dataSource() }
+          dataSource = { this.context.user.find.list.body }
           rowSelection = { this.rowSelection() }
           columns = { this.columns() }
           pagination = { this.pagination() }

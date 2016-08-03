@@ -6,8 +6,9 @@ import ValidateCode from './validateCode'
 export default Form.create({})(
   React.createClass({
     contextTypes: {
-      router: React.PropTypes.object.isRequired,
-      container: React.PropTypes.object
+      login: React.PropTypes.object.isRequired,
+      action: React.PropTypes.object.isRequired,
+      dispatch: React.PropTypes.func.isRequired
     },
     componentDidMount() {
       if (sessionStorage.token) {
@@ -21,7 +22,7 @@ export default Form.create({})(
     },
     handleSubmit(event) {
       event.preventDefault();
-      this.context.container.launchLogin({
+      this.context.action.launchLogin({
         loginName: this.props.form.getFieldValue('username'),
         password: this.props.form.getFieldValue('password'),
         validateCode: this.props.form.getFieldValue('validateCode')

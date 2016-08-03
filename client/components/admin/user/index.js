@@ -7,21 +7,19 @@ import Filter from './filter'
 import Access from './access'
 import Table from './table'
 
+const Types = {
+  user: React.PropTypes.object.isRequired,
+  action: React.PropTypes.object.isRequired,
+  dispatch: React.PropTypes.func.isRequired
+}
+
 export default connect(
   state => ({user: state.user}),
   dispatch => ({dispatch, action: bindActionCreators(actionCreators, dispatch)})
 )(
   React.createClass({
-    propTypes: {
-      user: React.PropTypes.object.isRequired,
-      action: React.PropTypes.object.isRequired,
-      dispatch: React.PropTypes.func.isRequired
-    },
-    childContextTypes: {
-      user: React.PropTypes.object.isRequired,
-      action: React.PropTypes.object.isRequired,
-      dispatch: React.PropTypes.func.isRequired
-    },
+    propTypes: Types,
+    childContextTypes: Types,
     getChildContext() {
       return {
         user: this.props.user,

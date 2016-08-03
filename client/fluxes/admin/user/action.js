@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions'
 import { Fetch, Validator } from '../../../common/http'
+import { message } from 'antd'
 
 /* Selected */
 export const selectSingle = createAction('SELECT_SINGLE')
@@ -14,22 +15,31 @@ export const find = createAction('FIND', async httpParam => {
     query: httpParam
   })
   if(Validator(data, 200)){
-    return data.body
+    return data
   }
 })
 
 /* Create */
 export const createModal = createAction('CREATE_MODAL')
-export const create = createAction('CREATE', async httpParam => {
-  const data = await Fetch({
-    url: '/sys/account',
-    method: 'POST',
-    param: httpParam
-  })
-  if(Validator(data, 200)){
-    return data.body
+export function create(httpParam) {
+  return function(dispatch) {
+    Fetch({
+      url: '/sys/account',
+      method: 'POST',
+      param: httpParam
+    })
+    .then(data => {
+      if(Validator(data, 200)) {
+        message.success(data.head.message, 3)
+      }
+      else if(Validator(data, 201)) {
+        message.error(data.head.message, 3)
+      }
+    })
+    .then(() => dispatch(find({current: 1, pageSize: 12})))
+    .then(() => dispatch(createModal()))
   }
-})
+}
 
 /* Update */
 export const updateModal = createAction('UPDATE_MODAL')

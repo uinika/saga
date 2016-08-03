@@ -3,11 +3,11 @@ import QueryString from 'query-string'
 import _ from 'lodash'
 
 /* 本机 */
-const URL  = 'http://localhost:5002'
+// const URL  = 'http://localhost:5002'
 /* 本地 */
 // const URL  = 'http://172.16.0.119:8080'
 /* 远程 */
-// const URL = 'http://192.168.13.185:8080'
+const URL = 'http://192.168.13.185:8080'
 /* 同源自动生成 */
 // const URL  = 'http://' + window.location.href.split('/')[2]
 
@@ -60,4 +60,9 @@ exports.Validator = (data, status) => {
     case 500:
       return (resolve(status)); break;
   }
+}
+
+exports.Paging = {
+  current: 1,
+  pageSize: 12
 }

@@ -11,9 +11,6 @@ export default Form.create()(
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
       this.context.action.create(httpParam)
-      .then(() => message.success('用户添加成功', 3))
-      .then(() => this.context.action.find())
-      .then(() => this.context.action.createModal(false))
     },
     handleCancel(event) {
       this.context.action.createModal(false)

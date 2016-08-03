@@ -10,6 +10,8 @@ export default Form.create({})(
     },
     handleFind() {
       let httpParam = {
+        current: 1,
+        pageSize: 12,
         loginName: this.props.form.getFieldValue('loginName')
       }
       this.context.action.findFilter(httpParam)
