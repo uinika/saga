@@ -7,6 +7,7 @@ import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-rou
 import thunkMiddleware from 'redux-thunk'
 import promiseMiddleware from 'redux-promise'
 import 'babel-polyfill'
+// import { fetchMiddleware } from './common/middleware'
 import Login from './components/login'
 import Frame from './components/frame'
 import 'antd/dist/antd.min.css'
@@ -27,7 +28,10 @@ const store = createStore(
     routing: routerReducer
   }),
   compose(
-    applyMiddleware(thunkMiddleware, promiseMiddleware, routerMiddleware(hashHistory)),
+    applyMiddleware(
+      thunkMiddleware, promiseMiddleware, routerMiddleware(hashHistory),
+      // fetchMiddleware,
+    ),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )

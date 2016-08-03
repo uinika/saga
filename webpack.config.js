@@ -14,7 +14,7 @@ exports.Development = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
     new Webpack.HotModuleReplacementPlugin()
   ],

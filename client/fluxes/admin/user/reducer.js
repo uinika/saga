@@ -3,11 +3,11 @@ import { handleActions } from 'redux-actions'
 
 /* Selected */
 export const select = handleActions({
-  'USER_SELECT_SINGLE': (state = {}, action) => ({
+  'SELECT_SINGLE': (state = {}, action) => ({
     ...state,
     single: action.payload
   }),
-  'USER_SELECT_MULTIPLE': (state = {}, action) => ({
+  'SELECT_MULTIPLE': (state = {}, action) => ({
     ...state,
     multiple: action.payload
   })
@@ -18,11 +18,11 @@ export const select = handleActions({
 
 /* Find */
 export const find = handleActions({
-  'USER_FIND': (state = {}, action) => ({
+  'FIND': (state = {}, action) => ({
     ...state,
     list: action.payload
   }),
-  'USER_FIND_FILTER': (state = {}, action) => ({
+  'FIND_FILTER': (state = {}, action) => ({
     ...state,
     filter: action.payload
   }),
@@ -33,7 +33,7 @@ export const find = handleActions({
 
 /* Create */
 export const create = handleActions({
-  'USER_CREATE_MODAL': (state = {}, action) => ({
+  'CREATE_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
   })
@@ -43,7 +43,7 @@ export const create = handleActions({
 
 /* Update */
 export const update = handleActions({
-  'USER_UPDATE_MODAL': (state = {}, action) => ({
+  'UPDATE_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
   })
@@ -53,11 +53,11 @@ export const update = handleActions({
 
 /* Detail */
 export const detail = handleActions({
-  'USER_DETAIL': (state = {}, action) => ({
+  'DETAIL': (state = {}, action) => ({
     ...state,
     target: action.payload
   }),
-  'USER_DETAIL_MODAL': (state = {}, action) => ({
+  'DETAIL_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
   })
@@ -68,11 +68,11 @@ export const detail = handleActions({
 
 /* Auth */
 export const auth = handleActions({
-  'USER_AUTH_MODAL': (state = {}, action) => ({
+  'AUTH_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
   }),
-  'USER_AUTH': (state = {}, action) => ({
+  'AUTH': (state = {}, action) => ({
     ...state,
     target: action.payload
   })

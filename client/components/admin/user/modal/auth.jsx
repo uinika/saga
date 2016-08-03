@@ -3,7 +3,9 @@ import { Modal, Transfer, Button, Input } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-     user: React.PropTypes.object
+    user: React.PropTypes.object.isRequired,
+    action: React.PropTypes.object.isRequired,
+    dispatch: React.PropTypes.func.isRequired
   },
   getInitialState() {
     return {
@@ -45,13 +47,13 @@ export default React.createClass({
     );
   },
   handleSubmit() {
-    this.context.user.dispatch.userAuthModal(false)
+    this.context.action.authModal(false)
   },
   handleCancel(event) {
-    this.context.user.dispatch.userAuthModal(false)
+    this.context.action.authModal(false)
   },
   getAuthData() {
-    const authTarget = this.context.user.state.auth.target[0];
+    const authTarget = this.context.user.auth.target[0];
     if( authTarget ){
       return {
         notAddList: authTarget.notAddList,
@@ -64,7 +66,7 @@ export default React.createClass({
       <span>
         <Modal
           title="授权用户"
-          visible={this.context.user.state.auth.modal}
+          visible={this.context.user.auth.modal}
           onOk={this.handleSubmit}
           onCancel={this.handleCancel}
         >

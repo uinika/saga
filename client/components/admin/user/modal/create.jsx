@@ -1,27 +1,30 @@
 import React from 'react'
-import { Modal, Input, Form } from 'antd'
+import { Modal, Input, Form, message } from 'antd'
 
 export default Form.create()(
   React.createClass({
     contextTypes: {
-       user: React.PropTypes.object
+      user: React.PropTypes.object.isRequired,
+      action: React.PropTypes.object.isRequired,
+      dispatch: React.PropTypes.func.isRequired
     },
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
-      this.context.user.dispatch.userCreate(httpParam)
-      this.context.user.dispatch.userFind()
-      this.context.user.dispatch.userCreateModal(false)
+      this.context.action.create(httpParam)
+      .then(() => message.success('用户添加成功', 3))
+      .then(() => this.context.action.find())
+      .then(() => this.context.action.createModal(false))
     },
     handleCancel(event) {
-      this.context.user.dispatch.userCreateModal(false)
+      this.context.action.createModal(false)
     },
     render() {
       const { getFieldProps } = this.props.form
       return (
         <span>
           <Modal
-            title="新建用户"
-            visible={this.context.user.state.create.modal}
+            title='新建用户'
+            visible={this.context.user.create.modal}
             onOk={this.handleSubmit}
             onCancel={this.handleCancel}
           >

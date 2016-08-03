@@ -4,24 +4,26 @@ import { Modal, Input, Form } from 'antd'
 export default Form.create()(
   React.createClass({
     contextTypes: {
-       user: React.PropTypes.object
+      user: React.PropTypes.object.isRequired,
+      action: React.PropTypes.object.isRequired,
+      dispatch: React.PropTypes.func.isRequired
     },
     handleSubmit() {
       let httpParam = this.props.form.getFieldsValue()
-      this.context.user.dispatch.userUpdate(httpParam);
-      this.context.user.dispatch.userUpdateModal(false)
+      this.context.action.update(httpParam);
+      this.context.action.updateModal(false)
     },
     handleCancel(event) {
-      this.context.user.dispatch.userUpdateModal(false)
+      this.context.action.updateModal(false)
     },
     render() {
       const { getFieldProps } = this.props.form
-      const target = this.context.user.state.select.single
+      const target = this.context.user.select.single
       return (
         <span>
           <Modal
             title="修改用户"
-            visible={this.context.user.state.update.modal}
+            visible={this.context.user.update.modal}
             onOk={this.handleSubmit}
             onCancel={this.handleCancel}
           >

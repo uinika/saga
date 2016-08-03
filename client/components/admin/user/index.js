@@ -7,26 +7,26 @@ import Filter from './filter'
 import Access from './access'
 import Table from './table'
 
-function mapStateToProps(state) {
-  return {
-    state: state.user
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch: bindActionCreators(actionCreators, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(
+export default connect(
+  state => ({user: state.user}),
+  dispatch => ({dispatch, action: bindActionCreators(actionCreators, dispatch)})
+)(
   React.createClass({
-    childContextTypes: {
-      user: React.PropTypes.object
+    propTypes: {
+      user: React.PropTypes.object.isRequired,
+      action: React.PropTypes.object.isRequired,
+      dispatch: React.PropTypes.func.isRequired
     },
-    getChildContext: function() {
+    childContextTypes: {
+      user: React.PropTypes.object.isRequired,
+      action: React.PropTypes.object.isRequired,
+      dispatch: React.PropTypes.func.isRequired
+    },
+    getChildContext() {
       return {
-        user: this.props
+        user: this.props.user,
+        action: this.props.action,
+        dispatch: this.props.dispatch
       }
     },
     render() {
@@ -45,7 +45,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             <Table />
           </section>
         </div>
-      );
+      )
     }
   })
 )

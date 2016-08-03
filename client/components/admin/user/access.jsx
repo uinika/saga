@@ -8,26 +8,28 @@ import _ from 'lodash'
 
 export default React.createClass({
   contextTypes: {
-     user: React.PropTypes.object
+    user: React.PropTypes.object.isRequired,
+    action: React.PropTypes.object.isRequired,
+    dispatch: React.PropTypes.func.isRequired
   },
   render() {
     return (
       <span className='buttons'>
-        <Button type='ghost' onClick = {() => this.context.user.dispatch.userCreateModal(true)}>
+        <Button type='ghost' onClick = {() => this.context.action.createModal(true)}>
           <Icon type='plus' />新建
         </Button>
-        <Button type='ghost' onClick = {() => this.context.user.dispatch.userUpdateModal(true)}>
+        <Button type='ghost' onClick = {() => this.context.action.updateModal(true)}>
           <Icon type='edit' />修改
         </Button>
         <Button type='ghost' onClick = {() => {
-          this.context.user.dispatch.userDetailModal(true)
-          this.context.user.dispatch.userDetail(this.context.user.state.select.single.accountId)
+          this.context.action.detailModal(true)
+          this.context.action.detail(this.context.user.select.single.accountId)
         }}>
           <Icon type='book' />详情
         </Button>
         <Button type='ghost' onClick = {() => {
-          this.context.user.dispatch.userAuthModal(true)
-          this.context.user.dispatch.userAuth(this.context.user.state.select.single.accountId, '')
+          this.context.action.authModal(true)
+          this.context.action.auth(this.context.user.select.single.accountId, '')
         }}>
           <Icon type='lock' />授权
         </Button>

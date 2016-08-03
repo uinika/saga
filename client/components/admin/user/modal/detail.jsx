@@ -3,16 +3,18 @@ import { Modal } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-     user: React.PropTypes.object
+    user: React.PropTypes.object.isRequired,
+    action: React.PropTypes.object.isRequired,
+    dispatch: React.PropTypes.func.isRequired
   },
   handleSubmit() {
-    this.context.user.dispatch.userDetailModal(false)
+    this.context.action.detailModal(false)
   },
   handleCancel(event) {
-    this.context.user.dispatch.userDetailModal(false)
+    this.context.action.detailModal(false)
   },
   render() {
-    let userInfo = this.context.user.state.detail.target[0]
+    let userInfo = this.context.user.detail.target[0]
     if(userInfo){
       var userInfoList = (
         <tbody>
@@ -31,7 +33,7 @@ export default React.createClass({
       <span>
         <Modal
           title="用户详情"
-          visible = {this.context.user.state.detail.modal}
+          visible = {this.context.user.detail.modal}
           onOk = {this.handleSubmit}
           onCancel = {this.handleCancel}
         >

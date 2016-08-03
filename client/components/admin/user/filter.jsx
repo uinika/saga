@@ -4,19 +4,21 @@ import { Input, Form, Button, Select } from 'antd';
 export default Form.create({})(
   React.createClass({
     contextTypes: {
-       user: React.PropTypes.object
+      user: React.PropTypes.object.isRequired,
+      action: React.PropTypes.object.isRequired,
+      dispatch: React.PropTypes.func.isRequired
     },
     handleFind() {
       let httpParam = {
         loginName: this.props.form.getFieldValue('loginName')
       }
-      this.context.user.dispatch.userFindFilter(httpParam)
-      this.context.user.dispatch.userFind(httpParam)
+      this.context.action.findFilter(httpParam)
+      this.context.action.find(httpParam)
     },
     handleFindAdvanced() {
       let httpParam = this.props.form.getFieldsValue()
-      this.context.user.dispatch.userFindFilter(httpParam)
-      this.context.user.dispatch.userFind(httpParam)
+      this.context.action.findFilter(httpParam)
+      this.context.action.find(httpParam)
     },
     render(){
       const { getFieldProps } = this.props.form
