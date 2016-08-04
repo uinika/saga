@@ -1,4 +1,4 @@
-export const fetchMiddleware = store => next => action => {
+export const httpMiddleware = store => next => action => {
   if (!action.promise) {
     return next(action)
   }

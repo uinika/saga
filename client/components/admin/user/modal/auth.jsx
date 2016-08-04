@@ -14,6 +14,7 @@ export default React.createClass({
     };
   },
   componentDidMount() {
+    const authTarget = this.context.user.auth.result
     this.getMock();
   },
   getMock() {
@@ -53,7 +54,7 @@ export default React.createClass({
     this.context.action.authModal(false)
   },
   getAuthData() {
-    const authTarget = this.context.user.auth.target[0];
+    const authTarget = this.context.user.auth.result
     if( authTarget ){
       return {
         notAddList: authTarget.notAddList,
@@ -62,6 +63,7 @@ export default React.createClass({
     }
   },
   render() {
+    console.log();
     return (
       <span>
         <Modal

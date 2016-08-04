@@ -18,16 +18,16 @@ export const select = handleActions({
 
 /* Find */
 export const find = handleActions({
-  'FIND': (state = {}, action) => ({
+  'FIND_RESULT': (state = {}, action) => ({
     ...state,
-    list: action.payload
+    result: action.payload
   }),
   'FIND_FILTER': (state = {}, action) => ({
     ...state,
     filter: action.payload
   }),
 }, {
-  list: [],
+  result: [],
   filter: {}
 })
 
@@ -36,9 +36,14 @@ export const create = handleActions({
   'CREATE_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
+  }),
+  'CREATE_RESULT': (state = {}, action) => ({
+    ...state,
+    result: action.payload
   })
 }, {
-  modal: false
+  modal: false,
+  result: {}
 })
 
 /* Update */
@@ -46,16 +51,21 @@ export const update = handleActions({
   'UPDATE_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
+  }),
+  'UPDATE_RESULT': (state = {}, action) => ({
+    ...state,
+    result: action.payload
   })
 }, {
-  modal: false
+  modal: false,
+  result: {}
 })
 
 /* Detail */
 export const detail = handleActions({
-  'DETAIL': (state = {}, action) => ({
+  'DETAIL_RESULT': (state = {}, action) => ({
     ...state,
-    target: action.payload
+    result: action.payload
   }),
   'DETAIL_MODAL': (state = {}, action) => ({
     ...state,
@@ -63,7 +73,7 @@ export const detail = handleActions({
   })
 }, {
   modal: false,
-  target: []
+  result: []
 })
 
 /* Auth */
@@ -72,13 +82,23 @@ export const auth = handleActions({
     ...state,
     modal: action.payload
   }),
-  'AUTH': (state = {}, action) => ({
+  'AUTH_RESULT': (state = {}, action) => ({
     ...state,
-    target: action.payload
+    result: action.payload
+  }),
+  'AUTH_ADD_RESULT': (state = {}, action) => ({
+    ...state,
+    resultAdd: action.payload
+  }),
+  'AUTH_REMOVE_RESULT': (state = {}, action) => ({
+    ...state,
+    resultRemove: action.payload
   })
 }, {
   modal: false,
-  target: []
+  result: {},
+  resultAdd: {},
+  resultRemove: {}
 })
 
 export default combineReducers({

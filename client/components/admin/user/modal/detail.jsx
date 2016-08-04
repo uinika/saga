@@ -14,7 +14,7 @@ export default React.createClass({
     this.context.action.detailModal(false)
   },
   render() {
-    let userInfo = this.context.user.detail.target[0]
+    let userInfo = this.context.user.detail.result[0]
     if(userInfo){
       var userInfoList = (
         <tbody>

@@ -15,7 +15,10 @@ export default React.createClass({
     this.context.action.find(queryString)
   },
   dataSource() {
-    return this.context.user.find.list.body
+    let result = this.context.user.find.result
+    if(result) {
+      return result.body
+    }
   },
   columns(){
     return [{
@@ -47,20 +50,14 @@ export default React.createClass({
       type: 'radio',
       onSelect: (record, selected, selectedRows) => {
         this.context.action.selectSingle(record)
-      },
-      onChange: (selectedRowKeys, selectedRows) => {
-        this.context.action.selectMultiple(selectedRows)
-      },
-      onSelectAll: (selected, selectedRows, changeRows) => {
-        this.context.action.selectMultiple(selectedRows)
       }
     }
   },
   pagination() {
-    let head = this.context.user.find.list.head
-    if(head) {
+    const result = this.context.user.find.result
+    if(result && result.head) {
       return {
-        total: head.total,
+        total: result.head.total,
         current: 1,
         pageSize: 12,
         defaultCurrent: 1,
@@ -90,7 +87,7 @@ export default React.createClass({
     return (
       <span>
         <Table
-          dataSource = { this.context.user.find.list.body }
+          dataSource = { this.dataSource() }
           rowSelection = { this.rowSelection() }
           columns = { this.columns() }
           pagination = { this.pagination() }

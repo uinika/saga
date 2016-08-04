@@ -5,18 +5,20 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
-import promiseMiddleware from 'redux-promise'
 import 'babel-polyfill'
+import promiseMiddleware from 'redux-promise'
 // import { fetchMiddleware } from './common/middleware'
+/** Reducer */
 import Login from './components/login'
 import Frame from './components/frame'
-import 'antd/dist/antd.min.css'
-import './styles/index.less'
 import login from './fluxes/login/reducer'
 import frame from './fluxes/frame/reducer'
 import user from './fluxes/admin/user/reducer'
 import log from './fluxes/admin/log/reducer'
 import role from './fluxes/admin/role/reducer'
+/** CSS */
+import 'antd/dist/antd.min.css'
+import './styles/index.less'
 
 const store = createStore(
   combineReducers({
