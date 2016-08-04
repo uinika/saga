@@ -1,22 +1,22 @@
 import { createAction } from 'redux-actions'
-import { Url, Fetch, Validator } from '../../common/http'
+import { url, http, validate } from '../../common/http'
 
 export const fetchMenuTree = createAction('FETCH_MENU_TREE', async () => {
-  let data = await Fetch({
+  let data = await http({
     url: '/navigation/menuTree',
     method: 'GET'
   })
-  if(Validator(data, 200)){
+  if(validate(data, 200)){
     return data.body
   }
 })
 
 export const launchLogout = createAction('LAUNCH_LOGOUT', async () => {
-  let promise = await Fetch({
+  let promise = await http({
     url: '/logout',
     method: 'POST'
   })
-  if(Validator(promise, 200)){
+  if(validate(promise, 200)){
     return data.body
   }
 })
