@@ -7,8 +7,8 @@ exports.Development = {
     index: ['webpack-dev-server/client?http://localhost:5000/', 'webpack/hot/dev-server', './index.js']
   },
   output: {
-    path: Path.resolve(__dirname, 'build/app'),
-    publicPath: '/app/',
+    path: Path.resolve(__dirname, 'build/bundle'),
+    publicPath: './bundle/',
     filename: '[name].js'
   },
   resolve: {
@@ -46,14 +46,13 @@ exports.Production = {
     index: ['./index.js']
   },
   output: {
-    path: Path.resolve(__dirname, 'build/app'),
-    publicPath: '/app/',
+    path: Path.resolve(__dirname, 'build/bundle'),
+    publicPath: './bundle/',
     filename: '[name].js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  devtool: 'source-map',
   plugins: [
     new Webpack.optimize.UglifyJsPlugin({
       mangle: {
@@ -61,8 +60,8 @@ exports.Production = {
       }
     }),
     new Webpack.DefinePlugin({
-      "process.env": {
-         NODE_ENV: JSON.stringify("production")
+      'process.env': {
+         NODE_ENV: JSON.stringify('production')
        }
     })
   ],

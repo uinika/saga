@@ -3,6 +3,7 @@ const Gulp = require('gulp'),
       WebpackDevServer = require('webpack-dev-server'),
       WebpackConfig = require('./webpack.config.js'),
       Nodemon = require('gulp-nodemon'),
+      Colors = require('colors'),
       Delete = require('del');
 // gulp
 Gulp.task('default', ['client', 'server']);
@@ -11,7 +12,7 @@ Gulp.task('client', function(callback) {
   let compiler = Webpack(WebpackConfig.Development);
   let server = new WebpackDevServer(compiler, {
     hot: true,
-    publicPath: '/app/',
+    publicPath: '/bundle/',
     contentBase: './client',
     stats: {colors: true}
   }).listen(5000);
@@ -28,7 +29,9 @@ Gulp.task('server', function() {
 Gulp.task('build', function() {
   Gulp.src(['./client/index.html'])
       .pipe(Gulp.dest('./build'));
-  var compiler = Webpack(WebpackConfig.Production);
+  Gulp.src(['./client/favicon.ico'])
+      .pipe(Gulp.dest('./build'));
+  let compiler = Webpack(WebpackConfig.Production);
   compiler.run(function(err, stats) {
     console.error(err);
     console.info(stats);
