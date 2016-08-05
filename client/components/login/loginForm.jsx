@@ -22,7 +22,7 @@ export default Form.create({})(
     },
     handleSubmit(event) {
       event.preventDefault();
-      this.context.action.launchLogin({
+      this.context.action.login({
         loginName: this.props.form.getFieldValue('username'),
         password: this.props.form.getFieldValue('password'),
         validateCode: this.props.form.getFieldValue('validateCode')

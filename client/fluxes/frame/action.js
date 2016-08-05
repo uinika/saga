@@ -1,22 +1,38 @@
 import { createAction } from 'redux-actions'
+import { message } from 'antd'
+import { push } from 'react-router-redux'
 import { url, http, validate } from '../../common/http'
 
-export const fetchMenuTree = createAction('FETCH_MENU_TREE', async () => {
-  let data = await http({
-    url: '/navigation/menuTree',
-    method: 'GET'
-  })
-  if(validate(data, 200)){
-    return data.body
+/** Menu tree  */
+export const menuTreeResult = createAction('MENU_TREE_RESULT')
+export const getMenuTree = () => {
+  return dispatch => {
+    http({
+      url: '/navigation/menuTree',
+      method: 'GET'
+    })
+    .then( data => dispatch(menuTreeResult(data)) )
+    .catch( (error) => console.warn(error) )
   }
-})
+}
 
-export const launchLogout = createAction('LAUNCH_LOGOUT', async () => {
-  let promise = await http({
-    url: '/logout',
-    method: 'POST'
-  })
-  if(validate(promise, 200)){
-    return data.body
+/** Logout */
+export const logout = httpParam => {
+  return dispatch => {
+    http({
+      url: '/logout',
+      method: 'POST'
+    })
+    .then(data => {
+      if(validate(data, 200)) {
+        sessionStorage.removeItem('token')
+        return data.head
+      }
+    })
+    .then(head => {
+      message.success(head.message, 2)
+    })
+    .then( () => dispatch(push('login')) )
+    .catch( (error) => console.warn(error) )
   }
-})
+}

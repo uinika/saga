@@ -5,19 +5,15 @@ import { Icon, Dropdown, Menu } from 'antd'
 
 export default React.createClass({
   contextTypes: {
-    frame: React.PropTypes.object,
+    frame: React.PropTypes.object.isRequired,
+    action: React.PropTypes.object.isRequired,
     router: React.PropTypes.object
-  },
-  handleLogout() {
-    this.context.frame.launchLogout()
-    .then(() => sessionStorage.removeItem('token'))
-    .then(() => this.context.router.push('login'))
   },
   render() {
     const menu = (
       <Menu>
-        <Menu.Item key='0' onClick={this.handleLogout}>
-          <a onClick={this.handleLogout}>退出系统</a>
+        <Menu.Item key='0' >
+          <a onClick={this.context.action.logout}>退出系统</a>
         </Menu.Item>
       </Menu>
     )

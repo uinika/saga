@@ -8,24 +8,24 @@ import MenuTree from './menuTree'
 import Avatar from './avatar'
 import * as actionCreators from '../../fluxes/frame/action'
 
-function mapStateToProps(state) {
-  return {
-    state: state.frame
-  }
+const Types = {
+  frame: React.PropTypes.object.isRequired,
+  action: React.PropTypes.object.isRequired,
+  dispatch: React.PropTypes.func.isRequired
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(
+export default connect(
+  state => ({frame: state.frame}),
+  dispatch => ({dispatch, action: bindActionCreators(actionCreators, dispatch)})
+)(
   React.createClass({
-    childContextTypes: {
-      frame: React.PropTypes.object
-    },
-    getChildContext: function() {
+    propTypes: Types,
+    childContextTypes: Types,
+    getChildContext() {
       return {
-        frame: this.props
+        frame: this.props.frame,
+        action: this.props.action,
+        dispatch: this.props.dispatch
       }
     },
     render() {

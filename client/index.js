@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+/** Redux */
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
@@ -8,17 +9,18 @@ import thunkMiddleware from 'redux-thunk'
 import 'babel-polyfill'
 import promiseMiddleware from 'redux-promise'
 // import { fetchMiddleware } from './common/middleware'
-/** Reducer */
+/** Components */
 import Login from './components/login'
 import Frame from './components/frame'
+/** CSS */
+import 'antd/dist/antd.min.css'
+import './styles/index.less'
+/** Reducer */
 import login from './fluxes/login/reducer'
 import frame from './fluxes/frame/reducer'
 import user from './fluxes/admin/user/reducer'
 import log from './fluxes/admin/log/reducer'
 import role from './fluxes/admin/role/reducer'
-/** CSS */
-import 'antd/dist/antd.min.css'
-import './styles/index.less'
 
 const store = createStore(
   combineReducers({

@@ -1,15 +1,15 @@
 import { handleActions } from 'redux-actions'
 
 export default handleActions({
-  'MOUNT_LOGIN': (state = {}, action) => ({
+  'LOGIN_RESULT': (state = {}, action) => ({
     ...state,
-    user: action.payload
+    result: action.payload
   }),
-  'GET_VALIDATE_CODE': (state = {}, action) => ({
+  'VALIDATE_CODE': (state = {}, action) => ({
     ...state,
     validatecode: action.payload
   })
 }, {
-  user: {},
+  result: {},
   validatecode: ''
 })

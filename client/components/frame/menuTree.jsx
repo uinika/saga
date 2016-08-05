@@ -4,23 +4,24 @@ import { Link } from 'react-router'
 
 export default React.createClass({
   contextTypes: {
-    frame: React.PropTypes.object
+    frame: React.PropTypes.object.isRequired,
+    action: React.PropTypes.object.isRequired
   },
   componentDidMount() {
-    this.context.frame.fetchMenuTree()
+    this.context.action.getMenuTree()
   },
   render() {
-    const menuTree = [];
-    _.map(this.context.frame.state.menuTree, function(item1){
+    const menuTrees = []
+    _.map(this.context.frame.menuTree.body, function(item1){
       _.map(item1.children, function(item2, index){
-        menuTree.push(<Menu.Item key={index}><Link to={item2.entryURL}>{item2.menuName}</Link></Menu.Item>);
+        menuTrees.push(<Menu.Item key={index}><Link to={item2.entryURL}>{item2.menuName}</Link></Menu.Item>);
       })
     })
     return (
       <span>
         <Menu className='menu' mode='inline' defaultOpenKeys={['menu']}>
           <Menu.SubMenu key='menu' title='系统管理'>
-            {menuTree}
+            {menuTrees}
           </Menu.SubMenu>
         </Menu>
       </span>

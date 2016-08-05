@@ -6,15 +6,15 @@ export default React.createClass({
     action: React.PropTypes.object.isRequired
   },
   componentDidMount() {
-    this.context.action.getValidateCode()
+    this.context.action.validateCode()
   },
   render() {
     return (
       <span>
-        <span className='image' onClick={this.context.action.getValidateCode}>
+        <span className='image' onClick={this.context.action.validateCode}>
           <img src={this.context.login.validatecode} height='33' width='88'  />
         </span>
-        <a className='switcher' onClick={this.context.action.getValidateCode}>换一张</a>
+        <a className='switcher' onClick={this.context.action.validateCode}>换一张</a>
       </span>
     )
   }

@@ -3,8 +3,8 @@ import { push } from 'react-router-redux'
 import { url, http, validate } from '../../common/http'
 import { message } from 'antd'
 // Login
-export const mountLogin = createAction('MOUNT_LOGIN')
-export function launchLogin(httpParam) {
+export const loginResult = createAction('LOGIN_RESULT')
+export function login(httpParam) {
   return function(dispatch) {
     http({
       url: '/login',
@@ -12,7 +12,7 @@ export function launchLogin(httpParam) {
       param: httpParam
     })
     .then(data => {
-       dispatch(mountLogin(data))
+       dispatch(loginResult(data))
        return data
      })
      .then(data => {
@@ -26,12 +26,12 @@ export function launchLogin(httpParam) {
      .then(data => {
        if(validate(data, 201)){
          message.warning(data.head.message, 3)
-         dispatch(getValidateCode())
+         dispatch(validateCode())
        }
      })
   }
 }
 // Vlidate Code
-export const getValidateCode = createAction('GET_VALIDATE_CODE', () => (
+export const validateCode = createAction('VALIDATE_CODE', () => (
   url + '/validatecode?_=' + Math.random()
 ))
