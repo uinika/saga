@@ -1,15 +1,18 @@
 const Mongodb = require('mongodb'),
       JsonLoader = require('load-json-file');
+
 /** Basic path */
 exports.Path = (url) => {
   return __dirname + url
 };
+
 /** Json loader */
 exports.Json = name => {
   return JsonLoader.sync(__dirname  + name);
 };
+
 /** Protocal between server & client */
-exports.Protocal = function(head, body){
+exports.Protocal = (head, body) => {
   head = head || {};
   body = body || {};
   return {
@@ -22,12 +25,14 @@ exports.Protocal = function(head, body){
     "body": body || ''
   }
 };
+
 /** Mongodb connection */
 exports.Mongodb = new Mongodb.Db('autumn', new Mongodb.Server('localhost', 27017), {
   safe: true
 });
+
 /** Log for http request */
-exports.Log = function(request, response) {
+exports.Log = (request, response) => {
   console.info('================================================');
   console.info('Request URL:', request.path);
   console.info('Request Type:', request.method);

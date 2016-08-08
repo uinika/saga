@@ -3,7 +3,7 @@ const Gulp = require('gulp'),
       WebpackDevServer = require('webpack-dev-server'),
       WebpackConfig = require('./webpack.config.js'),
       Nodemon = require('gulp-nodemon'),
-      Colors = require('colors'),
+      Color = require('colors/safe'),
       Delete = require('del');
 // gulp
 Gulp.task('default', ['client', 'server']);
@@ -33,8 +33,8 @@ Gulp.task('build', function() {
       .pipe(Gulp.dest('./build'));
   let compiler = Webpack(WebpackConfig.Production);
   compiler.run(function(err, stats) {
-    console.error(err);
-    console.info(stats);
+    console.error(Color.red.bold.underline(err));
+    console.info(Color.blue.underline(stats));
   });
 });
 // gulp clean

@@ -4,14 +4,14 @@ import { push } from 'react-router-redux'
 import { url, http, validate } from '../../common/http'
 
 /** Menu tree  */
-export const menuTreeResult = createAction('MENU_TREE_RESULT')
+export const menuTree = createAction('MENU_TREE')
 export const getMenuTree = () => {
   return dispatch => {
     http({
       url: '/navigation/menuTree',
       method: 'GET'
     })
-    .then( data => dispatch(menuTreeResult(data)) )
+    .then( data => dispatch(menuTree(data)) )
     .catch( (error) => console.warn(error) )
   }
 }

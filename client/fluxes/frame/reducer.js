@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions'
 
 export default handleActions({
-  'MENU_TREE_RESULT': (state = {}, action) => ({
+  'MENU_TREE': (state = {}, action) => ({
     ...state,
     menuTree: action.payload
   })

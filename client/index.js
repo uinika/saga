@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
+import {unAuthEnter} from './common/permission'
 import 'babel-polyfill'
 import promiseMiddleware from 'redux-promise'
 // import { fetchMiddleware } from './common/middleware'
@@ -24,12 +25,12 @@ import role from './fluxes/admin/role/reducer'
 
 const store = createStore(
   combineReducers({
+    routing: routerReducer,
     login,
     frame,
     user,
     log,
     role,
-    routing: routerReducer
   }),
   compose(
     applyMiddleware(
@@ -51,7 +52,7 @@ ReactDom.render((
         <Route path='login' component={Login} />
       </Route>
       {/* Frame */}
-      <Route path='/frame' component={Frame}>
+      <Route path='/frame' component={Frame} onEnter={unAuthEnter}>
         <Route path='dashboard' getComponent={(nextState, callback) => {
           require.ensure([], (require) => {callback(null, require('./components/dashboard').default)})
         }} />
