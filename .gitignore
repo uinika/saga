@@ -4,5 +4,5 @@ node_modules
 # Npm debug information
 npm-debug.*
 
-# Publish the client project by webpack
-build
+# Source code with compiled
+release
