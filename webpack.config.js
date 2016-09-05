@@ -2,12 +2,12 @@ const Webpack = require('webpack'),
       Path = require('path');
 // Configration for development
 exports.Development = {
-  context: Path.resolve(__dirname, 'client'),
+  context: Path.resolve(__dirname, 'artifact'),
   entry: {
     index: ['webpack-dev-server/client?http://localhost:5000/', 'webpack/hot/dev-server', './index.js']
   },
   output: {
-    path: Path.resolve(__dirname, 'build/bundle'),
+    path: Path.resolve(__dirname, 'release/bundle'),
     publicPath: './bundle/',
     filename: '[name].js'
   },
@@ -41,12 +41,12 @@ exports.Development = {
 }
 // Configration for production
 exports.Production = {
-  context: Path.resolve(__dirname, 'client'),
+  context: Path.resolve(__dirname, 'artifact'),
   entry: {
     index: ['./index.js']
   },
   output: {
-    path: Path.resolve(__dirname, 'build/bundle'),
+    path: Path.resolve(__dirname, 'release/bundle'),
     publicPath: './bundle/',
     filename: '[name].js'
   },

@@ -13,24 +13,24 @@ Gulp.task('client', function(callback) {
   let server = new WebpackDevServer(compiler, {
     hot: true,
     publicPath: '/bundle/',
-    contentBase: './client',
+    contentBase: './artifact',
     stats: {colors: true}
   }).listen(5000);
 });
 // gulp server
 Gulp.task('server', function() {
   Nodemon({
-    script: './server/app.js',
+    script: './mock/app.js',
     execMap: {js: 'node --harmony'},
     env: {'NODE_ENV': 'development'}
   })
 });
 // gulp build
 Gulp.task('build', function() {
-  Gulp.src(['./client/index.html'])
-      .pipe(Gulp.dest('./build'));
-  Gulp.src(['./client/favicon.ico'])
-      .pipe(Gulp.dest('./build'));
+  Gulp.src(['./artifact/index.html'])
+      .pipe(Gulp.dest('./release'));
+  Gulp.src(['./artifact/favicon.ico'])
+      .pipe(Gulp.dest('./release'));
   let compiler = Webpack(WebpackConfig.Production);
   compiler.run(function(err, stats) {
     console.error(Color.red.bold.underline(err));
@@ -39,5 +39,5 @@ Gulp.task('build', function() {
 });
 // gulp clean
 Gulp.task('clean', function() {
-  Delete(['./build/**/*']);
+  Delete(['./release/**/*']);
 });
