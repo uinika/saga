@@ -32,7 +32,7 @@ export default React.createClass({
     return (
       <span>
         <Modal
-          title="用户详情"
+          title="角色详情"
           visible = {this.context.role.state.detail.modal}
           onOk = {this.handleSubmit}
           onCancel = {this.handleCancel}

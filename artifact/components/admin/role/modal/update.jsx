@@ -7,9 +7,11 @@ export default Form.create()(
        role: React.PropTypes.object
     },
     handleSubmit() {
-      let httpParam = this.props.form.getFieldsValue()
+      let httpParam = this.props.form.getFieldsValue();
       this.context.role.dispatch.roleUpdate(httpParam);
-      this.context.role.dispatch.roleUpdateModal(false)
+      this.context.role.dispatch.roleUpdateModal(false);
+      //this.context.role.dispatch.roleFind();?
+
     },
     handleCancel(event) {
       this.context.role.dispatch.roleUpdateModal(false)
@@ -20,29 +22,19 @@ export default Form.create()(
       return (
         <span>
           <Modal
-            title="修改用户"
+            title="修改角色"
             visible={this.context.role.state.update.modal}
             onOk={this.handleSubmit}
             onCancel={this.handleCancel}
           >
-          <Form inline>
-            <Form.Item label="登陆名称">
-              <Input placeholder="请输入账户名"
-                {...getFieldProps('loginName', {initialValue: target.loginName})} />
-            </Form.Item>
-            <Form.Item label="真实姓名">
-              <Input placeholder="请输入账户名"
-                {...getFieldProps('realName', {initialValue: target.realName})} />
-            </Form.Item>
-            <Form.Item label="联系电话">
-              <Input placeholder="请输入账户名"
-                {...getFieldProps('tel', {initialValue: target.tel})} />
-            </Form.Item>
-            <Form.Item label="电子邮箱">
-              <Input placeholder="请输入账户名"
-                {...getFieldProps('email', {initialValue: target.email})} />
-            </Form.Item>
-          </Form>
+            <Form>
+              <Form.Item label="原角色名称">
+                <Input placeholder="请输入角色名称" {...getFieldProps('roleId', {initialValue: target.roleName})} disabled />
+              </Form.Item>
+              <Form.Item label="现角色名称">
+                <Input placeholder="请输入角色名称" {...getFieldProps('roleName')} />
+              </Form.Item>
+            </Form>
           </Modal>
         </span>
       )

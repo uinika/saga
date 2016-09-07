@@ -8,7 +8,7 @@ export default Form.create({})(
     },
     handleFind() {
       let httpParam = {
-        loginName: this.props.form.getFieldValue('roleName')
+        roleName: this.props.form.getFieldValue('roleName')
       }
       this.context.role.dispatch.roleFindFilter(httpParam)
       this.context.role.dispatch.roleFind(httpParam)

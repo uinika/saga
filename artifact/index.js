@@ -78,6 +78,23 @@ ReactDom.render((
             require.ensure([], (require) => {callback(null, require('./components/admin/user').default)})
           }} />
         </Route>
+        <Route path='cluster'>
+          <Route path='start' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/cluster/start').default)})
+          }} />
+          <Route path='resource-url' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/cluster/resource-url').default)})
+          }} />
+          <Route path='install-items' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/cluster/install-items').default)})
+          }} />
+          <Route path='comfirm-hosts' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/cluster/comfirm-hosts').default)})
+          }} />
+          <Route path='survey' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/cluster/survey').default)})
+          }} />
+        </Route>
       </Route>
     </Router>
   </Provider>

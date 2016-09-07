@@ -3,14 +3,16 @@ import { Table } from 'antd';
 
 export default React.createClass({
   contextTypes: {
-     role: React.PropTypes.object
+     role: React.PropTypes.object.isRequired,
+     action: React.PropTypes.object.isRequired,
+     dispatch: React.PropTypes.func.isRequired
   },
   componentDidMount() {
     let queryString = {
       current: 1,
       pageSize: 12
     };
-    this.context.role.dispatch.roleFind(queryString)
+   this.context.role.dispatch.roleFind(queryString)
   },
   columns(){
     return [{
@@ -26,10 +28,13 @@ export default React.createClass({
   },
   pagination() {
     return {
-      total: 1,
+      total: 15,
       showSizeChanger: true,
       onShowSizeChange(current, pageSize) {
         console.log('Current: ', current, '; PageSize: ', pageSize);
+      },
+      showTotal(total, pageSize) {
+        return `共 ${total/pageSize} 页`;
       },
       onChange(current) {
         console.log('Current: ', current);
@@ -38,13 +43,17 @@ export default React.createClass({
   },
   rowSelection(){
     return {
-      onSelect : (record, selected, selectedRows) => {
+      type: 'radio',
+      onSelect: (record, selected, selectedRows) => {
         this.context.role.dispatch.roleSelectSingle(record)
-        this.context.role.dispatch.roleSelectMultiple(selectedRows)
-      },
-      onSelectAll: (selected, selectedRows, changeRows) => {
-        this.context.role.dispatch.roleSelectMultiple(selectedRows)
       }
+      // onSelect : (record, selected, selectedRows) => {
+      //   this.context.role.dispatch.roleSelectSingle(record)
+      //   this.context.role.dispatch.roleSelectMultiple(selectedRows)
+      // },
+      // onSelectAll: (selected, selectedRows, changeRows) => {
+      //   this.context.role.dispatch.roleSelectMultiple(selectedRows)
+      // }
     }
   },
   render(){

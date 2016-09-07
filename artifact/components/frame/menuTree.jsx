@@ -20,8 +20,33 @@ export default React.createClass({
     return (
       <span>
         <Menu className='menu' mode='inline' defaultOpenKeys={['menu']}>
-          <Menu.SubMenu key='menu' title='系统管理'>
+          <Menu.SubMenu key='menu1' title='Service(服务)'>
+
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu2' title='Hosts(主机列表)'>
+
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu3' title='Hosts(添加主机)'>
+
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu4' title='Views(图库)'>
+
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu5' title='Admin(管理)'>
             {menuTrees}
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu6' title='Alerts(告警)'>
+
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu7' title='AddService(添加服务)'>
+
+          </Menu.SubMenu>
+          <Menu.SubMenu key='menu8' title='AddCluter(添加集群)'>
+            <Menu.Item key="AddCluter-1"><Link to='/frame/cluster/start'>开始</Link></Menu.Item>
+            <Menu.Item key="AddCluter-2"><Link to='/frame/cluster/resource-url'>资源地址</Link></Menu.Item>
+            <Menu.Item key="AddCluter-3">安装选项</Menu.Item>
+            <Menu.Item key="AddCluter-4">确认主机</Menu.Item>
+            <Menu.Item key="AddCluter-5">概览</Menu.Item>
           </Menu.SubMenu>
         </Menu>
       </span>
