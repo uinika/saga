@@ -39,14 +39,47 @@ export default React.createClass({
 
           </Menu.SubMenu>
           <Menu.SubMenu key='menu7' title='AddService(添加服务)'>
-
+            <Menu.Item key="AddService-1">
+              <Link to='/frame/add-service/select-service'>选择服务</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-2">
+              <Link to='/frame/add-service/distribute-hosts'>分配主机</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-3">
+              <Link to='/frame/add-service/distribute-node-and-client'>分配节点和客户端</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-4">
+              <Link to='/frame/add-service/customized-service'>定制服务</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-5">
+              <Link to='/frame/add-service/configuration-identification'>配置标识</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-6">
+              <Link to='/frame/add-service/review'>检查</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-7">
+              <Link to='/frame/add-service/install-start-test'>安装，启动和测试</Link>
+            </Menu.Item>
+            <Menu.Item key="AddService-8">
+              <Link to='/frame/add-service/survey'>概览</Link>
+            </Menu.Item>
           </Menu.SubMenu>
           <Menu.SubMenu key='menu8' title='AddCluter(添加集群)'>
-            <Menu.Item key="AddCluter-1"><Link to='/frame/cluster/start'>开始</Link></Menu.Item>
-            <Menu.Item key="AddCluter-2"><Link to='/frame/cluster/resource-url'>资源地址</Link></Menu.Item>
-            <Menu.Item key="AddCluter-3">安装选项</Menu.Item>
-            <Menu.Item key="AddCluter-4">确认主机</Menu.Item>
-            <Menu.Item key="AddCluter-5">概览</Menu.Item>
+            <Menu.Item key="AddCluter-1">
+              <Link to='/frame/cluster/start'>开始</Link>
+            </Menu.Item>
+            <Menu.Item key="AddCluter-2">
+              <Link to='/frame/cluster/resource-url'>资源地址</Link>
+            </Menu.Item>
+            <Menu.Item key="AddCluter-3">
+              <Link to='/frame/cluster/install-items'>安装选项</Link>
+            </Menu.Item>
+            <Menu.Item key="AddCluter-4">
+              <Link to='/frame/cluster/comfirm-hosts'>确认主机</Link>
+            </Menu.Item>
+            <Menu.Item key="AddCluter-5">
+              <Link to='/frame/cluster/survey'>概览</Link>
+            </Menu.Item>
           </Menu.SubMenu>
         </Menu>
       </span>

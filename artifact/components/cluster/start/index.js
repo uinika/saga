@@ -4,25 +4,28 @@ import { bindActionCreators } from 'redux'
 import * as actionCreators from '../../../fluxes/cluster/start/action'
 import { Form, Button, Input} from 'antd'
 const Types = {
-  //  cluster: React.PropTypes.object.isRequired
+    // cluster: React.PropTypes.object.isRequired
 }
 
 export default connect(
-  state => ({user: state.user}),
-  dispatch => ({dispatch, action: bindActionCreators(actionCreators, dispatch)})
+  // state => ({cluster: state.cluster}),
+  // dispatch => ({dispatch, action: bindActionCreators(actionCreators, dispatch)})
 )(
   Form.create()(
     React.createClass({
-    propTypes: Types,
-    childContextTypes: Types,
+    // propTypes: Types,
+    // childContextTypes: Types,
     // getChildContext() {
     //   return {
     //     cluster: this.props.cluster
     //   }
-    handleSubmit(e) {
-      e.preventDefault();
-      console.log('收到表单值：', this.props.form.getFieldsValue());
-    },
+    // handleSubmit(e) {
+    //   e.preventDefault();
+    //   console.log('收到表单值：', this.props.form.getFieldsValue());
+    // },
+
+
+
 
     render() {
       const { getFieldProps } = this.props.form
@@ -33,7 +36,7 @@ export default connect(
           <span className='form'>
             <Form horizontal onSubmit={this.handleSubmit} >
               <Form.Item label='请命名你的集群'>
-                <Input placeholder='' style={{ width:400 }} {...getFieldProps('clusterName')} />
+                <Input placeholder='' style={{width:400 }} {...getFieldProps('clusterName')} />
               </Form.Item>
               <Button  type='primary'>下一步</Button>
             </Form>

@@ -78,6 +78,7 @@ ReactDom.render((
             require.ensure([], (require) => {callback(null, require('./components/admin/user').default)})
           }} />
         </Route>
+
         <Route path='cluster'>
           <Route path='start' getComponent={(nextState, callback) => {
             require.ensure([], (require) => {callback(null, require('./components/cluster/start').default)})
@@ -93,6 +94,33 @@ ReactDom.render((
           }} />
           <Route path='survey' getComponent={(nextState, callback) => {
             require.ensure([], (require) => {callback(null, require('./components/cluster/survey').default)})
+          }} />
+        </Route>
+
+        <Route path='add-service'>
+          <Route path='select-service' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/select-service').default)})
+          }} />
+          <Route path='distribute-hosts' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/distribute-hosts').default)})
+          }} />
+        <Route path='distribute-node-and-client' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/distribute-node-and-client').default)})
+          }} />
+          <Route path='customized-service' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/customized-service').default)})
+          }} />
+          <Route path='configuration-identification' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/configuration-identification').default)})
+          }} />
+          <Route path='review' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/review').default)})
+          }} />
+          <Route path='install-start-test' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/install-start-test').default)})
+          }} />
+          <Route path='survey' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {callback(null, require('./components/add-service/survey').default)})
           }} />
         </Route>
       </Route>

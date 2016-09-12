@@ -1,81 +1,38 @@
 import { createAction } from 'redux-actions'
 import { url, http, validate } from '../../../common/http'
-import {message} from 'antd'
+import { message } from 'antd'
 
-/* Selected */
-export const roleSelectSingle = createAction('ROLE_SELECT_SINGLE')
-export const roleSelectMultiple = createAction('ROLE_SELECT_MULTIPLE')
-
-/* Find */
-export const roleFindFilter = createAction('ROLE_FIND_FILTER')
-export const roleFind = createAction('ROLE_FIND', async httpParam => {
-  const data = await http({
-    url: '/sys/roles',
-    method: 'GET',
-    query: httpParam
-  });
-  if(validate(data, 200)){
-    return data.body
+/** Create */
+export const createCluster=createAction('CREATE_CLUSTER')
+//
+export const createResult = createAction('CREATE_RESULT')
+export const create = httpParam => {
+  return dispatch => {
+    http({
+      url: '/sys/account',
+      method: 'POST',
+      param: httpParam
+    })
+    .then(data => {
+      dispatch(createResult(data))
+      if(validate(data, 200)) {
+        message.success(data.head.message, 3)
+        return data.head.status
+      }
+      else if(validate(data, 201)) {
+        message.error(data.head.message, 3)
+        return data.head.status
+      }
+    })
+    .then(status => {
+        if(200 === status){
+          dispatch(find({current: 1, pageSize: 12}))
+          dispatch(createModal(false))
+        }
+        else if(201 === status){
+          dispatch(createModal(true))
+        }
+    })
+    .catch( (error) => console.warn(error) )
   }
-  if(validate(data, 202)){
-    message.warning(data.head.message, 3)
-    //dispatch(push('login'))
-  }
-})
-
-/* Create */
-export const roleCreateModal = createAction('ROLE_CREATE_MODAL')
-export const roleCreate = createAction('ROLE_CREATE', async httpParam => {
-  const data = await http({
-    url: '/sys/role',
-    method: 'POST',
-    param: httpParam
-  });
-  if(validate(data, 200)){
-    return data.body
-  }
-  if(validate(data,201)){
-    message.error(data.head.message, 3);
-    return data.body
-  }
-  if(validate(data,202)){
-    message.error(data.head.message, 3);
-    dispatch(push('login'))
-  }
-})
-
-/* Update */
-export const roleUpdateModal = createAction('ROLE_UPDATE_MODAL')
-export const roleUpdate = createAction('ROLE_UPDATE', async httpParam => {
-  const data = await http({
-    url: '/sys/role',
-    method: 'PUT',
-    param: httpParam
-  });
-  if(validate(data, 200)){
-    return data.body
-  }
-  if(validate(data,201)){
-    message.warning(data.head.message, 3);
-    //return data.body
-  }
-  if(validate(data,202)){
-    message.error(data.head.message, 3);
-    dispatch(push('login'))
-  }
-})
-
-/* Detail */
-export const roleDetailModal = createAction('ROLE_DETAIL_MODAL')
-export const roleDetail = createAction('ROLE_DETAIL', async pathParam => {
-  const data = await http({
-    url: '/sys/role/' + pathParam,
-    method: 'GET'
-  })
-  if(validate(data, 200)){
-    return data.body
-  }
-})
-
-/* Auth */
-export const roleAuthModal = createAction('ROLE_AUTH_MODAL')
+}
