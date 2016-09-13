@@ -22,6 +22,7 @@ import frame from './fluxes/frame/reducer'
 import user from './fluxes/admin/user/reducer'
 import log from './fluxes/admin/log/reducer'
 import role from './fluxes/admin/role/reducer'
+import cluster from './fluxes/cluster/reducer'
 
 const store = createStore(
   combineReducers({
@@ -31,6 +32,7 @@ const store = createStore(
     user,
     log,
     role,
+    cluster
   }),
   compose(
     applyMiddleware(
