@@ -2,12 +2,11 @@ const Express = require('express'),
       App = Express(),
       Cors = require('cors'),
       BodyParser = require('body-parser'),
-      Color = require('colors/safe'),
-      Common = require('./common.js'),
-      Url = '/';
+      Middleware = require('./common/middleware.js'),
+      Color = require('colors/safe');
 
 /** Middleware */
-App.use('/client', Express.static('./client'));
+App.use('/wiserv', Express.static('./release'));
 App.use(Cors({
   origin: 'http://localhost:5000',
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
@@ -17,15 +16,15 @@ App.use(Cors({
 }));
 App.use(BodyParser.json());
 App.use('/', (request, response, next) => {
-  Common.Log(request, response);
+  Middleware.log(request, response);
   next();
 });
 App.listen(5002);
-console.info(Color.rainbow('Server started http://localhost:5002') + Url);
+console.info(Color.yellow('Mock started on http://localhost:5005/wiserv'));
 
 /** Basic config for express */
-App.use(Url, require('./login/api'));
-App.use(Url, require('./frame/api'));
-App.use(Url, require('./admin/user/api'));
-App.use(Url, require('./admin/log/api'));
-App.use(Url, require('./admin/role/api'));
+App.use('/', require('./login/api'));
+App.use('/', require('./frame/api'));
+App.use('/', require('./admin/user/api'));
+App.use('/', require('./admin/log/api'));
+App.use('/', require('./admin/role/api'));

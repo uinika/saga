@@ -6,9 +6,9 @@ const Gulp = require('gulp'),
       Color = require('colors/safe'),
       Delete = require('del');
 // gulp
-Gulp.task('default', ['client', 'server']);
+Gulp.task('default', ['artifact', 'mock']);
 // gulp client
-Gulp.task('client', function(callback) {
+Gulp.task('artifact', function(callback) {
   let compiler = Webpack(WebpackConfig.Development);
   let server = new WebpackDevServer(compiler, {
     hot: true,
@@ -18,7 +18,7 @@ Gulp.task('client', function(callback) {
   }).listen(5000);
 });
 // gulp server
-Gulp.task('server', function() {
+Gulp.task('mock', function() {
   Nodemon({
     script: './mock/app.js',
     execMap: {js: 'node --harmony'},

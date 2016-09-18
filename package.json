@@ -16,7 +16,7 @@
   "author": "Hank",
   "license": "MIT",
   "dependencies": {
-    "antd": "^1.11.0",
+    "antd": "^1.11.1",
     "flux-standard-action": "^0.6.1",
     "jquery": "^3.1.0",
     "lodash": "^4.15.0",

@@ -1,13 +1,13 @@
 const Router = require('express').Router(),
-      Common = require('../common.js');
+      Util = require('../common/util.js');
 /** Router definition */
 Router.route('/login')
   .post(function(request, response) {
-    response.json(Common.Json('/login/mock/login.json'));
+    response.json(Util.Json('/login/data/login.json'));
 });
 Router.route('/validatecode')
   .get(function(request, response) {
-    response.sendFile(Common.Path('/login/mock/validatecode.jpg'));
+    response.sendFile(Util.Path('/login/data/validatecode.jpg'));
 });
 /** Module export */
 module.exports = Router;
