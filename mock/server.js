@@ -20,7 +20,7 @@ App.use('/', (request, response, next) => {
   next();
 });
 App.listen(5002);
-console.info(Color.yellow('Mock started on http://localhost:5005/wiserv'));
+console.info(Color.yellow('Mock started on http://localhost:5002/wiserv'));
 
 /** Basic config for express */
 App.use('/', require('./login/api'));

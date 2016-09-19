@@ -7,7 +7,7 @@ Router.route('/navigation/menuTree')
     let protocal = Util.Protocal();
     protocal.head.status = 200;
     protocal.head.message = 'http response sucess';
-    protocal.body = Util.Json('/frame/data/navigation-menuTree.json');
+    protocal.body = Util.json('/frame/data/navigation-menuTree.json');
     response.json(protocal);
 });
 

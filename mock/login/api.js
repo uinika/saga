@@ -3,11 +3,11 @@ const Router = require('express').Router(),
 /** Router definition */
 Router.route('/login')
   .post(function(request, response) {
-    response.json(Util.Json('/login/data/login.json'));
+    response.json(Util.json('/login/data/login.json'));
 });
 Router.route('/validatecode')
   .get(function(request, response) {
-    response.sendFile(Util.Path('/login/data/validatecode.jpg'));
+    response.sendFile(Util.url('/login/data/validatecode.jpg'));
 });
 /** Module export */
 module.exports = Router;

@@ -3,13 +3,13 @@ const JsonLoader = require('load-json-file'),
 
 /** Basic path */
 exports.url = (url) => {
-  return __dirname + url
+  return Path.resolve(__dirname, '..') + url
 };
 
 /** Json loader */
-exports.json = name => {
+exports.json = path => {
   return JsonLoader.sync(
-    Path.resolve(__dirname, '..') + name
+    Path.resolve(__dirname, '..') + path
   );
 };
 

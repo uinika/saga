@@ -20,7 +20,7 @@ Gulp.task('artifact', function(callback) {
 // gulp server
 Gulp.task('mock', function() {
   Nodemon({
-    script: './mock/app.js',
+    script: './mock/server.js',
     execMap: {js: 'node --harmony'},
     env: {'NODE_ENV': 'development'}
   })
