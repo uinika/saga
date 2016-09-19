@@ -4,7 +4,7 @@ const Router = require('express').Router(),
 // 导航栏菜单
 Router.route('/navigation/menuTree')
   .get(function(request, response) {
-    let protocal = Util.Protocal();
+    let protocal = Util.protocal();
     protocal.head.status = 200;
     protocal.head.message = 'http response sucess';
     protocal.body = Util.json('/frame/data/navigation-menuTree.json');
