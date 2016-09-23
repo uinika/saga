@@ -36,10 +36,6 @@ export const create = handleActions({
   'ROLE_CREATE_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
-  }),
-  'ROLE_UPDATE': (state = {}, action) => ({
-    ...state,
-    result: action.payload
   })
 }, {
   modal: false
@@ -50,10 +46,6 @@ export const update = handleActions({
   'ROLE_UPDATE_MODAL': (state = {}, action) => ({
     ...state,
     modal: action.payload
-  }),
-  'ROLE_UPDATE': (state = {}, action) => ({
-    ...state,
-    result: action.payload
   })
 }, {
   modal: false

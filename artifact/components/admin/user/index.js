@@ -30,9 +30,9 @@ export default connect(
     render() {
       return (
         <div id='admin-user'>
-          <section className='path '>
+          <sction className='path '>
             <Path />
-          </section>
+          </sction>
           <section className='filter'>
             <Filter />
           </section>

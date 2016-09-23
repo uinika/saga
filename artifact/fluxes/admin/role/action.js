@@ -1,6 +1,5 @@
 import { createAction } from 'redux-actions'
 import { url, http, validate } from '../../../common/http'
-import {message} from 'antd'
 
 /* Selected */
 export const roleSelectSingle = createAction('ROLE_SELECT_SINGLE')
@@ -17,10 +16,6 @@ export const roleFind = createAction('ROLE_FIND', async httpParam => {
   if(validate(data, 200)){
     return data.body
   }
-  if(validate(data, 202)){
-    message.warning(data.head.message, 3)
-    //dispatch(push('login'))
-  }
 })
 
 /* Create */
@@ -34,14 +29,6 @@ export const roleCreate = createAction('ROLE_CREATE', async httpParam => {
   if(validate(data, 200)){
     return data.body
   }
-  if(validate(data,201)){
-    message.error(data.head.message, 3);
-    return data.body
-  }
-  if(validate(data,202)){
-    message.error(data.head.message, 3);
-    dispatch(push('login'))
-  }
 })
 
 /* Update */
@@ -54,14 +41,6 @@ export const roleUpdate = createAction('ROLE_UPDATE', async httpParam => {
   });
   if(validate(data, 200)){
     return data.body
-  }
-  if(validate(data,201)){
-    message.warning(data.head.message, 3);
-    //return data.body
-  }
-  if(validate(data,202)){
-    message.error(data.head.message, 3);
-    dispatch(push('login'))
   }
 })
 

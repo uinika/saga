@@ -25,7 +25,7 @@ exports.Development = {
       loader: 'babel-loader',
       query: {
         presets: ['react', 'es2015', 'stage-0', 'stage-1', 'stage-2', 'stage-3'],
-        plugins: ['antd']
+        plugins: [['import', { libraryName: 'antd', style: 'css'}]]
       }
     }, {
       test: /\.css$/,

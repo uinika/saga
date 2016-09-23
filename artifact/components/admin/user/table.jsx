@@ -58,7 +58,7 @@ export default React.createClass({
     if(result && result.head) {
       return {
         total: result.head.total,
-        //current: 1,
+        current: 1,
         pageSize: 12,
         defaultCurrent: 1,
         defaultPageSize: 12,
