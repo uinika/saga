@@ -10,12 +10,12 @@
 5. open browser with http://localhost:5000/
 
 ## Thirdparty Library
-* [NodeJS 6.2.x](https://nodejs.org/)
 * [React 15.2.x](http://facebook.github.io/react/)
 * [Redux 3.5.x](https://github.com/reactjs/redux/)
-* [React Router 2.x.x](https://github.com/reactjs/react-router/)
 * [Webpack 1.13.x](http://facebook.github.io/react/)
-* [babel with preset 6.x.x](https://babeljs.io/)
+* [Babel with preset 6.x.x](https://babeljs.io/)
+* [React Router 2.x.x](https://github.com/reactjs/react-router/)
+* [NodeJS 6.2.x](https://nodejs.org/)
 * [Ant Design 1.6.x](http://ant.design/)
 * [Lodash 1.5.x](https://lodash.com/)
 * [Q 1.4.x](https://github.com/kriskowal/q)
