@@ -1,28 +1,24 @@
 # Saga
 
------
+![](./artifact/logo.png)
 
 ## Installation and deployment
-1. git clone http://192.168.13.21/zhengh/saga.git
+1. git clone https://github.com/uinika/saga.git 
 2. cd saga
-3. npm Install
-4. gulp / gulp clean / gulp build
-5. Open browser http://localhost:5000/
+3. npm install
+4. gulp clean / build
+5. open browser with http://localhost:5000/
 
------
-
-## Third party Library
-* [Mongoose 4.x.x](http://mongoosejs.com/)
-* [Express 4.x.x](https://expressjs.com/)
+## Thirdparty Library
 * [NodeJS 6.2.x](https://nodejs.org/)
 * [React 15.2.x](http://facebook.github.io/react/)
 * [Redux 3.5.x](https://github.com/reactjs/redux/)
 * [React Router 2.x.x](https://github.com/reactjs/react-router/)
+* [Webpack 1.13.x](http://facebook.github.io/react/)
+* [babel with preset 6.x.x](https://babeljs.io/)
 * [Ant Design 1.6.x](http://ant.design/)
 * [Lodash 1.5.x](https://lodash.com/)
 * [Q 1.4.x](https://github.com/kriskowal/q)
-
------
 
 ## JSON Transfer Protocol
 ### Description
@@ -57,7 +53,6 @@
       }
     }
 
------
 
 ## How to write markdown for CORS API ?
 ### Summary
@@ -71,43 +66,3 @@
     #### Result: String/Object/Array/Bollean/Null
         name       data-type         'description(comment)'
     -----
------
-# User Management [Markdown DEMO]
-## User -- query(query all of the user infomation)
-### /api/user
-    Type: GET
-#### Parameter:
-    department_id    String         ID for user's department(If superuser login ignore this parameter)
-#### Result: Array
-    username         String         'User's alias name'
-    password         String         'User's password'
-    age              Integer        'User's age'
-    realname         String         'User's real name'
-    phone            String         'Telephone number'
-    department       String         'Department'
-    email            String         'E-mail'
-## User -- update(update user infomation base on ID)
-### /api/user
-    Type: PUT
-#### Parameter:
-    user_id    String         ID for user's department(If superuser login ignore this parameter)
-#### Result: Null
-## User -- add(Add a user by ID)
-### /api/user
-    Type: POST
-#### Parameter:
-    username         String         'User's alias name'
-    password         String         'User's password'
-    age              Integer        'User's age'
-    realname         String         'User's real name'
-    phone            String         'Telephone number'
-    department       String         'Department'
-    email            String         'E-mail'
-#### Result: Null
-## User -- delete(delete a user by ID)
-### /api/user/{:user_id}
-    Type: DELETE
-#### Parameter:
-    user_id    String         ID for user's department(If superuser login ignore this parameter)
-#### Result: Null
------
